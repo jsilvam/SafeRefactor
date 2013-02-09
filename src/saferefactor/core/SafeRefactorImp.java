@@ -54,6 +54,7 @@ public class SafeRefactorImp extends SafeRefactor {
 
 		analyzer = new ASMBasedAnalyzer(this.source, this.target,this.tmpFolder);
 //		analyzer = new ReflectionBasedAnalyzer(this.source, this.target,this.tmpFolder);
+
 		generator = new RandoopAntAdapter(this.source,this.getTestPath().getAbsolutePath());
 
 		sourceCompiler = new AntJavaCompiler(this.tmpFolder);

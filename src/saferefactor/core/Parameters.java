@@ -11,8 +11,8 @@ public class Parameters {
 	private boolean verbose = false;
 	
 	private boolean analyzeChangeMethods = false;
-	
-//	private String compilerPath;
+
+	private boolean enableOCC = false;
 	
 	private boolean fork = true;
 	
@@ -106,6 +106,14 @@ public class Parameters {
 
 	public void setAnalyzeChangeMethods(boolean analyzeChangeMethod) {
 		this.analyzeChangeMethods = analyzeChangeMethod;
+	}
+
+	public boolean isEnableOCC() {
+		return enableOCC;
+	}
+
+	public void setEnableOCC(boolean enableOCC) {
+		this.enableOCC = enableOCC;
 	}
 
 	

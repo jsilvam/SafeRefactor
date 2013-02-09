@@ -1,5 +1,7 @@
 package saferefactor.core.analysis.naive;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -9,6 +11,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.designwizard.design.ClassNode;
 import org.designwizard.design.MethodNode;
 import org.designwizard.design.Modifier;
@@ -27,15 +30,18 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 	private final Project target;
 	private DesignWizard dwSource;
 	private DesignWizard dwTarget;
+	private List<String> changedClasses;
 
 	public ASMBasedAnalyzer(Project source, Project target, String tmpDir) {
 		this.source = source;
 		this.target = target;
 	}
 
-	public Report analyze() throws Exception {
-		Report result = new NaiveReport();
+	public Report analyze(boolean enableOccOptimization) throws Exception {
+		if (enableOccOptimization)
+			this.changedClasses = compareBinaries(this.source.getSrcFolder());
 
+		Report result = new Report();
 		dwSource = new DesignWizard(source.getBuildFolder().getAbsolutePath());
 		dwTarget = new DesignWizard(target.getBuildFolder().getAbsolutePath());
 
@@ -48,7 +54,6 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 		return result;
 	}
 
-	
 	private List<String> getParameterList(MethodNode methodNode) {
 		List<String> result = new ArrayList<String>();
 		List<ClassNode> parameters = methodNode.getParameters();
@@ -59,6 +64,13 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 	}
 
 	private boolean doNotTestTypeOfMethod(MethodNode methodNode) {
+
+		if (this.changedClasses != null) {
+			ClassNode declaringClass = methodNode.getDeclaringClass();
+
+			if (!this.changedClasses.contains(declaringClass.getName()))
+				return true;
+		}
 
 		boolean isPublic = false;
 		Collection<Modifier> methodModifiers = methodNode.getModifiers();
@@ -161,7 +173,7 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 								.getDeclaringClass();
 						ClassNode targetDeclaringClass = targetMethod
 								.getDeclaringClass();
-						
+
 						if (isSuper(declaringClass, targetDeclaringClass)) {
 							Method convertToMethod = convertToMethod(methodNode);
 							int indexOf = result.indexOf(convertToMethod);
@@ -184,7 +196,6 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 
 		}
 
-		
 		return result;
 	}
 
@@ -228,9 +239,34 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 		return false;
 	}
 
-	// private List<Clazz> computeClasses(DesignWizard dw) {
-	//
-	// return null;
-	// }
+	private List<String> compareBinaries(File buildFolder) throws IOException {
+		List<String> result = new ArrayList<String>();
+		if (buildFolder.isDirectory()) {
+			File[] listFiles = buildFolder.listFiles();
+			for (File file : listFiles) {
+				List<String> compareBinaries = compareBinaries(file);
+				result.addAll(compareBinaries);
+			}
+		} else if (buildFolder.getName().endsWith(".java")) {
+			String absolutePath = buildFolder.getAbsolutePath();
+			String root = source.getBuildFolder().getAbsolutePath();
+			String fullNameFolder = absolutePath.substring(root.length() + 1);
+			File targetFile = new File(target.getSrcFolder(), fullNameFolder);
+			if (targetFile.exists()) {
+				boolean isEqual = FileUtils.contentEquals(buildFolder,
+						targetFile);
+				if (!isEqual) {
+					String fullName = fullNameFolder.replace("/", ".");
+					fullName = fullName.substring(0,
+							fullNameFolder.length() - 5);
+					result.add(fullName);
+				}
+			}
+
+		}
+		return result;
+	}
+
+	
 
 }

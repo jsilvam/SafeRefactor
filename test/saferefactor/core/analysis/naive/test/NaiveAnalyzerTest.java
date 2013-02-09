@@ -1,4 +1,4 @@
-package saferefactor.core.test.analysis.naive.test;
+package saferefactor.core.analysis.naive.test;
 
 import static org.junit.Assert.*;
 
@@ -35,7 +35,7 @@ public class NaiveAnalyzerTest {
 				.getProperty("java.io.tmpdir");
 		TransformationAnalyzer analyzer = new ReflectionBasedAnalyzer(
 				source, target,tmpFolder);
-		Report report = analyzer.analyze();
+		Report report = analyzer.analyze(false);
 
 		assertEquals(8, report.getMethodsToTest().size());
 		assertEquals(
@@ -61,7 +61,7 @@ public class NaiveAnalyzerTest {
 				.getProperty("java.io.tmpdir");
 		TransformationAnalyzer analyzer = new ASMBasedAnalyzer(
 				source, target,tmpFolder);
-		Report report = analyzer.analyze();
+		Report report = analyzer.analyze(false);
 
 		assertEquals(8, report.getMethodsToTest().size());
 		assertEquals(
@@ -69,6 +69,34 @@ public class NaiveAnalyzerTest {
 				report.getMethodsToTest().toString());
 
 	}
+	
+	@Test
+	public void testASMbasedOCC() throws Exception {
+
+		Project source = new Project();
+		source.setProjectFolder(new File("test/data/subject14source"));
+		source.setBuildFolder(new File("test/data/subject14source/bin"));
+		source.setSrcFolder(new File("test/data/subject14source/src"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("test/data/subject14target"));
+		target.setBuildFolder(new File("test/data/subject14target/bin"));
+		target.setSrcFolder(new File("test/data/subject14target/src"));
+
+		String tmpFolder = System
+				.getProperty("java.io.tmpdir");
+		TransformationAnalyzer analyzer = new ASMBasedAnalyzer(
+				source, target,tmpFolder);
+		
+		Report report = analyzer.analyze(true);
+
+		assertEquals(6, report.getMethodsToTest().size());
+		assertEquals(
+				"[method : B.k() : B, cons : B.<init>(), method : C.test() : C, method : C.main([Ljava.lang.String;) : C, cons : C.<init>(), method : B.m() : B;C]",
+				report.getMethodsToTest().toString());
+
+	}
+
 
 
 
@@ -90,7 +118,7 @@ public class NaiveAnalyzerTest {
 		
 		TransformationAnalyzer analyzer = new ReflectionBasedAnalyzer(
 				source, target,tmpFolder);
-		Report report = analyzer.analyze();
+		Report report = analyzer.analyze(false);
 		List<Method> methodsToTest = report.getMethodsToTest();
 		for (Method abstractMethod : methodsToTest) {
 			System.out.println(abstractMethod);

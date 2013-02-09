@@ -160,6 +160,8 @@ public class ComparatorImp implements TestComparator {
 			}
 
 			TestCase targetTestCase = targetMap.get(key);
+			if (targetTestCase == null)
+				continue;
 
 			if (sourceTestCase.getTestCaseState() != targetTestCase
 					.getTestCaseState()) {
@@ -189,6 +191,9 @@ public class ComparatorImp implements TestComparator {
 
 			TestCase sourceTestCase = sourceMap.get(key);
 			TestCase targetTestCase = targetMap.get(key);
+			
+			if (targetTestCase == null)
+				continue;
 
 			if (sourceTestCase.getTestCaseState() != targetTestCase
 					.getTestCaseState()) {

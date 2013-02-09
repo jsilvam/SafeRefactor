@@ -247,7 +247,7 @@ public abstract class SafeRefactor {
 
 	private void analyzeTransformation() throws Exception {
 		double start = System.currentTimeMillis();
-		analysisReport = analyzer.analyze();
+		analysisReport = analyzer.analyze(parameters.isEnableOCC());
 		methodsToTest = analysisReport.getMethodsToTest();
 
 		double stop = System.currentTimeMillis();
