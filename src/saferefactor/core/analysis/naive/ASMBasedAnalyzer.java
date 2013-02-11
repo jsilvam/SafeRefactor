@@ -15,6 +15,7 @@ import org.apache.commons.io.FileUtils;
 import org.designwizard.design.ClassNode;
 import org.designwizard.design.MethodNode;
 import org.designwizard.design.Modifier;
+import org.designwizard.exception.InexistentEntityException;
 import org.designwizard.main.DesignWizard;
 
 import saferefactor.core.analysis.Report;
@@ -39,7 +40,7 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 
 	public Report analyze(boolean enableOccOptimization) throws Exception {
 		if (enableOccOptimization)
-			this.changedClasses = compareBinaries(this.source.getSrcFolder());
+			this.changedClasses = compareBinaries(this.source.getBuildFolder());
 
 		Report result = new Report();
 		dwSource = new DesignWizard(source.getBuildFolder().getAbsolutePath());
@@ -47,6 +48,7 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 
 		Set<MethodNode> sourceMethods = dwSource.getAllMethods();
 		Set<MethodNode> targetMethods = dwTarget.getAllMethods();
+
 		List<Method> intersection = getIntersection(sourceMethods,
 				targetMethods);
 
@@ -65,12 +67,32 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 
 	private boolean doNotTestTypeOfMethod(MethodNode methodNode) {
 
+		ClassNode declaringClass = methodNode.getDeclaringClass();
 		if (this.changedClasses != null) {
-			ClassNode declaringClass = methodNode.getDeclaringClass();
 
 			if (!this.changedClasses.contains(declaringClass.getName()))
 				return true;
 		}
+
+		ClassNode targetClass;
+		try {		
+			String className = declaringClass.getClassName();
+			targetClass = this.dwTarget.getClass(className);
+
+			// FIXME Hack to avoid this class. This class is not public on
+			// target of jpider, but designwizard says it is.
+			if (targetClass.getName().equals(
+					"net.javacoding.jspider.core.storage.jdbc.DBUtil"))
+				return true;
+			if (!targetClass.containsModifiers(Modifier.PUBLIC))
+				return true;
+		} catch (InexistentEntityException e) {
+			// e.printStackTrace();
+		}
+
+		// TODO HACK: do not test methods from aspects
+		if (declaringClass.toString().contains(".aspectOf()"))
+			return true;
 
 		boolean isPublic = false;
 		Collection<Modifier> methodModifiers = methodNode.getModifiers();
@@ -119,7 +141,7 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 	}
 
 	private List<Method> getIntersection(Set<MethodNode> sourceMethods,
-			Set<MethodNode> targetMethods) {
+			Set<MethodNode> targetMethods) throws InexistentEntityException {
 
 		List<Method> result = new ArrayList<Method>();
 
@@ -131,6 +153,7 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 				continue;
 
 			if (targetMethods.contains(methodNode)) {
+
 				Method convertToMethod = convertToMethod(methodNode);
 				result.add(convertToMethod);
 			} else {
@@ -247,18 +270,18 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 				List<String> compareBinaries = compareBinaries(file);
 				result.addAll(compareBinaries);
 			}
-		} else if (buildFolder.getName().endsWith(".java")) {
+		} else if (buildFolder.getName().endsWith(".class")) {
 			String absolutePath = buildFolder.getAbsolutePath();
 			String root = source.getBuildFolder().getAbsolutePath();
 			String fullNameFolder = absolutePath.substring(root.length() + 1);
-			File targetFile = new File(target.getSrcFolder(), fullNameFolder);
+			File targetFile = new File(target.getBuildFolder(), fullNameFolder);
 			if (targetFile.exists()) {
 				boolean isEqual = FileUtils.contentEquals(buildFolder,
 						targetFile);
 				if (!isEqual) {
 					String fullName = fullNameFolder.replace("/", ".");
 					fullName = fullName.substring(0,
-							fullNameFolder.length() - 5);
+							fullNameFolder.length() - 6);
 					result.add(fullName);
 				}
 			}
@@ -266,7 +289,5 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 		}
 		return result;
 	}
-
-	
 
 }

@@ -25,6 +25,7 @@
 				<pathelement location="${binClasspath}" />
 				<pathelement location="${tests.dir}/" />
 				<pathelement path="${extra.jars}"/>
+				<pathelement path="${java.class.path}" />
 			</classpath>
 
 			<classpath refid="classpath_source" />			
