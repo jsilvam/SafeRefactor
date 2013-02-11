@@ -13,6 +13,7 @@ import java.util.Properties;
 
 import org.junit.Test;
 
+import saferefactor.core.SafeRefactorException;
 import saferefactor.core.util.AntJavaCompiler;
 import saferefactor.core.util.Compiler;
 import saferefactor.core.util.EclipseCompiler;
@@ -21,7 +22,7 @@ import saferefactor.core.util.Project;
 public class CompilerTest {
 
 	@Test
-	public void test() throws MalformedURLException, FileNotFoundException {
+	public void test() throws MalformedURLException, FileNotFoundException, SafeRefactorException {
 		
 		Project project= new Project();
 		project.setProjectFolder(new File("test/data/subject14source"));
@@ -44,7 +45,7 @@ public class CompilerTest {
 	}
 	
 	@Test
-	public void testCompileWithPackage() throws MalformedURLException, FileNotFoundException {
+	public void testCompileWithPackage() throws MalformedURLException, FileNotFoundException, SafeRefactorException {
 		
 		String tmpFolder = System
 				.getProperty("java.io.tmpdir");						
@@ -124,7 +125,7 @@ public class CompilerTest {
 //	}
 	
 	@Test
-	public void testEclipseCompiler() throws MalformedURLException, FileNotFoundException {
+	public void testEclipseCompiler() throws MalformedURLException, FileNotFoundException, SafeRefactorException {
 		
 		Project project= new Project();
 		project.setProjectFolder(new File("test/data/subject14source"));

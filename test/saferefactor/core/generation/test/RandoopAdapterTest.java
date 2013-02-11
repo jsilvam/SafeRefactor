@@ -48,6 +48,25 @@ public class RandoopAdapterTest {
 		assertTrue(testGenerated.exists());
 	}
 	
+	@Test(expected = RuntimeException.class)
+	public void testGenerateTestsIncorrectPath() throws FileNotFoundException {
+
+		Project projectToTest = new Project();
+		projectToTest.setProjectFolder(new File("test/data/subject14source"));
+		projectToTest.setBuildFolder(new File("test/data/subject14source/bin2"));
+		projectToTest.setSrcFolder(new File("test/data/subject14source/src"));
+
+		int timelimit = 1;
+		String tmpFolder = System
+				.getProperty("java.io.tmpdir");
+		AbstractTestGeneratorAdapter randoopGen = new RandoopAntAdapter(
+				projectToTest,tmpFolder);
+		List<Method> methods = getMethods();
+		List<String> additionalParameters = new ArrayList<String>();
+		randoopGen.generateTestsForMethodList(methods, timelimit,
+				additionalParameters);
+	}
+	
 
 
 	

@@ -65,7 +65,7 @@ public class NaiveAnalyzerTest {
 
 		assertEquals(8, report.getMethodsToTest().size());
 		assertEquals(
-				"[method : B.k() : B, cons : B.<init>(), method : C.test() : C, cons : A.<init>(), method : A.k() : A, method : C.main([Ljava.lang.String;) : C, cons : C.<init>(), method : B.m() : B;C]",
+				"[method : B.k() : B, cons : B.<init>(), method : C.test() : C, cons : A.<init>(), method : A.k() : A, method : C.main([Ljava.lang.String;) : C, cons : C.<init>(), method : B.m() : C]",
 				report.getMethodsToTest().toString());
 
 	}
@@ -92,7 +92,7 @@ public class NaiveAnalyzerTest {
 
 		assertEquals(6, report.getMethodsToTest().size());
 		assertEquals(
-				"[method : B.k() : B, cons : B.<init>(), method : C.test() : C, method : C.main([Ljava.lang.String;) : C, cons : C.<init>(), method : B.m() : B;C]",
+				"[method : B.k() : B, cons : B.<init>(), method : C.test() : C, method : C.main([Ljava.lang.String;) : C, cons : C.<init>(), method : B.m() : C]",
 				report.getMethodsToTest().toString());
 
 	}

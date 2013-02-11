@@ -24,7 +24,7 @@
 			Generating tests for ${projectBin}
 			Fork ${fork}
 		</echo>
-		<java classname="saferefactor.core.generation.RandoopAntAdapter" fork="${fork}" maxmemory="1024m">
+		<java classname="saferefactor.core.generation.RandoopAntAdapter" logerror="true" failonerror="true"  fork="${fork}" maxmemory="1024m">
 
 
 			<jvmarg value="-Xms512m" />

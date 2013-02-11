@@ -13,6 +13,7 @@ import org.junit.Test;
 
 import saferefactor.core.Parameters;
 import saferefactor.core.Report;
+import saferefactor.core.SafeRefactorException;
 import saferefactor.core.SafeRefactorImp;
 import saferefactor.core.SafeRefactor;
 import saferefactor.core.util.Project;
@@ -40,7 +41,27 @@ public class SafeRefactorTest {
 		
 	}
 	
-	@Test
+	@Test(expected = SafeRefactorException.class)
+	public void testCheckTransformationWithIncorrectClasspath() throws Exception {
+		Project source = new Project();
+		source.setProjectFolder(new File("test/data/subject14source"));
+		source.setBuildFolder(new File("test/data/subject14source/bin2"));
+		source.setSrcFolder(new File("test/data/subject14source/src"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("test/data/subject14target"));
+		target.setBuildFolder(new File("test/data/subject14target/bin"));
+		target.setSrcFolder(new File("test/data/subject14target/src"));
+
+		Parameters parameters = new Parameters();
+		parameters.setCompileProjects(false);		
+		parameters.setTimeLimit(1);
+		
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target, parameters);
+		saferefactor.checkTransformation();		
+	}
+	
+	@Test(expected = SafeRefactorException.class)
 	public void testCheckTransformationWithProjectsWithCompilationErrors() throws Exception {
 		Project source = new Project();
 		source.setProjectFolder(new File("test/data/compilation_error_source"));
@@ -68,33 +89,26 @@ public class SafeRefactorTest {
 	@Test
 	public void testCheckTransformationWithProjectsCompiled() throws Exception {
 		
-		//TODO fix these feature
-//		Project source = new Project();
-//		source.setProjectFolder(new File("test/data/subject14source"));
-//		source.setBuildFolder(new File("test/data/subject14source/bin"));
-//		source.setSrcFolder(new File("test/data/subject14source/src"));
-//
-//		Project target = new Project();
-//		target.setProjectFolder(new File("test/data/subject14target"));
-//		target.setBuildFolder(new File("test/data/subject14target/bin"));
-//		target.setSrcFolder(new File("test/data/subject14target/src"));
-//
-//		Parameters parameters = new Parameters();
-//		parameters.setCompileProjects(false);
-//		parameters.setAnalyzeChangeMethods(true);
-//		parameters.setTimeLimit(1);
-//		
-//		SafeRefactor saferefactor = new SafeRefactorImp(source, target, parameters);
-//		saferefactor.checkTransformation();
-//		Report report = saferefactor.getReport();
-//		
-//		assertEquals(false, report.isRefactoring());
-//		
-//		List<Method> methods =  report.getChangedMethods();
-//		Method method = methods.get(0);
-//		assertEquals("test", method.getSimpleName());
+
+		Project source = new Project();
+		source.setProjectFolder(new File("test/data/subject14source"));
+		source.setBuildFolder(new File("test/data/subject14source/bin"));
+		source.setSrcFolder(new File("test/data/subject14source/src"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("test/data/subject14target"));
+		target.setBuildFolder(new File("test/data/subject14target/bin"));
+		target.setSrcFolder(new File("test/data/subject14target/src"));
+
+		Parameters parameters = new Parameters();
+		parameters.setCompileProjects(false);		
+		parameters.setTimeLimit(1);
 		
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target, parameters);
+		saferefactor.checkTransformation();
+		Report report = saferefactor.getReport();
 		
+		assertEquals(false, report.isRefactoring());
 	}
 
 	@Test

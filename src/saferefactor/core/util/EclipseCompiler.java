@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.net.MalformedURLException;
 
+import saferefactor.core.SafeRefactorException;
+
 
 public class EclipseCompiler implements Compiler {
 
@@ -12,8 +14,8 @@ public class EclipseCompiler implements Compiler {
 
 	private String binClasspath;
 
-	public boolean compile(String src, String dest)
-			throws MalformedURLException, FileNotFoundException {
+	public void compile(String src, String dest)
+			throws MalformedURLException, FileNotFoundException, SafeRefactorException {
 		
 		
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -30,9 +32,9 @@ public class EclipseCompiler implements Compiler {
 
 		// System.out.println(out.toString());
 
-		 System.out.println(outError.toString());
-		if (outError.toString().length() > 0) return false;
-		return true;
+//		 System.out.println(outError.toString());
+		if (outError.toString().length() > 0) 
+			throw new SafeRefactorException("Problem during compilation: " + outError.toString());
 	}
 
 	public void setBinClasspath(String binClasspath) {

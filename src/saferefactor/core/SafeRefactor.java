@@ -24,11 +24,11 @@ public abstract class SafeRefactor {
 
 	protected String tmpFolder = "";
 
-	public  String getTmpFolder() {
+	public String getTmpFolder() {
 		return tmpFolder;
 	}
 
-	public  void setTmpFolder(String tmpFolder) {
+	public void setTmpFolder(String tmpFolder) {
 		this.tmpFolder = tmpFolder;
 	}
 
@@ -37,7 +37,7 @@ public abstract class SafeRefactor {
 	protected Parameters parameters;
 	protected Report report;
 	protected Compiler sourceTestCompiler;
-//	protected Compiler targetTestCompiler;
+	protected Compiler targetTestCompiler;
 	protected Compiler sourceCompiler;
 	protected Compiler targetCompiler;
 	protected TestExecutor testSourceTask;
@@ -51,19 +51,20 @@ public abstract class SafeRefactor {
 	protected CoverageMeter meter;
 
 	protected Logger logger;
-//	protected File bin_target;
+	protected File bin_target;
 	protected File bin_source;
 	protected File sourceReport;
 	private File testPath;
 	protected File targetReport;
 	protected File sourceSecondReport;
 	public static final String TARGET_REPORT = Constants.TESTS_DIR + "/target";
-	public static final String SOURCE_SECOND_REPORT = Constants.TESTS_DIR + "/source2";
+	public static final String SOURCE_SECOND_REPORT = Constants.TESTS_DIR
+			+ "/source2";
 	public static final String SOURCE_REPORT = Constants.TESTS_DIR + "/source";
-	
-//	protected static final String TESTS_BIN_TARGET = Constants.TESTS_DIR
-//			+ "/bin_target";
-	
+
+	protected static final String TESTS_BIN_TARGET = Constants.TESTS_DIR
+			+ "/bin_target";
+
 	protected static final String TESTS_BIN_SOURCE = Constants.TESTS_DIR
 			+ "/bin_source";
 
@@ -79,29 +80,37 @@ public abstract class SafeRefactor {
 		this.target = target;
 	}
 
-	public SafeRefactor(Project source, Project target,
-			Parameters parameters) {
+	public SafeRefactor(Project source, Project target, Parameters parameters) {
 		this(source, target);
 		this.parameters = parameters;
 
 	}
 
-	public void checkTransformation() throws Exception {
-		double start = System.currentTimeMillis();
+	public void checkTransformation() throws SafeRefactorException {
+		try {
+			double start = System.currentTimeMillis();
+			logger.info("check compilation? " + parameters.isCompileProjects());
+			if (parameters.isCompileProjects())
+				compileSourceAndTarget();
+			if (hasNoCompilationErrors())
+				checkBehavioralChanges();
+			else
+				logger.info("has compilation error");
+			generateReport();
 
-		logger.info("check compilation? " + parameters.isCompileProjects());
-		if (parameters.isCompileProjects())
-			compileSourceAndTarget();
-		if (hasNoCompilationErrors())
-			checkBehavioralChanges();
-		else
-			logger.info("has compilation error");
-		generateReport();
-
-		double stop = System.currentTimeMillis();
-		double total = ((stop - start) / 1000);
-		logger.info("time to check transformation (s): " + total);
-
+			double stop = System.currentTimeMillis();
+			double total = ((stop - start) / 1000);
+			logger.info("time to check transformation (s): " + total);
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+			throw new SafeRefactorException(e.getMessage());
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+			throw new SafeRefactorException(e.getMessage());
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new SafeRefactorException(e.getMessage());
+		}
 	}
 
 	protected boolean hasNoCompilationErrors() {
@@ -110,34 +119,34 @@ public abstract class SafeRefactor {
 	}
 
 	private void compileSourceAndTarget() throws MalformedURLException,
-			FileNotFoundException {
+			FileNotFoundException, SafeRefactorException {
 
 		double start = System.currentTimeMillis();
 
 		if (source.getLibFolder() != null)
 			sourceCompiler.setLibClasspath(source.getLibFolder()
 					.getAbsolutePath());
-//		if (parameters.getCompilerPath() != null) {
-//			sourceCompiler.setCompilerPath(parameters.getCompilerPath());
-//			targetCompiler.setCompilerPath(parameters.getCompilerPath());
-//		}
-//		if (parameters.getBuildPath() != null) {
-//			sourceCompiler.setBuildPath(parameters.getBuildPath());
-//			targetCompiler.setBuildPath(parameters.getBuildPath());
-//		}
+		// if (parameters.getCompilerPath() != null) {
+		// sourceCompiler.setCompilerPath(parameters.getCompilerPath());
+		// targetCompiler.setCompilerPath(parameters.getCompilerPath());
+		// }
+		// if (parameters.getBuildPath() != null) {
+		// sourceCompiler.setBuildPath(parameters.getBuildPath());
+		// targetCompiler.setBuildPath(parameters.getBuildPath());
+		// }
 
-		boolean isSourceCompilable = sourceCompiler.compile(source
-				.getSrcFolder().getAbsolutePath(), source.getBuildFolder()
-				.getAbsolutePath());
-		source.setCompile(isSourceCompilable);
+		// boolean isSourceCompilable =
+		sourceCompiler.compile(source.getSrcFolder().getAbsolutePath(), source
+				.getBuildFolder().getAbsolutePath());
+		// source.setCompile(isSourceCompilable);
 
 		if (target.getLibFolder() != null)
 			targetCompiler.setLibClasspath(target.getLibFolder()
 					.getAbsolutePath());
-		boolean isTargetCompilable = targetCompiler.compile(target
-				.getSrcFolder().getAbsolutePath(), target.getBuildFolder()
-				.getAbsolutePath());
-		target.setCompile(isTargetCompilable);
+		// boolean isTargetCompilable =
+		targetCompiler.compile(target.getSrcFolder().getAbsolutePath(), target
+				.getBuildFolder().getAbsolutePath());
+		//target.setCompile(isTargetCompilable);
 
 		double stop = System.currentTimeMillis();
 		double total = ((stop - start) / 1000);
@@ -151,9 +160,12 @@ public abstract class SafeRefactor {
 		compileTests();
 		runTestsOnSourceAndTargetProjects();
 		comparator.compare();
-		if (!comparator.getReport().isRefactoring() && parameters.analyzeChangeMethods()) {
-			String testSourceDir = getTmpFolder() + Constants.SEPARATOR + Constants.TESTS_DIR + Constants.SEPARATOR;
-			Set<Method> changedMethods = comparator.identifyMethodsWithBehavioralChanges(testSourceDir);
+		if (!comparator.getReport().isRefactoring()
+				&& parameters.analyzeChangeMethods()) {
+			String testSourceDir = getTmpFolder() + Constants.SEPARATOR
+					+ Constants.TESTS_DIR + Constants.SEPARATOR;
+			Set<Method> changedMethods = comparator
+					.identifyMethodsWithBehavioralChanges(testSourceDir);
 			report.setChangedMethods(new ArrayList<Method>(changedMethods));
 		}
 
@@ -168,39 +180,27 @@ public abstract class SafeRefactor {
 
 		double start = System.currentTimeMillis();
 
-//		ExecutorService executor = Executors.newSingleThreadExecutor();
-		 ExecutorService executor = Executors.newFixedThreadPool(1);
- 		
+		// ExecutorService executor = Executors.newSingleThreadExecutor();
+		ExecutorService executor = Executors.newFixedThreadPool(1);
+
 		testSourceTask.setReportPath(this.sourceReport.getAbsolutePath());
 		testSourceTask.setTests(this.bin_source.getAbsolutePath());
 		executor.execute(testSourceTask);
-//		Thread sourceTestsThread = new Thread(testSourceRunner);
-//		sourceTestsThread.start();
-//		testSourceRunner.executeTests(this.bin_source.getAbsolutePath());
-		
-		
+
 		if (testAgainSourceTask != null) {
-			testAgainSourceTask.setReportPath(this.sourceSecondReport.getAbsolutePath());
-//			testAgainSourceRunner
-//					.executeTests(this.bin_source.getAbsolutePath());
+			testAgainSourceTask.setReportPath(this.sourceSecondReport
+					.getAbsolutePath());
 			testAgainSourceTask.setTests(this.bin_source.getAbsolutePath());
 			executor.execute(testAgainSourceTask);
-//			Thread sourceAgainTestsThread = new Thread(testAgainSourceRunner);
-//			sourceAgainTestsThread.start();
 
 		}
 		testTargetTask.setReportPath(targetReport.getAbsolutePath());
-//		testTargetRunner.executeTests(this.bin_source.getAbsolutePath());	
-		testTargetTask.setTests(this.bin_source.getAbsolutePath());
+		testTargetTask.setTests(this.bin_target.getAbsolutePath());
 		executor.execute(testTargetTask);
 		executor.shutdown();
-//		Thread targetTestsThread = new Thread(testTargetRunner);
-//		targetTestsThread.start();
 
 		while (!executor.isTerminated()) {
-	    }
-		System.out.println("fim");
-		
+		}
 		double stop = System.currentTimeMillis();
 		double total = ((stop - start) / 1000);
 		logger.info("time to run tests (s): " + total);
@@ -208,7 +208,7 @@ public abstract class SafeRefactor {
 	}
 
 	private void compileTests() throws MalformedURLException,
-			FileNotFoundException {
+			FileNotFoundException, SafeRefactorException {
 		double start = System.currentTimeMillis();
 
 		sourceTestCompiler.setBinClasspath(source.getBuildFolder()
@@ -219,13 +219,14 @@ public abstract class SafeRefactor {
 		sourceTestCompiler.compile(getTestPath().getAbsolutePath(),
 				bin_source.getAbsolutePath());
 
-//		targetTestCompiler.setBinClasspath(target.getBuildFolder()
-//				.getAbsolutePath());
-//		if (target.getLibFolder() != null)
-//			targetTestCompiler.setLibClasspath(target.getLibFolder()
-//					.getAbsolutePath());
-//		targetTestCompiler.compile(getTestPath().getAbsolutePath(),
-//				bin_target.getAbsolutePath());
+		targetTestCompiler.setBinClasspath(target.getBuildFolder()
+				.getAbsolutePath());
+
+		if (target.getLibFolder() != null)
+			targetTestCompiler.setLibClasspath(target.getLibFolder()
+					.getAbsolutePath());
+		targetTestCompiler.compile(getTestPath().getAbsolutePath(),
+				bin_target.getAbsolutePath());
 
 		double stop = System.currentTimeMillis();
 		double total = ((stop - start) / 1000);
@@ -241,7 +242,7 @@ public abstract class SafeRefactor {
 				parameters.getTestGeneratorParameters());
 
 		double stop = System.currentTimeMillis();
-		double total = ((stop - start) / 1000) ;
+		double total = ((stop - start) / 1000);
 		logger.info("time to geenrate tests (s): " + total);
 	}
 
@@ -251,7 +252,7 @@ public abstract class SafeRefactor {
 		methodsToTest = analysisReport.getMethodsToTest();
 
 		double stop = System.currentTimeMillis();
-		double total = ((stop - start) / 1000) ;
+		double total = ((stop - start) / 1000);
 		logger.info("time to identify common methods (s): " + total);
 	}
 

@@ -199,6 +199,7 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 
 						if (isSuper(declaringClass, targetDeclaringClass)) {
 							Method convertToMethod = convertToMethod(methodNode);
+							convertToMethod.setAllowedClasses(new HashSet<String>());
 							int indexOf = result.indexOf(convertToMethod);
 							if (indexOf >= 0) {
 								result.get(indexOf)

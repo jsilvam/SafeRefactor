@@ -60,9 +60,10 @@ public class SafeRefactorImp extends SafeRefactor {
 		sourceCompiler = new AntJavaCompiler(this.tmpFolder);
 		targetCompiler = new AntJavaCompiler(this.tmpFolder);
 		sourceTestCompiler = new AntJavaCompiler(this.tmpFolder);
-//		targetTestCompiler = new AntJavaCompiler(this.tmpFolder);
+		targetTestCompiler = new AntJavaCompiler(this.tmpFolder);
 
 		testSourceTask = new AntJunitRunner(this.source,this.tmpFolder);
+		testTargetTask = new AntJunitRunner(this.target,this.tmpFolder);
 
 		if (this.parameters.isExecuteTwiceOnSource()) {
 			testAgainSourceTask = new AntJunitRunner(this.source,this.tmpFolder);
@@ -78,7 +79,7 @@ public class SafeRefactorImp extends SafeRefactor {
 		
 		
 		bin_source = new File(getTestPath(),SafeRefactor.TESTS_BIN_SOURCE);
-//		bin_target = new File(getTestPath(),SafeRefactor.TESTS_BIN_TARGET);
+		bin_target = new File(getTestPath(),SafeRefactor.TESTS_BIN_TARGET);
 		meter = new CoverageMeter(this.target, bin_source.getAbsolutePath());
 	}
 
