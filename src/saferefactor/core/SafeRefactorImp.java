@@ -39,9 +39,16 @@ public class SafeRefactorImp extends SafeRefactor {
 	private void init() throws Exception {
 
 		//define tmp folder
-
-		setTmpFolder(Constants.SAFEREFACTOR_DIR + Constants.SEPARATOR+ this.toString());
-		File tmpFile = new File(getTmpFolder());
+		int counter = 0;
+		String tmpFolder2 = Constants.SAFEREFACTOR_DIR + "SafeRefactor" + counter + Constants.SEPARATOR;
+		File tmpFile = new File(tmpFolder2);
+		while (tmpFile.exists()) {
+			counter++;
+			tmpFolder2 = Constants.SAFEREFACTOR_DIR + "SafeRefactor" + counter + Constants.SEPARATOR;
+			tmpFile = new File(tmpFolder2);
+		}
+		tmpFile.mkdir();
+		setTmpFolder(tmpFolder2);
 		
 		//create tmp folder
 		setTestPath(new File(tmpFile,Constants.TESTS_DIR));

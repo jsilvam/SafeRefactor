@@ -39,10 +39,10 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 	// + "/safeRefactorAJ/tests";
 
 	private List<String> additionalParameters;
-	private int timeLimit;
+	private double timeLimit;
 
 	public void generateTestsForMethodList(List<Method> methods,
-			int timeLimit, List<String> additionalParameters)
+			double timeLimit, List<String> additionalParameters)
 			throws FileNotFoundException {
 
 		this.timeLimit = timeLimit;
@@ -112,11 +112,12 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 		Random random = new Random();
 		int choice = random.nextInt(2);		
 		StringBuffer lines = new StringBuffer();
-		if (choice == 0) {
-			for (Method method : methods) {
-				lines.append(method + "\n");
-			}
-		} else {
+//		if (choice == 0) {
+//			for (Method method : methods) {
+//				lines.append(method + "\n");
+//			}
+//		} 
+//		else {
 			for (Method method : methods) {
 				if (method instanceof ConstructorImp)
 					lines.append(method + "\n");
@@ -126,7 +127,7 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 					lines.append(method + "\n");
 			}
 
-		}
+//		}
 
 		FileUtil.makeFile(tmpDir + Constants.SEPARATOR + methodsToTest, lines.toString());
 

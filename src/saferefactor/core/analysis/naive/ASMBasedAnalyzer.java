@@ -75,7 +75,7 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 		}
 
 		ClassNode targetClass;
-		try {		
+		try {
 			String className = declaringClass.getClassName();
 			targetClass = this.dwTarget.getClass(className);
 
@@ -135,6 +135,18 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 		Modifier visibility = returnType.getVisibility();
 		if (visibility != null && !visibility.equals(Modifier.PUBLIC)) {
 			return true;
+		}
+
+		// FIXME: to strong. Should not test dispose methods only from java.awt
+		// because they stop the application and the test suite
+		if (methodNode.getShortName().equals("dispose"))
+			return true;
+
+		//FIXME: see fix me above
+		Set<MethodNode> calleeMethods = methodNode.getCalleeMethods();
+		for (MethodNode methodNode2 : calleeMethods) {
+			if (methodNode2.getShortName().equals("dispose"))
+				return true;
 		}
 
 		return false;
@@ -199,7 +211,8 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 
 						if (isSuper(declaringClass, targetDeclaringClass)) {
 							Method convertToMethod = convertToMethod(methodNode);
-							convertToMethod.setAllowedClasses(new HashSet<String>());
+							convertToMethod
+									.setAllowedClasses(new HashSet<String>());
 							int indexOf = result.indexOf(convertToMethod);
 							if (indexOf >= 0) {
 								result.get(indexOf)

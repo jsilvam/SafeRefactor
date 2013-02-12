@@ -6,7 +6,7 @@ import java.util.List;
 public class Parameters {
 	
 	//default timelimit
-	private int timeLimit = 2;
+	private double timeLimit = 2;
 	
 	private boolean verbose = false;
 	
@@ -36,11 +36,11 @@ public class Parameters {
 		this.testGeneratorParameters = testGeneratorParameters;
 	}
 
-	public int getTimeLimit() {
+	public double getTimeLimit() {
 		return timeLimit;
 	}
 
-	public void setTimeLimit(int timeLimit) {
+	public void setTimeLimit(double timeLimit) {
 		this.timeLimit = timeLimit;
 	}
 

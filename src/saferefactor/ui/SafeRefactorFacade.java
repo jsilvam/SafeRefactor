@@ -12,7 +12,7 @@ public class SafeRefactorFacade {
 
 	
 	public static Report checkTransformation(String sourcePath,
-			String targetPath, int timelimit, boolean occ) {
+			String targetPath, double timelimit, boolean occ) throws Exception {
 
 		File sourceFile = new File(sourcePath);
 		File targetFile = new File(targetPath);
@@ -33,7 +33,7 @@ public class SafeRefactorFacade {
 		if (targetLibFolder.exists())
 			target.setLibFolder(targetLibFolder);
 
-		try {
+	
 			Parameters parameters = new Parameters();
 			parameters.setCompileProjects(false);
 			parameters.setTimeLimit(timelimit);
@@ -44,9 +44,7 @@ public class SafeRefactorFacade {
 			saferefactor.checkTransformation();
 			result = saferefactor.getReport();
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		
 		return result;
 	}
 }

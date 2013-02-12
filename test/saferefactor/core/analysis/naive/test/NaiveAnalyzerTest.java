@@ -118,9 +118,9 @@ public class NaiveAnalyzerTest {
 		
 		Report report = analyzer.analyze(true);
 
-		assertEquals(2, report.getMethodsToTest().size());
+		assertEquals(3, report.getMethodsToTest().size());
 		assertEquals(
-				"[cons : B.<init>(), method : B.x() : B]",
+				"[cons : B.<init>(), method : B.x() : B, method : B.main([Ljava.lang.String;) : B]",
 				report.getMethodsToTest().toString());
 
 	}

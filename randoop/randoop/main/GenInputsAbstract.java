@@ -128,7 +128,7 @@ public abstract class GenInputsAbstract extends CommandHandler {
    * either the time limit (--timelimit=int) OR the input limit (--inputlimit=int) is reached.
    */
   @Option("Maximum number of seconds to spend generating tests")
-  public static int timelimit = 100;
+  public static double timelimit = 100;
 
   /**
    * Maximum number of tests generated.

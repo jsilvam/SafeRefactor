@@ -14,7 +14,7 @@ public abstract class AbstractTestGeneratorAdapter {
 	protected Project project;
 
 	public abstract void generateTestsForMethodList(
-			List<Method> methods, int timeLimit, List<String> additionalParameters) throws FileNotFoundException;
+			List<Method> methods, double timeLimit, List<String> additionalParameters) throws FileNotFoundException;
 
 	public abstract List<File> getTestFiles();
 

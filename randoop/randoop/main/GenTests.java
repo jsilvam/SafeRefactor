@@ -335,7 +335,7 @@ public class GenTests extends GenInputsAbstract {
 
 		// ///////////////////////////////////////
 		// Create the generator for this session.
-		explorer = new ForwardGenerator(model, timelimit * 1000, inputlimit,
+		explorer = new ForwardGenerator(model, (long) (timelimit * 1000), inputlimit,
 				componentMgr, null, listenerMgr, outputTestFilters);
 		// ///////////////////////////////////////
 
