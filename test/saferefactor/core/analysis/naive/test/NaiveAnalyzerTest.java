@@ -98,32 +98,32 @@ public class NaiveAnalyzerTest {
 	}
 
 	
-	@Test
-	public void testASMbasedOCCWithAspects() throws Exception {
-
-		Project source = new Project();
-		source.setProjectFolder(new File("/Users/gustavoas/workspaces/scp/sourceaspect"));
-		source.setBuildFolder(new File("/Users/gustavoas/workspaces/scp/sourceaspect/bin"));
-		source.setSrcFolder(new File("/Users/gustavoas/workspaces/scp/sourceaspect/src"));
-
-		Project target = new Project();
-		target.setProjectFolder(new File("/Users/gustavoas/workspaces/scp/targetaspect"));
-		target.setBuildFolder(new File("/Users/gustavoas/workspaces/scp/targetaspect/bin"));
-		target.setSrcFolder(new File("/Users/gustavoas/workspaces/scp/targetaspect/src"));
-
-		String tmpFolder = System
-				.getProperty("java.io.tmpdir");
-		TransformationAnalyzer analyzer = new ASMBasedAnalyzer(
-				source, target,tmpFolder);
-		
-		Report report = analyzer.analyze(true);
-
-		assertEquals(3, report.getMethodsToTest().size());
-		assertEquals(
-				"[cons : B.<init>(), method : B.x() : B, method : B.main([Ljava.lang.String;) : B]",
-				report.getMethodsToTest().toString());
-
-	}
+//	@Test
+//	public void testASMbasedOCCWithAspects() throws Exception {
+//
+//		Project source = new Project();
+//		source.setProjectFolder(new File("/Users/gustavoas/workspaces/scp/sourceaspect"));
+//		source.setBuildFolder(new File("/Users/gustavoas/workspaces/scp/sourceaspect/bin"));
+//		source.setSrcFolder(new File("/Users/gustavoas/workspaces/scp/sourceaspect/src"));
+//
+//		Project target = new Project();
+//		target.setProjectFolder(new File("/Users/gustavoas/workspaces/scp/targetaspect"));
+//		target.setBuildFolder(new File("/Users/gustavoas/workspaces/scp/targetaspect/bin"));
+//		target.setSrcFolder(new File("/Users/gustavoas/workspaces/scp/targetaspect/src"));
+//
+//		String tmpFolder = System
+//				.getProperty("java.io.tmpdir");
+//		TransformationAnalyzer analyzer = new ASMBasedAnalyzer(
+//				source, target,tmpFolder);
+//		
+//		Report report = analyzer.analyze(true);
+//
+//		assertEquals(3, report.getMethodsToTest().size());
+//		assertEquals(
+//				"[cons : B.<init>(), method : B.x() : B, method : B.main([Ljava.lang.String;) : B]",
+//				report.getMethodsToTest().toString());
+//
+//	}
 
 
 

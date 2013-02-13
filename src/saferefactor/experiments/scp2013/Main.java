@@ -108,53 +108,54 @@ public class Main {
 
 		int option = Integer.parseInt(args[0]);
 
-		String[] patterns = { "state", "mediator", "prototype", "visitor" };
-		String[] eclipse = { "subject1", "subject2", "subject3", "subject5",
-				"subject6", "subject7", "subject8","subject9"};
-//		 String[] eclipse = {"subject1"};
-		String[] jhotdraw = { "JHotDraw" };
-		String[] ajml = { "jaccounting-" };
-
+		String[] patterns = { "abstractfactory", "adapter", "bridge",
+				"builder", "chain", "command", "composite", "decorator",
+				"facade", "factorymethod", "flyweight", "interpreter",
+				"iterator", "mediator", "memento", "observer", "prototype", "proxy", "singleton", "state",
+				"strategy", "template", "visitor"};
 		
+//		String[] eclipse = { "subject1", "subject2", "subject3", "subject5",
+//				"subject6", "subject7", "subject8", "subject9" };
+		String[] eclipse = { "subject10" };
+		String[] jhotdraw = { "JHotDraw" };
+		String[] ajml = { "jaccounting-","jspider-" };
+
 		Map<Double, List<Result>> results = new HashMap<Double, List<Result>>();
 		try {
 			switch (option) {
 			case 1:
 				if (true) {
-					double timelimit = 0.5;
-					List<Result> runSubjects = Main.runSubjects(eclipse, timelimit,
-							"source", "target");
+					double timelimit = 1;
+					List<Result> runSubjects = Main.runSubjects(eclipse,
+							timelimit, "source", "target");
 					System.out.println("Time Limit: " + timelimit);
 					printResults(runSubjects);
 					results.put(timelimit, runSubjects);
 				}
-				
-				
-			
+
 				break;
 			case 2:
-				
-				
+
 				if (true) {
 					int timelimit = 2;
-					List<Result> runSubjects2 = Main.runSubjects(jhotdraw, timelimit,
-							"_OO", "_AO");
+					List<Result> runSubjects2 = Main.runSubjects(jhotdraw,
+							timelimit, "_OO", "_AO");
 					System.out.println("Time Limit: " + timelimit);
 					printResults(runSubjects2);
 					results.put(Double.valueOf(timelimit), runSubjects2);
 				}
 				if (true) {
 					int timelimit = 5;
-					List<Result> runSubjects5 = Main.runSubjects(jhotdraw, timelimit,
-							"_OO", "_AO");
+					List<Result> runSubjects5 = Main.runSubjects(jhotdraw,
+							timelimit, "_OO", "_AO");
 					System.out.println("Time Limit: " + timelimit);
 					printResults(runSubjects5);
 					results.put(Double.valueOf(timelimit), runSubjects5);
 				}
 				if (true) {
 					int timelimit = 10;
-					List<Result> runSubjects10 = Main.runSubjects(jhotdraw, timelimit,
-							"_OO", "_AO");
+					List<Result> runSubjects10 = Main.runSubjects(jhotdraw,
+							timelimit, "_OO", "_AO");
 					System.out.println("Time Limit: " + timelimit);
 					printResults(runSubjects10);
 					results.put(Double.valueOf(timelimit), runSubjects10);
@@ -169,28 +170,45 @@ public class Main {
 				}
 
 				if (true) {
-					for (Entry<Double, List<Result>> result : results.entrySet()) {
+					for (Entry<Double, List<Result>> result : results
+							.entrySet()) {
 						System.out.println("Time Limit: " + result.getKey());
 						printResults(result.getValue());
 					}
-					// System.out.println("Time Limit: 2");
-					// printResults(runSubjects2);
-					// System.out.println("Time Limit: 5");
-					// printResults(runSubjects5);
-					// System.out.println("Time Limit: 10");
-					// printResults(runSubjects10);
-					// System.out.println("Time Limit: 20");
-					// printResults(runSubjects20);
-					// System.out.println("Time Limit: 30");
-					// printResults(runSubjects30);
 				}
 
 				break;
 			case 3:
-				Main.runSubjects(patterns, 1, "OO", "AO");
+				if (true) {
+					double timelimit = 0.2;
+					List<Result> runSubjects = Main.runSubjects(patterns,
+							timelimit, "OO", "AO");
+					System.out.println("Time Limit: " + timelimit);
+					printResults(runSubjects);					
+				}
+				if (true) {
+					for (Entry<Double, List<Result>> result : results
+							.entrySet()) {
+						System.out.println("Time Limit: " + result.getKey());
+						printResults(result.getValue());
+					}
+				}
 				break;
 			case 4:
-				Main.runSubjects(ajml, 1, "non-opt", "opt");
+				if (true) {
+					double timelimit = 0.5;
+					List<Result> runSubjects = Main.runSubjects(ajml,
+							timelimit, "non-opt", "opt");
+					System.out.println("Time Limit: " + timelimit);
+					printResults(runSubjects);					
+				}
+				if (true) {
+					for (Entry<Double, List<Result>> result : results
+							.entrySet()) {
+						System.out.println("Time Limit: " + result.getKey());
+						printResults(result.getValue());
+					}
+				}				
 				break;
 			default:
 				break;

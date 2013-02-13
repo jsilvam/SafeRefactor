@@ -142,7 +142,7 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 		if (methodNode.getShortName().equals("dispose"))
 			return true;
 
-		//FIXME: see fix me above
+		// FIXME: see fix me above
 		Set<MethodNode> calleeMethods = methodNode.getCalleeMethods();
 		for (MethodNode methodNode2 : calleeMethods) {
 			if (methodNode2.getShortName().equals("dispose"))
@@ -166,6 +166,12 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 
 			if (targetMethods.contains(methodNode)) {
 
+				
+				//FIXME: just need to check if it has same modifier from original method
+				MethodNode method = dwTarget.getMethod(methodNode.getName());
+				if (doNotTestTypeOfMethod(method))
+					continue;
+				
 				Method convertToMethod = convertToMethod(methodNode);
 				result.add(convertToMethod);
 			} else {

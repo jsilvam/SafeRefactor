@@ -273,5 +273,7 @@ public class SafeRefactorTest {
 		Report report = saferefactor.getReport();
 		assertEquals(false, report.isRefactoring());
 	}
+	
+
 
 }
