@@ -25,15 +25,15 @@ public class CompilerTest {
 	public void test() throws MalformedURLException, FileNotFoundException, SafeRefactorException {
 		
 		Project project= new Project();
-		project.setProjectFolder(new File("test/data/subject14source"));
-		project.setBuildFolder(new File("test/data/subject14source/bin"));
-		project.setSrcFolder(new File("test/data/subject14source/src"));
+		project.setProjectFolder(new File("test/resources/subject14source"));
+		project.setBuildFolder(new File("test/resources/subject14source/bin"));
+		project.setSrcFolder(new File("test/resources/subject14source/src"));
 						
 		String tmpFolder = System
 				.getProperty("java.io.tmpdir");
 		Compiler compiler = new AntJavaCompiler(tmpFolder);
 		compiler.setBinClasspath(project.getBuildFolder().getAbsolutePath());
-		String testFolder = "test/data/subject14source/test/";
+		String testFolder = "test/resources/subject14source/test/";
 		compiler.compile(testFolder , testFolder);
 		
 		File test1 = new File(testFolder,"RandoopTest.class");
@@ -50,16 +50,16 @@ public class CompilerTest {
 		String tmpFolder = System
 				.getProperty("java.io.tmpdir");						
 		Compiler compiler = new AntJavaCompiler(tmpFolder);
-		compiler.compile("test/data/compileWithPackage" , "test/data/compileWithPackage");
+		compiler.compile("test/resources/compileWithPackage" , "test/resources/compileWithPackage");
 		
 		
-		File test1 = new File("test/data/compileWithPackage","Package_0/ClassId_1.class");
+		File test1 = new File("test/resources/compileWithPackage","Package_0/ClassId_1.class");
 		assertTrue(test1.exists());
 		
-		File test2 = new File("test/data/compileWithPackage","Package_1/ClassId_0.class");
+		File test2 = new File("test/resources/compileWithPackage","Package_1/ClassId_0.class");
 		assertTrue(test2.exists());
 		
-		File test3 = new File("test/data/compileWithPackage","Package_1/ClassId_2.class");
+		File test3 = new File("test/resources/compileWithPackage","Package_1/ClassId_2.class");
 		assertTrue(test3.exists());
 		
 	}
@@ -70,7 +70,7 @@ public class CompilerTest {
 //	public void testCompileSpecificCompiler() throws IOException {
 //		
 //		Properties config = new Properties();
-//		File configFile = new File("test/data/compiler.properties");
+//		File configFile = new File("test/resources/compiler.properties");
 //		config.load(new FileInputStream(configFile));
 //					
 //		String tmpFolder = System
@@ -78,18 +78,18 @@ public class CompilerTest {
 //		Compiler compiler = new AntJavaCompiler(tmpFolder);
 //		String path = config.getProperty("COMPILER_JAVA_5");
 //		compiler.setCompilerPath(path);
-//		boolean compile = compiler.compile("test/data/compileWithPackage" , "test/data/compileWithPackage");
+//		boolean compile = compiler.compile("test/resources/compileWithPackage" , "test/resources/compileWithPackage");
 //		
 //		assertTrue(compile);
 //		
 //		
-//		File test1 = new File("test/data/compileWithPackage","Package_0/ClassId_1.class");
+//		File test1 = new File("test/resources/compileWithPackage","Package_0/ClassId_1.class");
 //		assertTrue(test1.exists());
 //		
-//		File test2 = new File("test/data/compileWithPackage","Package_1/ClassId_0.class");
+//		File test2 = new File("test/resources/compileWithPackage","Package_1/ClassId_0.class");
 //		assertTrue(test2.exists());
 //		
-//		File test3 = new File("test/data/compileWithPackage","Package_1/ClassId_2.class");
+//		File test3 = new File("test/resources/compileWithPackage","Package_1/ClassId_2.class");
 //		assertTrue(test3.exists());
 //		
 //	}
@@ -100,7 +100,7 @@ public class CompilerTest {
 //	public void testCompileSpecificBuilder() throws IOException {
 //		
 //		Properties config = new Properties();
-//		File configFile = new File("test/data/compiler.properties");
+//		File configFile = new File("test/resources/compiler.properties");
 //		config.load(new FileInputStream(configFile));
 //						
 //		String tmpFolder = System
@@ -108,18 +108,18 @@ public class CompilerTest {
 //		Compiler compiler = new AntJavaCompiler(tmpFolder);
 //		String buildPath = config.getProperty("DIFFERENT_BUILDER");
 //		compiler.setBuildPath(buildPath);
-//		boolean compile = compiler.compile("test/data/compileWithPackage" , "test/data/compileWithPackage");
+//		boolean compile = compiler.compile("test/resources/compileWithPackage" , "test/resources/compileWithPackage");
 //		
 //		assertTrue(compile);
 //		
 //		
-//		File test1 = new File("test/data/compileWithPackage","Package_0/ClassId_1.class");
+//		File test1 = new File("test/resources/compileWithPackage","Package_0/ClassId_1.class");
 //		assertTrue(test1.exists());
 //		
-//		File test2 = new File("test/data/compileWithPackage","Package_1/ClassId_0.class");
+//		File test2 = new File("test/resources/compileWithPackage","Package_1/ClassId_0.class");
 //		assertTrue(test2.exists());
 //		
-//		File test3 = new File("test/data/compileWithPackage","Package_1/ClassId_2.class");
+//		File test3 = new File("test/resources/compileWithPackage","Package_1/ClassId_2.class");
 //		assertTrue(!test3.exists());
 //		
 //	}
@@ -128,13 +128,13 @@ public class CompilerTest {
 	public void testEclipseCompiler() throws MalformedURLException, FileNotFoundException, SafeRefactorException {
 		
 		Project project= new Project();
-		project.setProjectFolder(new File("test/data/subject14source"));
-		project.setBuildFolder(new File("test/data/subject14source/bin"));
-		project.setSrcFolder(new File("test/data/subject14source/src"));
+		project.setProjectFolder(new File("test/resources/subject14source"));
+		project.setBuildFolder(new File("test/resources/subject14source/bin"));
+		project.setSrcFolder(new File("test/resources/subject14source/src"));
 						
 		Compiler compiler = new EclipseCompiler();
 		compiler.setBinClasspath(project.getBuildFolder().getAbsolutePath());
-		String testFolder = "test/data/subject14source/test/";
+		String testFolder = "test/resources/subject14source/test/";
 		compiler.compile(testFolder , testFolder);
 		
 		File test1 = new File(testFolder,"RandoopTest.class");

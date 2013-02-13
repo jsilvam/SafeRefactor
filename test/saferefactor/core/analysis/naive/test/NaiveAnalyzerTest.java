@@ -22,14 +22,14 @@ public class NaiveAnalyzerTest {
 	public void testAnalyze() throws Exception {
 
 		Project source = new Project();
-		source.setProjectFolder(new File("test/data/subject14source"));
-		source.setBuildFolder(new File("test/data/subject14source/bin"));
-		source.setSrcFolder(new File("test/data/subject14source/src"));
+		source.setProjectFolder(new File("test/resources/subject14source"));
+		source.setBuildFolder(new File("test/resources/subject14source/bin"));
+		source.setSrcFolder(new File("test/resources/subject14source/src"));
 
 		Project target = new Project();
-		target.setProjectFolder(new File("test/data/subject14target"));
-		target.setBuildFolder(new File("test/data/subject14target/bin"));
-		target.setSrcFolder(new File("test/data/subject14target/src"));
+		target.setProjectFolder(new File("test/resources/subject14target"));
+		target.setBuildFolder(new File("test/resources/subject14target/bin"));
+		target.setSrcFolder(new File("test/resources/subject14target/src"));
 
 		String tmpFolder = System
 				.getProperty("java.io.tmpdir");
@@ -48,14 +48,14 @@ public class NaiveAnalyzerTest {
 	public void testAsmBasedAnalyze() throws Exception {
 
 		Project source = new Project();
-		source.setProjectFolder(new File("test/data/subject14source"));
-		source.setBuildFolder(new File("test/data/subject14source/bin"));
-		source.setSrcFolder(new File("test/data/subject14source/src"));
+		source.setProjectFolder(new File("test/resources/subject14source"));
+		source.setBuildFolder(new File("test/resources/subject14source/bin"));
+		source.setSrcFolder(new File("test/resources/subject14source/src"));
 
 		Project target = new Project();
-		target.setProjectFolder(new File("test/data/subject14target"));
-		target.setBuildFolder(new File("test/data/subject14target/bin"));
-		target.setSrcFolder(new File("test/data/subject14target/src"));
+		target.setProjectFolder(new File("test/resources/subject14target"));
+		target.setBuildFolder(new File("test/resources/subject14target/bin"));
+		target.setSrcFolder(new File("test/resources/subject14target/src"));
 
 		String tmpFolder = System
 				.getProperty("java.io.tmpdir");
@@ -74,14 +74,14 @@ public class NaiveAnalyzerTest {
 	public void testASMbasedOCC() throws Exception {
 
 		Project source = new Project();
-		source.setProjectFolder(new File("test/data/subject14source"));
-		source.setBuildFolder(new File("test/data/subject14source/bin"));
-		source.setSrcFolder(new File("test/data/subject14source/src"));
+		source.setProjectFolder(new File("test/resources/subject14source"));
+		source.setBuildFolder(new File("test/resources/subject14source/bin"));
+		source.setSrcFolder(new File("test/resources/subject14source/src"));
 
 		Project target = new Project();
-		target.setProjectFolder(new File("test/data/subject14target"));
-		target.setBuildFolder(new File("test/data/subject14target/bin"));
-		target.setSrcFolder(new File("test/data/subject14target/src"));
+		target.setProjectFolder(new File("test/resources/subject14target"));
+		target.setBuildFolder(new File("test/resources/subject14target/bin"));
+		target.setSrcFolder(new File("test/resources/subject14target/src"));
 
 		String tmpFolder = System
 				.getProperty("java.io.tmpdir");
@@ -131,14 +131,14 @@ public class NaiveAnalyzerTest {
 	public void testAnalyzeProjectNotFound() throws Exception {
 
 		Project source = new Project();
-		source.setProjectFolder(new File("test/data/subject14source"));
-		source.setBuildFolder(new File("data/subject14source/bin"));
-		source.setSrcFolder(new File("data/subject14source/src"));
+		source.setProjectFolder(new File("test/resources/subject14source"));
+		source.setBuildFolder(new File("resources/subject14source/bin"));
+		source.setSrcFolder(new File("resources/subject14source/src"));
 
 		Project target = new Project();
-		target.setProjectFolder(new File("test/data/subject14target"));
-		target.setBuildFolder(new File("test/data/subject14target/bin"));
-		target.setSrcFolder(new File("test/data/subject14target/src"));
+		target.setProjectFolder(new File("test/resources/subject14target"));
+		target.setBuildFolder(new File("test/resources/subject14target/bin"));
+		target.setSrcFolder(new File("test/resources/subject14target/src"));
 
 		String tmpFolder = System
 				.getProperty("java.io.tmpdir");

@@ -24,14 +24,14 @@ public class SafeRefactorTest {
 	@Test
 	public void testCheckTransformationWithProjectsNotCompiled() throws Exception {
 		Project source = new Project();
-		source.setProjectFolder(new File("test/data/notCompiled_source"));
-		source.setBuildFolder(new File("test/data/notCompiled_source/bin"));
-		source.setSrcFolder(new File("test/data/notCompiled_source/src"));
+		source.setProjectFolder(new File("test/resources/notCompiled_source"));
+		source.setBuildFolder(new File("test/resources/notCompiled_source/bin"));
+		source.setSrcFolder(new File("test/resources/notCompiled_source/src"));
 
 		Project target = new Project();
-		target.setProjectFolder(new File("test/data/notCompiled_target"));
-		target.setBuildFolder(new File("test/data/notCompiled_target/bin"));
-		target.setSrcFolder(new File("test/data/notCompiled_target/src"));
+		target.setProjectFolder(new File("test/resources/notCompiled_target"));
+		target.setBuildFolder(new File("test/resources/notCompiled_target/bin"));
+		target.setSrcFolder(new File("test/resources/notCompiled_target/src"));
 
 		SafeRefactor saferefactor = new SafeRefactorImp(source, target);
 		saferefactor.checkTransformation();
@@ -44,14 +44,14 @@ public class SafeRefactorTest {
 	@Test(expected = SafeRefactorException.class)
 	public void testCheckTransformationWithIncorrectClasspath() throws Exception {
 		Project source = new Project();
-		source.setProjectFolder(new File("test/data/subject14source"));
-		source.setBuildFolder(new File("test/data/subject14source/bin2"));
-		source.setSrcFolder(new File("test/data/subject14source/src"));
+		source.setProjectFolder(new File("test/resources/subject14source"));
+		source.setBuildFolder(new File("test/resources/subject14source/bin2"));
+		source.setSrcFolder(new File("test/resources/subject14source/src"));
 
 		Project target = new Project();
-		target.setProjectFolder(new File("test/data/subject14target"));
-		target.setBuildFolder(new File("test/data/subject14target/bin"));
-		target.setSrcFolder(new File("test/data/subject14target/src"));
+		target.setProjectFolder(new File("test/resources/subject14target"));
+		target.setBuildFolder(new File("test/resources/subject14target/bin"));
+		target.setSrcFolder(new File("test/resources/subject14target/src"));
 
 		Parameters parameters = new Parameters();
 		parameters.setCompileProjects(false);		
@@ -64,14 +64,14 @@ public class SafeRefactorTest {
 	@Test(expected = SafeRefactorException.class)
 	public void testCheckTransformationWithProjectsWithCompilationErrors() throws Exception {
 		Project source = new Project();
-		source.setProjectFolder(new File("test/data/compilation_error_source"));
-		source.setBuildFolder(new File("test/data/notcompilation_error_source/bin"));
-		source.setSrcFolder(new File("test/data/compilation_error_source/src"));
+		source.setProjectFolder(new File("test/resources/compilation_error_source"));
+		source.setBuildFolder(new File("test/resources/notcompilation_error_source/bin"));
+		source.setSrcFolder(new File("test/resources/compilation_error_source/src"));
 
 		Project target = new Project();
-		target.setProjectFolder(new File("test/data/compilation_error_target"));
-		target.setBuildFolder(new File("test/data/compilation_error_target/bin"));
-		target.setSrcFolder(new File("test/data/compilation_error_target/src"));
+		target.setProjectFolder(new File("test/resources/compilation_error_target"));
+		target.setBuildFolder(new File("test/resources/compilation_error_target/bin"));
+		target.setSrcFolder(new File("test/resources/compilation_error_target/src"));
 
 		SafeRefactor saferefactor = new SafeRefactorImp(source, target);
 		saferefactor.checkTransformation();
@@ -91,14 +91,14 @@ public class SafeRefactorTest {
 		
 
 		Project source = new Project();
-		source.setProjectFolder(new File("test/data/subject14source"));
-		source.setBuildFolder(new File("test/data/subject14source/bin"));
-		source.setSrcFolder(new File("test/data/subject14source/src"));
+		source.setProjectFolder(new File("test/resources/subject14source"));
+		source.setBuildFolder(new File("test/resources/subject14source/bin"));
+		source.setSrcFolder(new File("test/resources/subject14source/src"));
 
 		Project target = new Project();
-		target.setProjectFolder(new File("test/data/subject14target"));
-		target.setBuildFolder(new File("test/data/subject14target/bin"));
-		target.setSrcFolder(new File("test/data/subject14target/src"));
+		target.setProjectFolder(new File("test/resources/subject14target"));
+		target.setBuildFolder(new File("test/resources/subject14target/bin"));
+		target.setSrcFolder(new File("test/resources/subject14target/src"));
 
 		Parameters parameters = new Parameters();
 		parameters.setCompileProjects(false);		
@@ -114,14 +114,14 @@ public class SafeRefactorTest {
 	@Test
 	public void testCheckTransformationWithProjectsCompiledForkFalse() throws Exception {
 		Project source = new Project();
-		source.setProjectFolder(new File("test/data/subject14source"));
-		source.setBuildFolder(new File("test/data/subject14source/bin"));
-		source.setSrcFolder(new File("test/data/subject14source/src"));
+		source.setProjectFolder(new File("test/resources/subject14source"));
+		source.setBuildFolder(new File("test/resources/subject14source/bin"));
+		source.setSrcFolder(new File("test/resources/subject14source/src"));
 
 		Project target = new Project();
-		target.setProjectFolder(new File("test/data/subject14target"));
-		target.setBuildFolder(new File("test/data/subject14target/bin"));
-		target.setSrcFolder(new File("test/data/subject14target/src"));
+		target.setProjectFolder(new File("test/resources/subject14target"));
+		target.setBuildFolder(new File("test/resources/subject14target/bin"));
+		target.setSrcFolder(new File("test/resources/subject14target/src"));
 
 		Parameters parameters = new Parameters();
 		parameters.setCompileProjects(false);
@@ -146,18 +146,18 @@ public class SafeRefactorTest {
 //	@Test
 //	public void testCheckTransformationWithProjectsNotCompiledSetCompilerPath() throws Exception {
 //		Project source = new Project();
-//		source.setProjectFolder(new File("test/data/notCompiled_source"));
-//		source.setBuildFolder(new File("test/data/notCompiled_source/bin"));
-//		source.setSrcFolder(new File("test/data/notCompiled_source/src"));
+//		source.setProjectFolder(new File("test/resources/notCompiled_source"));
+//		source.setBuildFolder(new File("test/resources/notCompiled_source/bin"));
+//		source.setSrcFolder(new File("test/resources/notCompiled_source/src"));
 //
 //		Project target = new Project();
-//		target.setProjectFolder(new File("test/data/notCompiled_target"));
-//		target.setBuildFolder(new File("test/data/notCompiled_target/bin"));
-//		target.setSrcFolder(new File("test/data/notCompiled_target/src"));
+//		target.setProjectFolder(new File("test/resources/notCompiled_target"));
+//		target.setBuildFolder(new File("test/resources/notCompiled_target/bin"));
+//		target.setSrcFolder(new File("test/resources/notCompiled_target/src"));
 //		
 //		
 //		Properties config = new Properties();
-//		File configFile = new File("test/data/compiler.properties");
+//		File configFile = new File("test/resources/compiler.properties");
 //		config.load(new FileInputStream(configFile));
 //		String path = config.getProperty("COMPILER_JAVA_5");
 //		
@@ -177,18 +177,18 @@ public class SafeRefactorTest {
 //	@Test
 //	public void testCheckTransformationWithProjectsNotCompiledSetBuildPath() throws Exception {
 //		Project source = new Project();
-//		source.setProjectFolder(new File("test/data/notCompiled_source"));
-//		source.setBuildFolder(new File("test/data/notCompiled_source/bin"));
-//		source.setSrcFolder(new File("test/data/notCompiled_source/src"));
+//		source.setProjectFolder(new File("test/resources/notCompiled_source"));
+//		source.setBuildFolder(new File("test/resources/notCompiled_source/bin"));
+//		source.setSrcFolder(new File("test/resources/notCompiled_source/src"));
 //
 //		Project target = new Project();
-//		target.setProjectFolder(new File("test/data/notCompiled_target"));
-//		target.setBuildFolder(new File("test/data/notCompiled_target/bin"));
-//		target.setSrcFolder(new File("test/data/notCompiled_target/src"));
+//		target.setProjectFolder(new File("test/resources/notCompiled_target"));
+//		target.setBuildFolder(new File("test/resources/notCompiled_target/bin"));
+//		target.setSrcFolder(new File("test/resources/notCompiled_target/src"));
 //		
 //		
 //		Properties config = new Properties();
-//		File configFile = new File("test/data/compiler.properties");
+//		File configFile = new File("test/resources/compiler.properties");
 //		config.load(new FileInputStream(configFile));
 //		String path = config.getProperty("DIFFERENT_BUILDER");
 //		
@@ -207,14 +207,14 @@ public class SafeRefactorTest {
 	@Test
 	public void testCheckTransformationWithCoverage() throws Exception {
 		Project source = new Project();
-		source.setProjectFolder(new File("test/data/subject14source"));
-		source.setBuildFolder(new File("test/data/subject14source/bin"));
-		source.setSrcFolder(new File("test/data/subject14source/src"));
+		source.setProjectFolder(new File("test/resources/subject14source"));
+		source.setBuildFolder(new File("test/resources/subject14source/bin"));
+		source.setSrcFolder(new File("test/resources/subject14source/src"));
 
 		Project target = new Project();
-		target.setProjectFolder(new File("test/data/subject14target"));
-		target.setBuildFolder(new File("test/data/subject14target/bin"));
-		target.setSrcFolder(new File("test/data/subject14target/src"));
+		target.setProjectFolder(new File("test/resources/subject14target"));
+		target.setBuildFolder(new File("test/resources/subject14target/bin"));
+		target.setSrcFolder(new File("test/resources/subject14target/src"));
 
 		Parameters parameters = new Parameters();
 		parameters.setCompileProjects(false);
@@ -232,14 +232,14 @@ public class SafeRefactorTest {
 	@Test
 	public void testSafeRefactorFailOnRandomSubject() throws Exception {
 		Project source = new Project();
-		source.setProjectFolder(new File("test/data/randomSubjectSource"));
-		source.setBuildFolder(new File("test/data/randomSubjectSource/bin"));
-		source.setSrcFolder(new File("test/data/randomSubjectSource/src"));
+		source.setProjectFolder(new File("test/resources/randomSubjectSource"));
+		source.setBuildFolder(new File("test/resources/randomSubjectSource/bin"));
+		source.setSrcFolder(new File("test/resources/randomSubjectSource/src"));
 
 		Project target = new Project();
-		target.setProjectFolder(new File("test/data/randomSubjectTarget"));
-		target.setBuildFolder(new File("test/data/randomSubjectTarget/bin"));
-		target.setSrcFolder(new File("test/data/randomSubjectTarget/src"));		
+		target.setProjectFolder(new File("test/resources/randomSubjectTarget"));
+		target.setBuildFolder(new File("test/resources/randomSubjectTarget/bin"));
+		target.setSrcFolder(new File("test/resources/randomSubjectTarget/src"));		
 
 
 		Parameters parameters = new Parameters();
@@ -254,14 +254,14 @@ public class SafeRefactorTest {
 	@Test
 	public void testExecuteTwiceOnSourceToAvoidRandomResults() throws Exception {
 		Project source = new Project();
-		source.setProjectFolder(new File("test/data/randomSubjectSource"));
-		source.setBuildFolder(new File("test/data/randomSubjectSource/bin"));
-		source.setSrcFolder(new File("test/data/randomSubjectSource/src"));
+		source.setProjectFolder(new File("test/resources/randomSubjectSource"));
+		source.setBuildFolder(new File("test/resources/randomSubjectSource/bin"));
+		source.setSrcFolder(new File("test/resources/randomSubjectSource/src"));
 
 		Project target = new Project();
-		target.setProjectFolder(new File("test/data/randomSubjectTarget"));
-		target.setBuildFolder(new File("test/data/randomSubjectTarget/bin"));
-		target.setSrcFolder(new File("test/data/randomSubjectTarget/src"));		
+		target.setProjectFolder(new File("test/resources/randomSubjectTarget"));
+		target.setBuildFolder(new File("test/resources/randomSubjectTarget/bin"));
+		target.setSrcFolder(new File("test/resources/randomSubjectTarget/src"));		
 
 				
 		Parameters parameters = new Parameters();

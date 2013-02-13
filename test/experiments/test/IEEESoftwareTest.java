@@ -24,21 +24,21 @@ public class IEEESoftwareTest {
 	@Test
 	public void test1() throws Exception {
 		Project source = new Project();
-		source.setProjectFolder(new File("test/data/jhotdraw_source"));
-		source.setBuildFolder(new File("test/data/jhotdraw_source/bin"));
-		source.setSrcFolder(new File("test/data/jhotdraw_source/src"));
-		source.setLibFolder(new File("test/data/jhotdraw_source/lib"));
+		source.setProjectFolder(new File("test/resources/jhotdraw_source"));
+		source.setBuildFolder(new File("test/resources/jhotdraw_source/bin"));
+		source.setSrcFolder(new File("test/resources/jhotdraw_source/src"));
+		source.setLibFolder(new File("test/resources/jhotdraw_source/lib"));
 
 		Project target = new Project();
-		target.setProjectFolder(new File("test/data/jhotdraw_target"));
-		target.setBuildFolder(new File("test/data/jhotdraw_target/bin"));
-		target.setSrcFolder(new File("test/data/jhotdraw_target/src"));
-		target.setLibFolder(new File("test/data/jhotdraw_target/lib"));
+		target.setProjectFolder(new File("test/resources/jhotdraw_target"));
+		target.setBuildFolder(new File("test/resources/jhotdraw_target/bin"));
+		target.setSrcFolder(new File("test/resources/jhotdraw_target/src"));
+		target.setLibFolder(new File("test/resources/jhotdraw_target/lib"));
 
 		Parameters parameters = new Parameters();
 		parameters.setTimeLimit(30);
 		parameters.setCheckCoverage(true);
-		parameters.setCompileProjects(false);
+		parameters.setCompileProjects(true);
 		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
 				parameters);
 
