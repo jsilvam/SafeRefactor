@@ -1,0 +1,389 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard
+END
+OrderedFigureElement.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/OrderedFigureElement.java
+END
+AbstractCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/AbstractCommand.java
+END
+FigureAndEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/FigureAndEnumerator.java
+END
+NullTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/NullTool.java
+END
+DuplicateCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/DuplicateCommand.java
+END
+ConnectionHandle.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/ConnectionHandle.java
+END
+BringToFrontCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/BringToFrontCommand.java
+END
+ChopBoxConnector.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/ChopBoxConnector.java
+END
+PeripheralLocator.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/PeripheralLocator.java
+END
+LocatorHandle.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/LocatorHandle.java
+END
+TextHolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/TextHolder.java
+END
+SelectionTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/SelectionTool.java
+END
+FigureEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/FigureEnumerator.java
+END
+DecoratorFigure.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/DecoratorFigure.java
+END
+SingleFigureEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/SingleFigureEnumerator.java
+END
+FigureTransferCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/FigureTransferCommand.java
+END
+FastBufferedUpdateStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/FastBufferedUpdateStrategy.java
+END
+AWTCursor.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/AWTCursor.java
+END
+HandleEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/HandleEnumerator.java
+END
+CompositeFigure.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/CompositeFigure.java
+END
+HandleTracker.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/HandleTracker.java
+END
+ChangeConnectionEndHandle.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/ChangeConnectionEndHandle.java
+END
+CopyCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/CopyCommand.java
+END
+ToolButton.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/ToolButton.java
+END
+StandardDrawing.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/StandardDrawing.java
+END
+ChangeConnectionHandle.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/ChangeConnectionHandle.java
+END
+ToggleGridCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/ToggleGridCommand.java
+END
+AlignCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/AlignCommand.java
+END
+DragTracker.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/DragTracker.java
+END
+CutCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/CutCommand.java
+END
+RelativeLocator.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/RelativeLocator.java
+END
+ChangeConnectionStartHandle.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/ChangeConnectionStartHandle.java
+END
+DeleteCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/DeleteCommand.java
+END
+CreationTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/CreationTool.java
+END
+StandardDrawingView.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/StandardDrawingView.java
+END
+StandardFigureSelection.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/StandardFigureSelection.java
+END
+ChangeAttributeCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/ChangeAttributeCommand.java
+END
+PasteCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/PasteCommand.java
+END
+AbstractConnector.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/AbstractConnector.java
+END
+SimpleUpdateStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/SimpleUpdateStrategy.java
+END
+ReverseFigureEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/ReverseFigureEnumerator.java
+END
+HandleAndEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/HandleAndEnumerator.java
+END
+NullHandle.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/NullHandle.java
+END
+AbstractLocator.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/AbstractLocator.java
+END
+InsertIntoDrawingVisitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/InsertIntoDrawingVisitor.java
+END
+NullPainter.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/NullPainter.java
+END
+GridConstrainer.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/GridConstrainer.java
+END
+AbstractTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/AbstractTool.java
+END
+AbstractFigure.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/AbstractFigure.java
+END
+FigureChangeEventMulticaster.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/FigureChangeEventMulticaster.java
+END
+SelectAllCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/SelectAllCommand.java
+END
+BufferedUpdateStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/BufferedUpdateStrategy.java
+END
+QuadTree.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/QuadTree.java
+END
+OffsetLocator.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/OffsetLocator.java
+END
+ActionTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/ActionTool.java
+END
+SendToBackCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/SendToBackCommand.java
+END
+BoxHandleKit.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/BoxHandleKit.java
+END
+LocatorConnector.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/LocatorConnector.java
+END
+AbstractHandle.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/AbstractHandle.java
+END
+NullDrawingView.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/NullDrawingView.java
+END
+DeleteFromDrawingVisitor.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/DeleteFromDrawingVisitor.java
+END
+SelectAreaTracker.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/SelectAreaTracker.java
+END
+FigureChangeAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/FigureChangeAdapter.java
+END
+ConnectionTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/standard/ConnectionTool.java
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1078/source/saferefactoraj/files/target/src/org/jhotdraw/util/collections/jdk11
+END
+CollectionsFactoryJDK11.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/1078/source/saferefactoraj/files/target/src/org/jhotdraw/util/collections/jdk11/CollectionsFactoryJDK11.java
+END
+IteratorWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/1078/source/saferefactoraj/files/target/src/org/jhotdraw/util/collections/jdk11/IteratorWrapper.java
+END
+ListWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1078/source/saferefactoraj/files/target/src/org/jhotdraw/util/collections/jdk11/ListWrapper.java
+END
+SetWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1078/source/saferefactoraj/files/target/src/org/jhotdraw/util/collections/jdk11/SetWrapper.java
+END
+MapWrapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1078/source/saferefactoraj/files/target/src/org/jhotdraw/util/collections/jdk11/MapWrapper.java
+END

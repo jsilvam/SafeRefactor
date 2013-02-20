@@ -1,0 +1,251 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util
+END
+Clipboard.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/Clipboard.java
+END
+GraphLayout.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/GraphLayout.java
+END
+Iconkit.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/Iconkit.java
+END
+UndoManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/UndoManager.java
+END
+CommandMenu.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/CommandMenu.java
+END
+UndoableHandle.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/UndoableHandle.java
+END
+StorageFormatManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/StorageFormatManager.java
+END
+ReverseListEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/ReverseListEnumerator.java
+END
+VersionControlStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/VersionControlStrategy.java
+END
+CommandButton.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/CommandButton.java
+END
+SerializationStorageFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/SerializationStorageFormat.java
+END
+ColorMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/ColorMap.java
+END
+FloatingTextField.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/FloatingTextField.java
+END
+StorageFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/StorageFormat.java
+END
+Filler.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/Filler.java
+END
+VersionManagement.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/VersionManagement.java
+END
+CommandListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/CommandListener.java
+END
+VersionRequester.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/VersionRequester.java
+END
+Geom.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/Geom.java
+END
+UndoableCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/UndoableCommand.java
+END
+StandardVersionControlStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/StandardVersionControlStrategy.java
+END
+PaletteButton.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/PaletteButton.java
+END
+StorableInput.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/StorableInput.java
+END
+StorableOutput.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/StorableOutput.java
+END
+UndoRedoActivity.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/UndoRedoActivity.java
+END
+UndoCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/UndoCommand.java
+END
+PaletteListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/PaletteListener.java
+END
+CollectionsFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/CollectionsFactory.java
+END
+PaletteIcon.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/PaletteIcon.java
+END
+JDOStorageFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/JDOStorageFormat.java
+END
+Storable.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/Storable.java
+END
+Command.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/Command.java
+END
+UndoableTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/UndoableTool.java
+END
+RedoCommand.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/RedoCommand.java
+END
+CommandChoice.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/CommandChoice.java
+END
+Undoable.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/Undoable.java
+END
+Bounds.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/Bounds.java
+END
+UndoableAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/UndoableAdapter.java
+END
+PaletteLayout.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/PaletteLayout.java
+END
+Animatable.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/Animatable.java
+END
+StandardStorageFormat.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/util/StandardStorageFormat.java
+END

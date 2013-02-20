@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html
+END
+URLContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/URLContentProducer.java
+END
+HTMLColorContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/HTMLColorContentProducer.java
+END
+AttributeFigureContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/AttributeFigureContentProducer.java
+END
+AttributeContentProducerContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/AttributeContentProducerContext.java
+END
+ContentProducerRegistry.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/ContentProducerRegistry.java
+END
+HTMLContentProducerContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/HTMLContentProducerContext.java
+END
+StandardDisposableResourceManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/StandardDisposableResourceManager.java
+END
+ResourceDisposabilityStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/ResourceDisposabilityStrategy.java
+END
+FigureDataContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/FigureDataContentProducer.java
+END
+RoundRectangleGeometricAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/RoundRectangleGeometricAdapter.java
+END
+ColorContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/ColorContentProducer.java
+END
+DiamondFigureGeometricAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/DiamondFigureGeometricAdapter.java
+END
+ContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/ContentProducer.java
+END
+ContentProducerContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/ContentProducerContext.java
+END
+FigureContentProducerContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/FigureContentProducerContext.java
+END
+DisposableResourceManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/DisposableResourceManager.java
+END
+PolygonFigureGeometricAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/PolygonFigureGeometricAdapter.java
+END
+HTMLLayouter.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/HTMLLayouter.java
+END
+ETSLADisposalStrategy.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/ETSLADisposalStrategy.java
+END
+DisposableResourceHolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/DisposableResourceHolder.java
+END
+ResourceManagerNotSetException.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/ResourceManagerNotSetException.java
+END
+EllipseFigureGeometricAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/EllipseFigureGeometricAdapter.java
+END
+HTMLTextAreaTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/HTMLTextAreaTool.java
+END
+AbstractContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/AbstractContentProducer.java
+END
+HTMLContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/HTMLContentProducer.java
+END
+HTMLTextAreaFigure.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/HTMLTextAreaFigure.java
+END
+TriangleFigureGeometricAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/TriangleFigureGeometricAdapter.java
+END
+StandardDisposableResourceHolder.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/StandardDisposableResourceHolder.java
+END
+GeometricFigure.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/GeometricFigure.java
+END
+DisposableResourceManagerFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/DisposableResourceManagerFactory.java
+END
+TextHolderContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/TextHolderContentProducer.java
+END
+ResourceContentProducer.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/1077/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html/ResourceContentProducer.java
+END

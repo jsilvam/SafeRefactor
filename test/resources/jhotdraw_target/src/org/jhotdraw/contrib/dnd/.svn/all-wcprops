@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1078/source/saferefactoraj/files/target/src/org/jhotdraw/contrib/dnd
+END
+DNDFiguresTransferable.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/1078/source/saferefactoraj/files/target/src/org/jhotdraw/contrib/dnd/DNDFiguresTransferable.java
+END
+DndHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1078/source/saferefactoraj/files/target/src/org/jhotdraw/contrib/dnd/DndHandler.java
+END
+DNDHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1078/source/saferefactoraj/files/target/src/org/jhotdraw/contrib/dnd/DNDHelper.java
+END
+DNDInterface.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1078/source/saferefactoraj/files/target/src/org/jhotdraw/contrib/dnd/DNDInterface.java
+END
+JHDDropTargetListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1078/source/saferefactoraj/files/target/src/org/jhotdraw/contrib/dnd/JHDDropTargetListener.java
+END
+DNDFigures.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/1078/source/saferefactoraj/files/target/src/org/jhotdraw/contrib/dnd/DNDFigures.java
+END
+JHDDragSourceListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/1078/source/saferefactoraj/files/target/src/org/jhotdraw/contrib/dnd/JHDDragSourceListener.java
+END
+DragNDropTool.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1078/source/saferefactoraj/files/target/src/org/jhotdraw/contrib/dnd/DragNDropTool.java
+END
