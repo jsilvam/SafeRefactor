@@ -202,7 +202,7 @@ public class ComparatorImp implements TestComparator {
 				failure.setTestSimpleName(packageAndName[1]);
 				failure.setSourceState(sourceTestCase.getTestCaseState());
 				failure.setTargetState(targetTestCase.getTestCaseState());
-				failure.setLine(targetTestCase.getFailureLine());
+//				failure.setLine(targetTestCase.getFailureLine());
 				result.add(failure);
 				// changes.append(key + " in source is " + sourceState
 				// + " while in target is " + targetState + "\n");
@@ -282,8 +282,8 @@ public class ComparatorImp implements TestComparator {
 						Element problem = (Element) subNodes.item(j);
 						String errorMessage = problem.getFirstChild()
 								.getTextContent();
-						int line = identifyLineNumber(errorMessage);
-						testCase.setFailureLine(line);
+//						int line = identifyLineNumber(errorMessage);
+//						testCase.setFailureLine(line);
 						if (problem.getTagName().equals("error")) {
 							hasProblems = true;
 							testCase.setTestCaseState(TestCaseState.ERROR);

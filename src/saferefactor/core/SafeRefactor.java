@@ -101,6 +101,7 @@ public abstract class SafeRefactor {
 			double stop = System.currentTimeMillis();
 			double total = ((stop - start) / 1000);
 			logger.info("time to check transformation (s): " + total);
+			report.setTotalTime(total);
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 			throw new SafeRefactorException(e.getMessage());

@@ -21,10 +21,16 @@ public class Report implements Serializable {
 	private boolean problemDuringAnalysis = false;
 	
 	private boolean compilationError;
+	
+	private String tmpFolder;
 
 	private String changes;
 	
 	private int totalMethodsToTest;
+	
+	private double timelimit;
+	
+	private double totalTime;
 	
 	private List<Method> changedMethods = new ArrayList<Method>();
 	
@@ -94,6 +100,30 @@ public class Report implements Serializable {
 
 	public void setChangedMethods2(List<String> changedMethods2) {
 		this.changedMethods2 = changedMethods2;
+	}
+
+	public double getTimelimit() {
+		return timelimit;
+	}
+
+	public void setTimelimit(double timelimit) {
+		this.timelimit = timelimit;
+	}
+
+	public double getTotalTime() {
+		return totalTime;
+	}
+
+	public void setTotalTime(double totalTime) {
+		this.totalTime = totalTime;
+	}
+
+	public String getTmpFolder() {
+		return tmpFolder;
+	}
+
+	public void setTmpFolder(String tmpFolder) {
+		this.tmpFolder = tmpFolder;
 	}
 
 }

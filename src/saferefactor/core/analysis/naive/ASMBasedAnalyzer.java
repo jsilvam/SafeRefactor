@@ -31,7 +31,7 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 	private final Project target;
 	private DesignWizard dwSource;
 	private DesignWizard dwTarget;
-	private List<String> changedClasses;
+	private List<String> impactedClasses;
 
 	public ASMBasedAnalyzer(Project source, Project target, String tmpDir) {
 		this.source = source;
@@ -39,12 +39,55 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 	}
 
 	public Report analyze(boolean enableOccOptimization) throws Exception {
-		if (enableOccOptimization)
-			this.changedClasses = compareBinaries(this.source.getBuildFolder());
 
-		Report result = new Report();
 		dwSource = new DesignWizard(source.getBuildFolder().getAbsolutePath());
 		dwTarget = new DesignWizard(target.getBuildFolder().getAbsolutePath());
+
+		if (enableOccOptimization) {
+
+			List<String> changedClasses = compareBinaries(this.source
+					.getBuildFolder());
+			impactedClasses = new ArrayList<String>();
+			impactedClasses.addAll(changedClasses);
+
+			for (String clazz : changedClasses) {
+				// TODO do the same with dwTarget?
+				try {
+					ClassNode classNode = dwSource.getClass(clazz);
+
+					Set<ClassNode> calleeClasses = classNode.getCalleeClasses();
+					for (ClassNode calleeClass : calleeClasses) {
+						impactedClasses.add(calleeClass.getClassName());
+					}
+					// Set<ClassNode> subClasses = classNode.getSubClasses();
+					// for (ClassNode subClass : subClasses) {
+					// impactedClasses.add(subClass.getClassName());
+					// }
+					//
+					// Set<ClassNode> callerClasses =
+					// classNode.getCallerClasses();
+					// for (ClassNode callerClass : callerClasses) {
+					// impactedClasses.add(callerClass.getClassName());
+					// }
+					// //TODO get only declared or all methods?
+					// Set<MethodNode> declaredMethods =
+					// classNode.getDeclaredMethods();
+					// for (MethodNode methodNode : declaredMethods) {
+					// Set<ClassNode> callerClasses2 =
+					// methodNode.getCallerClasses();
+					// for (ClassNode callerClass : callerClasses2) {
+					// impactedClasses.add(callerClass.getClassName());
+					// }
+					// }
+				} catch (Exception e) {
+					System.out.println("class not found on source: " + clazz);
+				}
+
+			}
+
+		}
+
+		Report result = new Report();
 
 		Set<MethodNode> sourceMethods = dwSource.getAllMethods();
 		Set<MethodNode> targetMethods = dwTarget.getAllMethods();
@@ -68,11 +111,69 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 	private boolean doNotTestTypeOfMethod(MethodNode methodNode) {
 
 		ClassNode declaringClass = methodNode.getDeclaringClass();
-		if (this.changedClasses != null) {
+		if (this.impactedClasses != null) {
 
-			if (!this.changedClasses.contains(declaringClass.getName()))
+			if (!this.impactedClasses.contains(declaringClass.getName()))
 				return true;
 		}
+
+		if (!declaringClass.containsModifiers(Modifier.PUBLIC))
+			return true;
+
+		// TODO hack to avoid classes in CheckStyle plugin that stop test
+		// generation
+		if (declaringClass
+				.getClassName()
+				.equals("com.atlassw.tools.eclipse.checkstyle.util.table.EnhancedCheckBoxTableViewer"))
+			return true;
+
+		if (declaringClass
+				.getClassName()
+				.equals("com.atlassw.tools.eclipse.checkstyle.util.table.EnhancedTableViewer"))
+			return true;
+
+		if (declaringClass
+				.getClassName()
+				.equals("com.atlassw.tools.eclipse.checkstyle.config.configtypes.ConfigurationTypes"))
+			return true;
+
+		if (declaringClass
+				.getClassName()
+				.equals("com.atlassw.tools.eclipse.checkstyle.config.meta.MetadataFactory"))
+			return true;
+
+		if (declaringClass
+				.getClassName()
+				.equals("com.atlassw.tools.eclipse.checkstyle.projectconfig.PluginFilters"))
+			return true;
+
+		if (declaringClass
+				.getClassName()
+				.equals("com.atlassw.tools.eclipse.checkstyle.config.CheckConfigurationFactory"))
+			return true;
+
+		if (declaringClass.getClassName().equals(
+				"com.atlassw.tools.eclipse.checkstyle.util.CheckstyleLog"))
+			return true;
+
+		if (declaringClass
+				.getClassName()
+				.equals("com.atlassw.tools.eclipse.checkstyle.config.savefilter.SaveFilters"))
+			return true;
+
+		if (declaringClass
+				.getClassName()
+				.equals("com.atlassw.tools.eclipse.checkstyle.config.CheckConfigurationFactory"))
+			return true;
+
+		// end hack
+
+		// FIXME check why Design wizard says that this class is public
+		if (declaringClass
+				.getClassName()
+				.contains(
+						"com.atlassw.tools.eclipse.checkstyle.config.configtypes.RemoteConfigurationType$RemoteConfigAuthenticator"))
+			return true;
 
 		ClassNode targetClass;
 		try {
@@ -89,6 +190,12 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 		} catch (InexistentEntityException e) {
 			// e.printStackTrace();
 		}
+
+		// FIXME design wizard says the class has public modifier but it has not
+		if (declaringClass
+				.getName()
+				.equals("com.atlassw.tools.eclipse.checkstyle.builder.PackageObjectFactory"))
+			return true;
 
 		// TODO HACK: do not test methods from aspects
 		if (declaringClass.toString().contains(".aspectOf()"))
@@ -141,6 +248,10 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 		// because they stop the application and the test suite
 		if (methodNode.getShortName().equals("dispose"))
 			return true;
+		if (methodNode.getShortName().equals("remove")
+				&& declaringClass.getName().equals(
+						"org.jhotdraw.app.DefaultSDIApplication"))
+			return true;
 
 		// FIXME: see fix me above
 		Set<MethodNode> calleeMethods = methodNode.getCalleeMethods();
@@ -159,27 +270,27 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 
 		Map<String, List<MethodNode>> differentSignaturesSource = new HashMap<String, List<MethodNode>>();
 		Map<String, List<MethodNode>> differentSignaturesTarget = new HashMap<String, List<MethodNode>>();
-		for (MethodNode methodNode : sourceMethods) {
+		for (MethodNode sourceNode : sourceMethods) {
 
-			if (doNotTestTypeOfMethod(methodNode))
+			if (doNotTestTypeOfMethod(sourceNode))
 				continue;
 
-			if (targetMethods.contains(methodNode)) {
+			if (targetMethods.contains(sourceNode)) {
 
-				
-				//FIXME: just need to check if it has same modifier from original method
-				MethodNode method = dwTarget.getMethod(methodNode.getName());
-				if (doNotTestTypeOfMethod(method))
+				MethodNode targetMethod = dwTarget.getMethod(sourceNode
+						.getName());
+
+				if (!hasSameReturnTypeAndModifiers(sourceNode, targetMethod))
 					continue;
-				
-				Method convertToMethod = convertToMethod(methodNode);
+
+				Method convertToMethod = convertToMethod(sourceNode);
 				result.add(convertToMethod);
 			} else {
-				String name = methodNode.getShortName();
+				String name = sourceNode.getShortName();
 				List<MethodNode> list = differentSignaturesSource.get(name);
 				if (list == null)
 					list = new ArrayList<MethodNode>();
-				list.add(methodNode);
+				list.add(sourceNode);
 				differentSignaturesSource.put(name, list);
 			}
 		}
@@ -240,6 +351,33 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 		}
 
 		return result;
+	}
+
+	private boolean hasSameReturnTypeAndModifiers(MethodNode sourceMethod,
+			MethodNode targetMethod) {
+		if (!sourceMethod.getReturnType().getClassName()
+				.equals(targetMethod.getReturnType().getClassName()))
+			return false;
+
+		Collection<Modifier> modifiers = sourceMethod.getModifiers();
+		for (Modifier modifier : modifiers) {
+			if (!targetMethod.getModifiers().contains(modifier))
+				return false;
+		}
+
+		ClassNode declaringClass = targetMethod.getDeclaringClass();
+		if (declaringClass
+				.getClassName()
+				.equals("com.atlassw.tools.eclipse.checkstyle.builder.PackageObjectFactory"))
+			System.out.println("class");
+
+		if (!declaringClass.containsModifiers(Modifier.PUBLIC))
+			return false;
+
+		if (!declaringClass.getModifiers().contains(Modifier.PUBLIC))
+			return false;
+
+		return true;
 	}
 
 	private Method convertToMethod(MethodNode methodNode) {

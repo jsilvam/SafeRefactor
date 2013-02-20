@@ -33,7 +33,7 @@ public class IEEESoftwareTest {
 		target.setProjectFolder(new File("test/resources/jhotdraw_target"));
 		target.setBuildFolder(new File("test/resources/jhotdraw_target/bin"));
 		target.setSrcFolder(new File("test/resources/jhotdraw_target/src"));
-		target.setLibFolder(new File("test/resources/jhotdraw_target/lib"));
+		target.setLibFolder(new File("test/resources/jhotdraw_source/lib"));
 
 		Parameters parameters = new Parameters();
 		parameters.setTimeLimit(30);

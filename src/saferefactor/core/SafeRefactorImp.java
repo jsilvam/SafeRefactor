@@ -101,8 +101,10 @@ public class SafeRefactorImp extends SafeRefactor {
 			report.setRefactoring(comparatorReport.isRefactoring());
 
 			int methods = getTotalMethodsToTest();
-
+			report.setTmpFolder(this.tmpFolder);
 			report.setTotalMethodsToTest(methods);
+			report.setTimelimit(parameters.getTimeLimit());
+			
 
 			if (!report.isRefactoring())
 				report.setChanges(comparatorReport.getChanges());
