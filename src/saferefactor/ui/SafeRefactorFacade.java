@@ -20,7 +20,7 @@ public class SafeRefactorFacade {
 		source.setProjectFolder(sourceFile);
 		source.setBuildFolder(new File(sourceFile, "bin"));
 		source.setSrcFolder(new File(sourceFile, "src"));
-		File libFolder = new File(sourceFile, "lib");
+		File libFolder = new File(sourceFile, "lib");	
 		if (libFolder.exists())
 			source.setLibFolder(libFolder);
 

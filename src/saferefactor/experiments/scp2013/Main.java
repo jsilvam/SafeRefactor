@@ -22,7 +22,7 @@ public class Main {
 	
 	private static final String LOG_DIR = "/Users/gustavoas/Dropbox/scp_results";
 
-	private static String workspace = "/Users/gustavoas/workspaces/aspects/";
+	private static String workspace = "/Users/gustavoas/workspaces/scp/";
 
 	private static int numberofexecutions = 1;
 
@@ -171,7 +171,7 @@ public class Main {
 		String[] ajml = { "jaccounting-", "jspider-" };
 		String[] jss = { "JHotDraw_650_" };
 		String[] jss2 = { "JHotDraw_344_" };
-		String[] mobilemedia = { "MobileMedia03_" };
+		String[] mobilemedia = {"MobileMedia01_", "MobileMedia02_","MobileMedia03_","MobileMedia04_"};
 
 		Map<Double, List<Result>> results = new HashMap<Double, List<Result>>();
 		// List<Result> results = new ArrayList<Result>();
@@ -379,43 +379,32 @@ public class Main {
 				break;
 			case 7:
 				if (true) {
-					double timelimit = 0.1;
-					String bin = "bin";
-					String src = "src";
-					List<Result> runSubjects = Main.runSubjects(mobilemedia,
-							bin, src, timelimit, "OO", "AO");
-					System.out.println("Time Limit: " + timelimit);
-					results.put(timelimit, runSubjects);
-					printResults(runSubjects);
-				}
-				if (true) {
 					double timelimit = 0.2;
 					String bin = "bin";
 					String src = "src";
 					List<Result> runSubjects = Main.runSubjects(mobilemedia,
 							bin, src, timelimit, "OO", "AO");
-					System.out.println("Time Limit: " + timelimit);
 					results.put(timelimit, runSubjects);
 					printResults(runSubjects);
 				}
 				if (true) {
-					double timelimit = 0.3;
+					double timelimit = 0.5;
 					String bin = "bin";
 					String src = "src";
 					List<Result> runSubjects = Main.runSubjects(mobilemedia,
 							bin, src, timelimit, "OO", "AO");
-					System.out.println("Time Limit: " + timelimit);
 					results.put(timelimit, runSubjects);
 					printResults(runSubjects);
 				}
-
 				if (true) {
-					for (Entry<Double, List<Result>> result : results
-							.entrySet()) {
-						System.out.println("Time Limit: " + result.getKey());
-						printResults(result.getValue());
-					}
-				}
+					double timelimit = 1;
+					String bin = "bin";
+					String src = "src";
+					List<Result> runSubjects = Main.runSubjects(mobilemedia,
+							bin, src, timelimit, "OO", "AO");
+					results.put(timelimit, runSubjects);
+					printResults(runSubjects);
+				}	
 				break;
 			default:
 				break;
