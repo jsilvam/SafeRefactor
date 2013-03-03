@@ -44,58 +44,58 @@ public class CoverageDataReader implements Serializable{
 				e1.printStackTrace();
 			}
 		CoverageReport data = new CoverageReport();
-		
-		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-		dbf.setNamespaceAware(false);
-		DocumentBuilder docBuilder;
-	
-			
-			try {
-				docBuilder      = dbf.newDocumentBuilder();
-				
-				Document srcDoc = docBuilder.parse(file);
-				
-				Node report = srcDoc.getChildNodes().item(1);				
-				NodeList childNodes = report.getChildNodes();
-				Node dataNode = childNodes.item(3);
-				Node allClasses = dataNode.getChildNodes().item(1);
-				NodeList coverageData = allClasses.getChildNodes();
-				
-				Node classCoverage = coverageData.item(1);
-				Node classCoveragePercent = classCoverage.getAttributes().getNamedItem("value");
-				Double classRate = Double.parseDouble(classCoveragePercent.getTextContent().split("%")[0]);
-				data.setClassRate(classRate);
-//				System.out.println(classRate);
-				
-				Node methodCoverage = coverageData.item(3);
-				Node methodCoveragePercent = methodCoverage.getAttributes().getNamedItem("value");
-				Double methodRate = Double.parseDouble(methodCoveragePercent.getTextContent().split("%")[0]);
-				data.setMethodRate(methodRate);
-//				System.out.println(methodRate);
-				
-				Node blockCoverage = coverageData.item(5);
-				Node blockCoveragePercent = blockCoverage.getAttributes().getNamedItem("value");
-				Double blockRate = Double.parseDouble(blockCoveragePercent.getTextContent().split("%")[0]);
-				data.setBlockRate(blockRate);
-//				System.out.println(blockRate);
-					
-				Node lineCoverage = coverageData.item(7);
-				Node lineCoveragePercent = lineCoverage.getAttributes().getNamedItem("value");
-				Double lineRate = Double.parseDouble(lineCoveragePercent.getTextContent().split("%")[0]);
-				data.setLineRate(lineRate);
-//				System.out.println(lineRate);
-
-			
-			} catch (ParserConfigurationException e) {
-
-				e.printStackTrace();
-			} catch (SAXException e) {
-
-				e.printStackTrace();
-			} catch (IOException e) {
-
-				e.printStackTrace();
-			} 
+		//FIXME
+//		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+//		dbf.setNamespaceAware(false);
+//		DocumentBuilder docBuilder;
+//	
+//			
+//			try {
+//				docBuilder      = dbf.newDocumentBuilder();
+//				
+//				Document srcDoc = docBuilder.parse(file);
+//				
+//				Node report = srcDoc.getChildNodes().item(1);				
+//				NodeList childNodes = report.getChildNodes();
+//				Node dataNode = childNodes.item(3);
+//				Node allClasses = dataNode.getChildNodes().item(1);
+//				NodeList coverageData = allClasses.getChildNodes();
+//				
+//				Node classCoverage = coverageData.item(1);
+//				Node classCoveragePercent = classCoverage.getAttributes().getNamedItem("value");
+//				Double classRate = Double.parseDouble(classCoveragePercent.getTextContent().split("%")[0]);
+//				data.setClassRate(classRate);
+////				System.out.println(classRate);
+//				
+//				Node methodCoverage = coverageData.item(3);
+//				Node methodCoveragePercent = methodCoverage.getAttributes().getNamedItem("value");
+//				Double methodRate = Double.parseDouble(methodCoveragePercent.getTextContent().split("%")[0]);
+//				data.setMethodRate(methodRate);
+////				System.out.println(methodRate);
+//				
+//				Node blockCoverage = coverageData.item(5);
+//				Node blockCoveragePercent = blockCoverage.getAttributes().getNamedItem("value");
+//				Double blockRate = Double.parseDouble(blockCoveragePercent.getTextContent().split("%")[0]);
+//				data.setBlockRate(blockRate);
+////				System.out.println(blockRate);
+//					
+//				Node lineCoverage = coverageData.item(7);
+//				Node lineCoveragePercent = lineCoverage.getAttributes().getNamedItem("value");
+//				Double lineRate = Double.parseDouble(lineCoveragePercent.getTextContent().split("%")[0]);
+//				data.setLineRate(lineRate);
+////				System.out.println(lineRate);
+//
+//			
+//			} catch (ParserConfigurationException e) {
+//
+//				e.printStackTrace();
+//			} catch (SAXException e) {
+//
+//				e.printStackTrace();
+//			} catch (IOException e) {
+//
+//				e.printStackTrace();
+//			} 
 			
 			
 		

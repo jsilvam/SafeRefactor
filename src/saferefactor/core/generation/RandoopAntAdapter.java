@@ -110,7 +110,7 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 	private void generateMethodListFile(List<Method> methods) {
 
 		Random random = new Random();
-		int choice = random.nextInt(2);		
+//		int choice = random.nextInt(2);		
 		StringBuffer lines = new StringBuffer();
 //		if (choice == 0) {
 //			for (Method method : methods) {

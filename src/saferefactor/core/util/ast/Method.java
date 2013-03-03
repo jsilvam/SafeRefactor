@@ -77,11 +77,7 @@ public abstract class Method implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Method other = (Method) obj;
-		if (allowedClasses == null) {
-			if (other.allowedClasses != null)
-				return false;
-		} else if (!allowedClasses.equals(other.allowedClasses))
-			return false;
+		
 		if (declaringClass == null) {
 			if (other.declaringClass != null)
 				return false;

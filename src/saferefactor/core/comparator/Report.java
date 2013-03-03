@@ -7,6 +7,8 @@ public class Report {
 	
 	private boolean isRefactoring;
 	
+	private int totalTests;
+	
 	private Set<Failure> changedTests = new HashSet<Failure>();
 	
 	private String changes;
@@ -33,6 +35,14 @@ public class Report {
 
 	public void setChangedTests(Set<Failure> changedTests) {
 		this.changedTests = changedTests;
+	}
+
+	public int getTotalTests() {
+		return totalTests;
+	}
+
+	public void setTotalTests(int totalTests) {
+		this.totalTests = totalTests;
 	}
 
 	

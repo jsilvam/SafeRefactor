@@ -146,17 +146,12 @@
 				             can be inherited from the parent <report>
 				             and individually overridden for each report type:
 				        -->
-				        <txt outfile="${coverage.dir}/coverage.txt"
-				             depth="package"
-				             columns="class,method,block,line,name"
-				        />
+				        
 				        <xml outfile="${coverage.dir}/coverage.xml"
-				             depth="package"
-				        />
-				        <html outfile="${coverage.dir}/coverage.html"
 				             depth="method"
-				             columns="name,class,method,block,line"
+				        	 columns="name,class,method,block,line"
 				        />
+				        
 				      </report>
 				    </emma>				
 	</target>

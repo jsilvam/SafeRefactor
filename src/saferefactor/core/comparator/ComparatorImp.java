@@ -96,6 +96,8 @@ public class ComparatorImp implements TestComparator {
 				Document srcDoc = docBuilder.parse(sourceResult);
 				String tests = srcDoc.getDocumentElement()
 						.getAttribute("tests");
+				report.setTotalTests(Integer.parseInt(tests));
+				
 				String erros = srcDoc.getDocumentElement().getAttribute(
 						"errors");
 				String failures = srcDoc.getDocumentElement().getAttribute(

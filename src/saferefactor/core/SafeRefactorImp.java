@@ -1,6 +1,8 @@
 package saferefactor.core;
 
 import java.io.File;
+import java.io.FileFilter;
+import java.util.Arrays;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
@@ -104,7 +106,24 @@ public class SafeRefactorImp extends SafeRefactor {
 			report.setTmpFolder(this.tmpFolder);
 			report.setTotalMethodsToTest(methods);
 			report.setTimelimit(parameters.getTimeLimit());
-			
+			report.setNumberTests(comparatorReport.getTotalTests());
+			report.setMethodsToTest(this.methodsToTest);
+			report.setSourceProject(this.target);
+			File tmp = new File(tmpFolder,"tests/");
+			File[] testFiles = tmp.listFiles(new FileFilter() {
+				
+				@Override
+				public boolean accept(File file) {
+					if (file.getName().equals("RandoopTest.java"))
+						return false;
+					if (file.getName().endsWith(".java"))
+						return true;
+					return false;
+				}
+			});
+			for (File file : testFiles) {
+				report.getGeneratedTestFiles().add(file);
+			}
 
 			if (!report.isRefactoring())
 				report.setChanges(comparatorReport.getChanges());

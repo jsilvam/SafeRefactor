@@ -1,10 +1,12 @@
 package saferefactor.core;
 
+import java.io.File;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import saferefactor.core.execution.CoverageDataReader.CoverageReport;
+import saferefactor.core.util.Project;
 import saferefactor.core.util.ast.Method;
 
 
@@ -23,6 +25,10 @@ public class Report implements Serializable {
 	private boolean compilationError;
 	
 	private String tmpFolder;
+	
+	private int numberTests;
+	
+	private Project sourceProject;
 
 	private String changes;
 	
@@ -31,6 +37,10 @@ public class Report implements Serializable {
 	private double timelimit;
 	
 	private double totalTime;
+	
+	private List<File> generatedTestFiles = new ArrayList<File>();
+	
+	private List<Method> methodsToTest = new ArrayList<Method>();
 	
 	private List<Method> changedMethods = new ArrayList<Method>();
 	
@@ -124,6 +134,38 @@ public class Report implements Serializable {
 
 	public void setTmpFolder(String tmpFolder) {
 		this.tmpFolder = tmpFolder;
+	}
+
+	public int getNumberTests() {
+		return numberTests;
+	}
+
+	public void setNumberTests(int numberTests) {
+		this.numberTests = numberTests;
+	}
+
+	public List<Method> getMethodsToTest() {
+		return methodsToTest;
+	}
+
+	public void setMethodsToTest(List<Method> methodsToTest) {
+		this.methodsToTest = methodsToTest;
+	}
+
+	public List<File> getGeneratedTestFiles() {
+		return generatedTestFiles;
+	}
+
+	public void setGeneratedTestFiles(List<File> generatedTestFiles) {
+		this.generatedTestFiles = generatedTestFiles;
+	}
+
+	public Project getSourceProject() {
+		return sourceProject;
+	}
+
+	public void setSourceProject(Project sourceProject) {
+		this.sourceProject = sourceProject;
 	}
 
 }

@@ -1,11 +1,15 @@
 package saferefactor.ui;
 
 import java.io.File;
+import java.util.List;
 
 import saferefactor.core.Parameters;
 import saferefactor.core.Report;
 import saferefactor.core.SafeRefactor;
 import saferefactor.core.SafeRefactorImp;
+import saferefactor.core.execution.CoverageImpactedMethodReport;
+import saferefactor.core.execution.CoverageMeter;
+import saferefactor.core.execution.CoverageDataReader.CoverageReport;
 import saferefactor.core.util.Project;
 
 public class SafeRefactorFacade {
@@ -36,7 +40,9 @@ public class SafeRefactorFacade {
 		parameters.setCompileProjects(false);
 		parameters.setTimeLimit(timelimit);
 		parameters.setEnableOCC(occ);
-
+		parameters.getTestGeneratorParameters().add("--testsperfile=1");
+		
+		
 
 		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
 				parameters);
@@ -73,7 +79,8 @@ public class SafeRefactorFacade {
 		source.setBuildFolder(new File(sourceFile, bin));
 		source.setSrcFolder(new File(sourceFile, src));
 		File libFolder = new File(sourceFile, lib);
-		source.setLibFolder(libFolder);
+		if (libFolder.exists())
+			source.setLibFolder(libFolder);
 		
 
 		Project target = new Project();
@@ -81,18 +88,25 @@ public class SafeRefactorFacade {
 		target.setBuildFolder(new File(targetFile, bin));
 		target.setSrcFolder(new File(targetFile, src));
 		File targetLibFolder = new File(targetFile, lib);
-		target.setLibFolder(targetLibFolder);
+		if (targetLibFolder.exists())
+			target.setLibFolder(targetLibFolder);
 
 		Parameters parameters = new Parameters();
 		parameters.setTimeLimit(timelimit);
 		parameters.setEnableOCC(occ);
 		parameters.setCompileProjects(needCompile);
 		parameters.setExecuteTwiceOnSource(true);
-
+		parameters.setCheckCoverage(true);
+//		parameters.getTestGeneratorParameters().add("--testsperfile=1");
+//		parameters.getTestGeneratorParameters().add("--outputlimit=31");
+		
 		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
 				parameters);
 		saferefactor.checkTransformation();
 		result = saferefactor.getReport();
+		
+		
+		
 
 		return result;
 	}

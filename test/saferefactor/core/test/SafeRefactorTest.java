@@ -219,6 +219,7 @@ public class SafeRefactorTest {
 		Parameters parameters = new Parameters();
 		parameters.setCompileProjects(false);
 		parameters.setCheckCoverage(true);
+		
 		SafeRefactor saferefactor = new SafeRefactorImp(source, target,parameters  );
 		saferefactor.checkTransformation();
 		Report report = saferefactor.getReport();

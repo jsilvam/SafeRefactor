@@ -68,7 +68,7 @@ public class MethodImp extends Method {
 		if (parameterList == null) {
 			if (other.parameterList != null)
 				return false;
-		} else if (!parameterList.equals(other.parameterList))
+		} else if ((parameterList.size() > 0 || other.parameterList.size() > 0) && !parameterList.equals(other.parameterList))
 			return false;
 		if (simpleName == null) {
 			if (other.simpleName != null)
