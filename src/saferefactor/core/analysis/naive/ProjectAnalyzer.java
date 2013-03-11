@@ -56,6 +56,23 @@ public class ProjectAnalyzer {
 				continue;
 			if (className.equals("com.sleepycat.je.log.SyncedLogManager"))
 				continue;
+			
+			if (className.equals("com.atlassw.tools.eclipse.checkstyle.util.table.EnhancedCheckBoxTableViewer"))
+				continue;
+			if (className.equals("com.atlassw.tools.eclipse.checkstyle.util.table.EnhancedTableViewer"))
+				continue;
+			if (className.equals("com.atlassw.tools.eclipse.checkstyle.config.configtypes.ConfigurationTypes"))
+				continue;
+			if (className.equals("com.atlassw.tools.eclipse.checkstyle.config.meta.MetadataFactory"))
+				continue;
+			if (className.equals("com.atlassw.tools.eclipse.checkstyle.projectconfig.PluginFilters"))
+				continue;
+			if (className.equals("com.atlassw.tools.eclipse.checkstyle.config.CheckConfigurationFactory"))
+				continue;
+			if (className.equals("com.atlassw.tools.eclipse.checkstyle.util.CheckstyleLog"))
+				continue;				
+			if (className.equals("com.atlassw.tools.eclipse.checkstyle.config.savefilter.SaveFilters"))
+				continue;
 
 			// jedit
 			if (className.equals("org.gjt.sp.jedit.menu.EnhancedMenuItem"))
@@ -142,6 +159,9 @@ public class ProjectAnalyzer {
 						continue;
 
 					
+					//hack jhotdraw ao
+					if (method.getDeclaringClass().getName().contains("AbstractJavaEditorTextHover"))
+						continue;
 					//hack jhotdraw
 					if (method.getReturnType().getName().endsWith("UndoActivity")) 
 						continue;

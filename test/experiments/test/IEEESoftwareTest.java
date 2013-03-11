@@ -48,6 +48,34 @@ public class IEEESoftwareTest {
 		assertTrue(report.getCoverage().getLineRate() > 17.0);
 		
 	}
+	
+	@Test
+	public void test2() throws Exception {
+		Project source = new Project();
+		source.setProjectFolder(new File("/Users/gustavoas/workspaces/scp/CheckstylePluginSource"));
+		source.setBuildFolder(new File("/Users/gustavoas/workspaces/scp/CheckstylePluginSource/bin"));
+		source.setSrcFolder(new File("/Users/gustavoas/workspaces/scp/CheckstylePluginSource/src"));
+		source.setLibFolder(new File("/Users/gustavoas/workspaces/scp/CheckstylePluginSource/lib"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("/Users/gustavoas/workspaces/scp/CheckstylePluginAO"));
+		target.setBuildFolder(new File("/Users/gustavoas/workspaces/scp/CheckstylePluginAO/bin"));
+		target.setSrcFolder(new File("/Users/gustavoas/workspaces/scp/CheckstylePluginAO/src"));
+		target.setLibFolder(new File("/Users/gustavoas/workspaces/scp/CheckstylePluginAO/lib"));
+
+		Parameters parameters = new Parameters();
+		parameters.setTimeLimit(10);
+//		parameters.setCheckCoverage(true);
+		parameters.setCompileProjects(false);
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
+				parameters);
+
+		saferefactor.checkTransformation();
+		Report report = saferefactor.getReport();
+		assertEquals(true, report.isRefactoring());
+//		assertTrue(report.getCoverage().getLineRate() > 17.0);
+		
+	}
 
 	//CheckStylePlugin subject has more than 400 mb. So, I will not mantain it in SVN. 
 //	@Test

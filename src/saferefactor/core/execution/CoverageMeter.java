@@ -119,14 +119,17 @@ public class CoverageMeter {
 
 	
 
+//			boolean found = false;
 			for (MethodCoverage methodCoverage : MethodCoveredByTests) {
-					
 				if (method.equals(methodCoverage.getMethod())) {
-					if (methodCoverage.getLine_rate() > 1)
+//					found = true;
+					if (methodCoverage.getLine_rate() > 1) 
 						totalCoveredMethods++;
 					break;
 				}
 			}
+//			if (!found)
+//				System.out.println("methodNotFound: " + method.getDeclaringClass() + "." + method.getSimpleName());
 		}
 		result.setMethodCoverage(totalCoveredMethods / totalImpactedMethods);
 
@@ -238,6 +241,9 @@ public class CoverageMeter {
 									String[] parameterArray = parameters
 											.split(", ");
 									for (String parameter : parameterArray) {
+										//TODO hack
+										if (parameter.equals("String"))
+											parameter = "java.lang.String";
 										parameterList.add(parameter);
 									}
 								}

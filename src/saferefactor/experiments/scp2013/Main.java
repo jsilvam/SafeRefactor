@@ -1,6 +1,7 @@
 package saferefactor.experiments.scp2013;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,6 +29,8 @@ public class Main {
 
 	private static final String LOG_DIR = "/Users/gustavoas/Dropbox/scp_results";
 
+	private static final boolean RUN_METRIC2 = false;
+
 	private static String workspace = "/Users/gustavoas/workspaces/scp/";
 
 	private static int numberofexecutions = 1;
@@ -54,31 +57,71 @@ public class Main {
 						new ArrayList<Report>());
 
 			for (int i = 0; i < Main.numberofexecutions; i++) {
+				Report saferefactor = new Report();
 				if (runOriginal) {
-					Report original = runSubject(subject, bin, src, timelimit,
+					saferefactor = runSubject(subject, bin, src, timelimit,
 							false, sourceSuffix, targetSuffix);
 					System.out.println("Original. Is refactoring? "
-							+ original.isRefactoring());
-					log(original, ORIGINAL, timelimit, id);
-					if (!original.isRefactoring())
-						System.out.println(original.getChanges());
-					result.getTechniqueReports().get(ORIGINAL).add(original);
+							+ saferefactor.isRefactoring());
+					log(saferefactor, ORIGINAL, timelimit, id);
+					if (!saferefactor.isRefactoring())
+						System.out.println(saferefactor.getChanges());
 				}
+				result.getTechniqueReports().get(ORIGINAL).add(saferefactor);
+				Report saferefactorImp = new Report();
 				if (runOCC) {
-					Report occ = runSubject(subject, bin, src, timelimit, true,
-							sourceSuffix, targetSuffix);
-					result.getTechniqueReports().get(NEW_TECHNIQUE).add(occ);
-					System.out.println("Occ. Is refactoring? "
-							+ occ.isRefactoring());
-					log(occ, NEW_TECHNIQUE, timelimit, id);
-					if (!occ.isRefactoring())
-						System.out.println(occ.getChanges());
+					saferefactorImp = runSubject(subject, bin, src, timelimit,
+							true, sourceSuffix, targetSuffix);
+				}
+				result.getTechniqueReports().get(NEW_TECHNIQUE)
+						.add(saferefactorImp);
+				System.out.println("Occ. Is refactoring? "
+						+ saferefactorImp.isRefactoring());
+				log(saferefactorImp, NEW_TECHNIQUE, timelimit, id);
+				if (!saferefactorImp.isRefactoring())
+					System.out.println(saferefactorImp.getChanges());
+				if (RUN_METRIC2) {
+					List<Method> impactedMethods = saferefactorImp
+							.getMethodsToTest();
+					calculateUsefulTests(saferefactorImp, impactedMethods);
+					calculateUsefulTests(saferefactor, impactedMethods);
 				}
 			}
 			results.add(result);
 		}
 
 		return results;
+	}
+
+	private static void calculateUsefulTests(Report report,
+			List<Method> impactedMethods) throws FileNotFoundException,
+			JDOMException, IOException {
+		List<File> generatedTestFiles = report.getGeneratedTestFiles();
+		double totalTests = generatedTestFiles.size();
+		double usefulTests = 0;
+		List<String> testesNotUseful = new ArrayList<String>();
+		for (File file : generatedTestFiles) {
+			if (file.getName().equals("RandoopTest5.java"))
+				System.out.println("para");
+			// run this test case and get coverage
+			CoverageMeter m = new CoverageMeter(report.getSourceProject(),
+					report.getTmpFolder() + "/tests/tests/bin_source/");
+			m.checkTestCoverage(file.getName().replaceAll("java", "class"));
+			CoverageReport coverageReport2 = m.getCoverageReport();
+			// File reportFile;
+			// check coverage
+			CoverageImpactedMethodReport checkCoverageImpactedMethod = CoverageMeter
+					.checkCoverageImpactedMethod(impactedMethods, new File(
+							report.getTmpFolder(),
+							"tests/tests/bin_source/coverage/coverage.xml"));
+			if (checkCoverageImpactedMethod.getMethodCoverage() > 0)
+				usefulTests++;
+			else
+				testesNotUseful.add(file.getName());
+		}
+
+		double percent = usefulTests / totalTests;
+		report.setTestsThatCoverTheChange(percent);
 	}
 
 	private static void log(Report report, String technique, double timelimit,
@@ -119,8 +162,6 @@ public class Main {
 		List<Report> v2Results = techniqueReports.get(NEW_TECHNIQUE);
 
 		List<Method> impactedMethods = v2Results.get(0).getMethodsToTest();
-		
-	
 
 		System.out.print(result.getSubject() + "\tV1\t");
 		System.out.print(originalResults.get(0).getTotalMethodsToTest() + "\t");
@@ -141,44 +182,43 @@ public class Main {
 
 	private static void print(Report report, List<Method> impactedMethods)
 			throws JDOMException, IOException {
-		
-//		List<File> generatedTestFiles = report.getGeneratedTestFiles();		
-//		double totalTests = generatedTestFiles.size();
-//		double usefulTests = 0;
-//		List<String> testesNotUseful = new ArrayList<String>();
-//		for (File file : generatedTestFiles) {
-//			if (file.getName().equals("RandoopTest5.java"))
-//				System.out.println("para");
-//			// run this test case and get coverage
-//			CoverageMeter m = new CoverageMeter(report.getSourceProject(), report.getTmpFolder() + "/tests/tests/bin_source/");
-//			m.checkTestCoverage(file.getName().replaceAll("java", "class"));
-//			CoverageReport coverageReport2 = m.getCoverageReport();
-//			File reportFile;
-//			// check coverage
-//			CoverageImpactedMethodReport checkCoverageImpactedMethod = CoverageMeter
-//					.checkCoverageImpactedMethod(impactedMethods, new File(report.getTmpFolder(),
-//							"tests/tests/bin_source/coverage/coverage.xml"));
-//			if (checkCoverageImpactedMethod.getMethodCoverage() > 0)
-//				usefulTests++;
-//			else 
-//				testesNotUseful.add(file.getName());
-//		}
-		
+
+		// List<File> generatedTestFiles = report.getGeneratedTestFiles();
+		// double totalTests = generatedTestFiles.size();
+		// double usefulTests = 0;
+		// List<String> testesNotUseful = new ArrayList<String>();
+		// for (File file : generatedTestFiles) {
+		// if (file.getName().equals("RandoopTest5.java"))
+		// System.out.println("para");
+		// // run this test case and get coverage
+		// CoverageMeter m = new CoverageMeter(report.getSourceProject(),
+		// report.getTmpFolder() + "/tests/tests/bin_source/");
+		// m.checkTestCoverage(file.getName().replaceAll("java", "class"));
+		// CoverageReport coverageReport2 = m.getCoverageReport();
+		// File reportFile;
+		// // check coverage
+		// CoverageImpactedMethodReport checkCoverageImpactedMethod =
+		// CoverageMeter
+		// .checkCoverageImpactedMethod(impactedMethods, new File(
+		// report.getTmpFolder(),
+		// "tests/tests/bin_source/coverage/coverage.xml"));
+		// if (checkCoverageImpactedMethod.getMethodCoverage() > 0)
+		// usefulTests++;
+		// else
+		// testesNotUseful.add(file.getName());
+		// }
+
 		System.out.print(report.isRefactoring() + "\t");
-//		double percent = usefulTests/totalTests;
-//		System.out.println("total de testes: " + totalTests);
-//		System.out.println("uteis: " + usefulTests);
-//		System.out.print("Porcentagem: " + percent);
-//		System.out.print("\t");
-//		for (String string : testesNotUseful) {
-//			System.out.println(string);
-//		}
-		File file = new File(report.getTmpFolder(),
-				"tests/tests/bin_source/coverage/coverage.xml");
-		CoverageImpactedMethodReport coverageReport = CoverageMeter
-				.checkCoverageImpactedMethod(impactedMethods, file);
-		System.out.print(coverageReport.getMethodCoverage());
-		System.out.print("\t");
+		 File file = new File(report.getTmpFolder(),
+		 "tests/tests/bin_source/coverage/coverage.xml");
+		 CoverageImpactedMethodReport coverageReport = CoverageMeter
+		 .checkCoverageImpactedMethod(impactedMethods, file);
+		 System.out.print(coverageReport.getMethodCoverage());
+		 System.out.print("\t");
+		if (RUN_METRIC2) {
+			System.out.print(report.getTestsThatCoverTheChange());
+			System.out.print("\t");
+		}
 		System.out.print(report.getTotalTime() + "\t");
 		System.out.print(report.getTimelimit() + "\t");
 	}
@@ -186,10 +226,10 @@ public class Main {
 	private static Report runSubject(String subjectName, String bin,
 			String src, double timelimit, boolean occ, String sourceSuffix,
 			String targetSuffix) throws Exception {
-		Report stateNaive = SafeRefactorFacade.checkTransformation(workspace
+		Report report = SafeRefactorFacade.checkTransformation(workspace
 				+ subjectName + sourceSuffix, workspace + subjectName
 				+ targetSuffix, bin, src, "lib", false, timelimit, occ);
-		return stateNaive;
+		return report;
 	}
 
 	public static void main(String[] args) {
@@ -198,23 +238,26 @@ public class Main {
 			throw new IllegalArgumentException("Usage: main option");
 
 		int option = Integer.parseInt(args[0]);
-
+////
 //		String[] patterns = { "abstractfactory", "adapter", "bridge",
 //				"builder", "chain", "command", "composite", "decorator",
 //				"facade", "factorymethod", "flyweight", "interpreter",
 //				"iterator", "mediator", "memento", "observer", "prototype",
 //				"proxy", "singleton", "state", "strategy", "template",
 //				"visitor" };
-		
-		String[] patterns = {"abstractfactory"};
 
-		String[] eclipse = { "subject1", "subject2", "subject3", "subject5",
-				"subject6", "subject7", "subject8", "subject9" };
-//		 String[] eclipse = { "subject1" };
+		String[] patterns = { "bridge"};
+
+		// String[] patterns = { "abstractfactory" };
+
+		 String[] eclipse = { "subject1", "subject2", "subject3", "subject4",
+		 "subject5", "subject6", "subject7", "subject8" };
+//		String[] eclipse = { "subject1" };
 		String[] jhotdraw = { "JHotDraw" };
 		String[] checkstyle = { "CheckstylePlugin" };
 		String[] ajml = { "jaccounting-", "jspider-" };
 		String[] jss = { "JHotDraw_650_" };
+		String[] motivating = { "motivating_" };
 		String[] jss2 = { "JHotDraw_344_" };
 		String[] mobilemedia = { "MobileMedia01_", "MobileMedia02_",
 				"MobileMedia03_", "MobileMedia04_" };
@@ -231,7 +274,7 @@ public class Main {
 
 					results.put(timelimit, runSubjects);
 				}
-				if (false) {
+				if (true) {
 					double timelimit = 0.2;
 					List<Result> runSubjects = Main.runSubjects(eclipse, "bin",
 							"src", timelimit, "source", "target");
@@ -253,17 +296,17 @@ public class Main {
 							"src", timelimit, "_OO", "_AO"));
 					runSubjects2.addAll(Main.runSubjects(jhotdraw, "bin",
 							"src", timelimit, "_Original", "_AO"));
-//					printResults(runSubjects2);
+					// printResults(runSubjects2);
 					results.put(Double.valueOf(timelimit), runSubjects2);
 				}
-				if (true) {
+				if (false) {
 					int timelimit = 5;
 					List<Result> runSubjects2 = new ArrayList<Result>();
 					runSubjects2.addAll(Main.runSubjects(jhotdraw, "bin",
 							"src", timelimit, "_OO", "_AO"));
 					runSubjects2.addAll(Main.runSubjects(jhotdraw, "bin",
 							"src", timelimit, "_Original", "_AO"));
-//					printResults(runSubjects2);
+					// printResults(runSubjects2);
 					results.put(Double.valueOf(timelimit), runSubjects2);
 				}
 				if (true) {
@@ -273,7 +316,7 @@ public class Main {
 							"src", timelimit, "_OO", "_AO"));
 					runSubjects2.addAll(Main.runSubjects(jhotdraw, "bin",
 							"src", timelimit, "_Original", "_AO"));
-//					printResults(runSubjects2);
+					// printResults(runSubjects2);
 					results.put(Double.valueOf(timelimit), runSubjects2);
 				}
 				break;
@@ -322,26 +365,26 @@ public class Main {
 
 				break;
 			case 5:
-				if (true) {
+				if (false) {
 					double timelimit = 2;
 
 					List<Result> runSubjects = new ArrayList<Result>();
 					String bin = "bin";
 					String src = "src/main/java";
-					runSubjects.addAll(Main.runSubjects(jss2, bin, src,
-							timelimit, "BEFORE", "AFTER"));
+//					runSubjects.addAll(Main.runSubjects(jss2, bin, src,
+//							timelimit, "BEFORE", "AFTER"));
 
 					bin = "build/classes";
 					src = "src/main/java";
 					runSubjects.addAll(Main.runSubjects(jss, bin, src,
 							timelimit, "BEFORE", "AFTER"));
 					//
-					 bin = "bin";
-					 src = "src";
-					 runSubjects.addAll(Main.runSubjects(checkstyle, bin, src,
-					 timelimit, "Source", "AO"));
-					 runSubjects.addAll(Main.runSubjects(checkstyle, bin, src,
-					 timelimit, "OO", "AO"));
+					bin = "bin";
+					src = "src";
+//					runSubjects.addAll(Main.runSubjects(checkstyle, bin, src,
+//							timelimit, "Source", "AO"));
+//					runSubjects.addAll(Main.runSubjects(checkstyle, bin, src,
+//							timelimit, "OO", "AO"));
 
 					results.put(timelimit, runSubjects);
 				}
@@ -358,16 +401,16 @@ public class Main {
 					runSubjects.addAll(Main.runSubjects(jss, bin, src,
 							timelimit, "BEFORE", "AFTER"));
 
-					 bin = "bin";
-					 src = "src";
-					 runSubjects.addAll(Main.runSubjects(checkstyle, bin, src,
-					 timelimit, "Source", "AO"));
-					 runSubjects.addAll(Main.runSubjects(checkstyle, bin, src,
-					 timelimit, "OO", "AO"));
+					bin = "bin";
+					src = "src";
+					runSubjects.addAll(Main.runSubjects(checkstyle, bin, src,
+							timelimit, "Source", "AO"));
+					runSubjects.addAll(Main.runSubjects(checkstyle, bin, src,
+							timelimit, "OO", "AO"));
 
 					results.put(timelimit, runSubjects);
 				}
-				if (true) {
+				if (false) {
 					double timelimit = 10;
 					List<Result> runSubjects = new ArrayList<Result>();
 					String bin = "bin";
@@ -379,16 +422,13 @@ public class Main {
 					src = "src/main/java";
 					runSubjects.addAll(Main.runSubjects(jss, bin, src,
 							timelimit, "BEFORE", "AFTER"));
-					 bin = "bin";
-					 src = "src";
-					  runSubjects.addAll(Main.runSubjects(checkstyle, bin,
-					 src,
-					  timelimit, "Source", "OO"));
-					 runSubjects.addAll(Main.runSubjects(checkstyle, bin, src,
-					 timelimit, "OO", "AO"));
-					 runSubjects.addAll(Main.runSubjects(checkstyle, bin, src,
-					 timelimit, "Source", "AO"));
-					 // printResults(runSubjects);
+					bin = "bin";
+					src = "src";
+					runSubjects.addAll(Main.runSubjects(checkstyle, bin, src,
+							timelimit, "OO", "AO"));
+					runSubjects.addAll(Main.runSubjects(checkstyle, bin, src,
+							timelimit, "Source", "AO"));
+					// printResults(runSubjects);
 					results.put(timelimit, runSubjects);
 
 				}
@@ -454,6 +494,14 @@ public class Main {
 					results.put(timelimit, runSubjects);
 					printResults(runSubjects);
 				}
+				break;
+			case 8:
+				double timelimit = 1;
+				String bin = "bin";
+				String src = "src";
+				List<Result> runSubjects = Main.runSubjects(motivating, bin,
+						src, timelimit, "source", "target");
+				results.put(timelimit, runSubjects);
 				break;
 			default:
 				break;

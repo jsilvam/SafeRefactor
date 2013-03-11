@@ -38,6 +38,8 @@ public class Report implements Serializable {
 	
 	private double totalTime;
 	
+	private double testsThatCoverTheChange;
+	
 	private List<File> generatedTestFiles = new ArrayList<File>();
 	
 	private List<Method> methodsToTest = new ArrayList<Method>();
@@ -166,6 +168,14 @@ public class Report implements Serializable {
 
 	public void setSourceProject(Project sourceProject) {
 		this.sourceProject = sourceProject;
+	}
+
+	public double getTestsThatCoverTheChange() {
+		return testsThatCoverTheChange;
+	}
+
+	public void setTestsThatCoverTheChange(double testsThatCoverTheChange) {
+		this.testsThatCoverTheChange = testsThatCoverTheChange;
 	}
 
 }
