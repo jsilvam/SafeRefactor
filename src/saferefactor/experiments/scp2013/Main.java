@@ -19,7 +19,6 @@ import saferefactor.core.execution.CoverageMeter;
 import saferefactor.core.util.FileUtil;
 import saferefactor.core.util.Project;
 import saferefactor.core.util.ast.Method;
-import saferefactor.ui.SafeRefactorFacade;
 
 public class Main {
 
