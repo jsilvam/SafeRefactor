@@ -121,7 +121,8 @@
 				<formatter type="xml" />
 				<batchtest haltonfailure="no">
 					<fileset dir="${tests.folder}/">
-						<include name="*Test.class" />
+						<!--To check relevant tests, comment next line, and uncomment the following one.-->
+						<include name="*Test.class" />						
 						<!--<include name="${test.name}" />-->
 					</fileset>
 				</batchtest>

@@ -1,4 +1,4 @@
-package saferefactor.ui;
+package saferefactor.experiments.scp2013;
 
 import java.io.File;
 import java.util.List;
@@ -24,7 +24,7 @@ public class SafeRefactorFacade {
 		source.setProjectFolder(sourceFile);
 		source.setBuildFolder(new File(sourceFile, "bin"));
 		source.setSrcFolder(new File(sourceFile, "src"));
-		File libFolder = new File(sourceFile, "lib");	
+		File libFolder = new File(sourceFile, "lib");
 		if (libFolder.exists())
 			source.setLibFolder(libFolder);
 
@@ -39,10 +39,8 @@ public class SafeRefactorFacade {
 		Parameters parameters = new Parameters();
 		parameters.setCompileProjects(false);
 		parameters.setTimeLimit(timelimit);
-		parameters.setEnableOCC(occ);
+		parameters.setEnableImpactAnalysis(occ);
 		parameters.getTestGeneratorParameters().add("--testsperfile=1");
-		
-		
 
 		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
 				parameters);
@@ -58,8 +56,7 @@ public class SafeRefactorFacade {
 					.checkTransformation(
 							"/Users/gustavoas/Downloads/workspace/ferramentaLPSSM/Products/Product2/",
 							"/Users/gustavoas/Downloads/workspace/ferramentaLPSSM/Products/Product5/",
-							"bin", "src/", "lib", false, 10,
-							false);
+							"bin", "src/", "lib", false, 10, false);
 			System.out.println(checkTransformation.isRefactoring());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -81,7 +78,6 @@ public class SafeRefactorFacade {
 		File libFolder = new File(sourceFile, lib);
 		if (libFolder.exists())
 			source.setLibFolder(libFolder);
-		
 
 		Project target = new Project();
 		target.setProjectFolder(targetFile);
@@ -93,20 +89,16 @@ public class SafeRefactorFacade {
 
 		Parameters parameters = new Parameters();
 		parameters.setTimeLimit(timelimit);
-		parameters.setEnableOCC(occ);
+		parameters.setEnableImpactAnalysis(occ);
 		parameters.setCompileProjects(needCompile);
 		parameters.setExecuteTwiceOnSource(true);
 		parameters.setCheckCoverage(true);
-//		parameters.getTestGeneratorParameters().add("--testsperfile=1");
-//		parameters.getTestGeneratorParameters().add("--outputlimit=31");
-		
+		// To check relevant tests, comment next line
+		// parameters.getTestGeneratorParameters().add("--testsperfile=1");
 		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
 				parameters);
 		saferefactor.checkTransformation();
 		result = saferefactor.getReport();
-		
-		
-		
 
 		return result;
 	}

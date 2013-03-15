@@ -120,54 +120,6 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 		if (!declaringClass.containsModifiers(Modifier.PUBLIC))
 			return true;
 
-		// TODO hack to avoid classes in CheckStyle plugin that stop test
-		// generation
-		if (declaringClass
-				.getClassName()
-				.equals("com.atlassw.tools.eclipse.checkstyle.util.table.EnhancedCheckBoxTableViewer"))
-			return true;
-
-		if (declaringClass
-				.getClassName()
-				.equals("com.atlassw.tools.eclipse.checkstyle.util.table.EnhancedTableViewer"))
-			return true;
-
-		if (declaringClass
-				.getClassName()
-				.equals("com.atlassw.tools.eclipse.checkstyle.config.configtypes.ConfigurationTypes"))
-			return true;
-
-		if (declaringClass
-				.getClassName()
-				.equals("com.atlassw.tools.eclipse.checkstyle.config.meta.MetadataFactory"))
-			return true;
-
-		if (declaringClass
-				.getClassName()
-				.equals("com.atlassw.tools.eclipse.checkstyle.projectconfig.PluginFilters"))
-			return true;
-
-		if (declaringClass
-				.getClassName()
-				.equals("com.atlassw.tools.eclipse.checkstyle.config.CheckConfigurationFactory"))
-			return true;
-
-		if (declaringClass.getClassName().equals(
-				"com.atlassw.tools.eclipse.checkstyle.util.CheckstyleLog"))
-			return true;
-
-		if (declaringClass
-				.getClassName()
-				.equals("com.atlassw.tools.eclipse.checkstyle.config.savefilter.SaveFilters"))
-			return true;
-
-		if (declaringClass
-				.getClassName()
-				.equals("com.atlassw.tools.eclipse.checkstyle.config.CheckConfigurationFactory"))
-			return true;
-
-		// end hack
-
 		// FIXME check why Design wizard says that this class is public
 		if (declaringClass
 				.getClassName()

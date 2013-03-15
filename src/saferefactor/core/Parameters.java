@@ -12,7 +12,7 @@ public class Parameters {
 	
 	private boolean analyzeChangeMethods = false;
 
-	private boolean enableOCC = false;
+	private boolean enableImpactAnalysis = false;
 	
 	private boolean fork = true;
 	
@@ -108,12 +108,12 @@ public class Parameters {
 		this.analyzeChangeMethods = analyzeChangeMethod;
 	}
 
-	public boolean isEnableOCC() {
-		return enableOCC;
+	public boolean isEnableImpactAnalysis() {
+		return enableImpactAnalysis;
 	}
 
-	public void setEnableOCC(boolean enableOCC) {
-		this.enableOCC = enableOCC;
+	public void setEnableImpactAnalysis(boolean enableImpactAnalysis) {
+		this.enableImpactAnalysis = enableImpactAnalysis;
 	}
 
 	

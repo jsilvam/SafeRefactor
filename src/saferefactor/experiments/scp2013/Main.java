@@ -19,7 +19,6 @@ import saferefactor.core.execution.CoverageMeter;
 import saferefactor.core.util.FileUtil;
 import saferefactor.core.util.Project;
 import saferefactor.core.util.ast.Method;
-import saferefactor.ui.SafeRefactorFacade;
 
 public class Main {
 
@@ -31,7 +30,7 @@ public class Main {
 
 	private static final boolean RUN_METRIC2 = false;
 
-	private static String workspace = "/Users/gustavoas/workspaces/scp/";
+	private static String workspace = "/Users/gustavoas/workspaces/scp2013/";
 
 	private static int numberofexecutions = 1;
 
