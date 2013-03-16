@@ -1,15 +1,15 @@
 10
 
 dir
-1078
+0
 http://spg.dsc.ufcg.edu.br/svn/source/saferefactoraj/files/target/src/org/jhotdraw
 http://spg.dsc.ufcg.edu.br/svn
+add
 
 
 
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
 
 
 
@@ -26,172 +26,136 @@ gustavo
 
 0f13e986-d809-4a31-b782-dbd1014f6ca6
 
-test
-dir
-
 figures.jdo
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-b1f24c6ec8b17a8ad46184998a9f70a5
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+test
+dir
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1705
+add
 
 applet
 dir
+
+
+
+add
 
 framework
 dir
+
+
+
+add
 
 exception
 dir
-
-contrib
-dir
+
+
+
+add
 
 standard
 dir
+
+
+
+add
+
+contrib
+dir
+
+
+
+add
 
 application
 dir
-
-figures
-dir
+
+
+
+add
 
 samples
 dir
+
+
+
+add
+
+figures
+dir
+
+
+
+add
 
 images
 dir
+
+
+
+add
 
 framework.jdo
 file
 
 
 
+add
 
-2012-06-27T15:03:08.000000Z
-ffee21778debf49e47faff4b6195a349
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-329
-
-standard.jdo
-file
-
-
-
-
-2012-06-27T15:03:08.000000Z
-efe0c3951a011c57251846efdf898906
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-792
+has-prop-mods
 
 contrib.jdo
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-0dc44b25366c3b75251e898b9c2655fb
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+standard.jdo
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-779
+has-props
+has-prop-mods
 
 util
 dir
+
+
+
+add
 

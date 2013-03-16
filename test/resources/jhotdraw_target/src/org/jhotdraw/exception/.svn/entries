@@ -1,15 +1,15 @@
 10
 
 dir
-1078
+0
 http://spg.dsc.ufcg.edu.br/svn/source/saferefactoraj/files/target/src/org/jhotdraw/exception
 http://spg.dsc.ufcg.edu.br/svn
+add
 
 
 
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
 
 
 
@@ -31,66 +31,26 @@ file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-f69631fe2bda72fe5a4b1c6d1e59f222
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-488
+has-prop-mods
 
 ExceptionHandler.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-4437a0b7517d04ba9d77d9ebdeaf2e5b
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-78
+has-prop-mods
 

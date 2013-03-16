@@ -1,15 +1,15 @@
 10
 
 dir
-1077
+0
 http://spg.dsc.ufcg.edu.br/svn/source/saferefactoraj/files/source/src/org/jhotdraw/figures
 http://spg.dsc.ufcg.edu.br/svn
+add
 
 
 
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
 
 
 
@@ -31,1188 +31,488 @@ file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-b23ac4cc2cb9bd7bb298538cbd7c6c5f
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3921
+has-prop-mods
 
 AttributeFigure.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-9fd4a554ce116972d2bb4cb41b44d564
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7197
+has-prop-mods
 
 LineConnection.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-e1b8b0679f43cf5ad6dd7570d37d2505
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8839
+has-prop-mods
 
 PolyLineHandle.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-d1f23f4179f14daf01597b2e52cb2a63
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3387
+has-prop-mods
 
 BorderTool.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-66fe1c1c9feba96fe2c81eacc0b565d4
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3643
+has-prop-mods
 
 NullFigure.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-989a96e9fab98f953c6a37cc56fdebb3
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4914
+has-prop-mods
 
 RoundRectangleFigure.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-88a12aa42c49148f575e37857b862c58
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3583
+has-prop-mods
 
 BorderDecorator.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-d9d775e1c32c5cab1258756d6d5a846b
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2649
+has-prop-mods
 
 ChopEllipseConnector.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-b0c77a3f30bb64cf629f3268e1f6c29f
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1168
+has-prop-mods
 
 TextTool.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-b276fc91921c11ac415014d2c8bedc55
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8236
+has-prop-mods
 
 ScribbleTool.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-74cf609922d4da1d0aa9424e76b0b451
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2922
+has-prop-mods
 
 ElbowHandle.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-c0a72f54ea2865f142da899933af2146
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3739
+has-prop-mods
 
 ImageFigure.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-9fb230a08d046e465832e148a0223850
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4066
+has-prop-mods
 
 NullConnector.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-ba35f0c9d2c6745a7fe5be48e0fc7126
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-744
+has-prop-mods
 
 TextFigure.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-6d4c5193750bfbd67572c114e30de864
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-13889
+has-prop-mods
 
 FigureAttributes.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-82c0b9c0f5baf0dfe4c2840a072ba17c
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5799
+has-prop-mods
 
 LineFigure.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-d42bbd548d1bca0374fdd151038bd461
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1528
+has-prop-mods
 
 GroupCommand.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-fb389cf0368f94322ecfc410202da02c
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3344
+has-prop-mods
 
 GroupFigure.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-06ac4fcb47d2fff4f6ba57dde0c5e37a
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2662
-
-NumberTextFigure.java
-file
-
-
-
-
-2012-06-27T14:18:43.000000Z
-b071ece480e77f94bc6635a59953e211
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1910
-
-EllipseFigure.java
-file
-
-
-
-
-2012-06-27T14:18:43.000000Z
-c192bb84a154a21c540f8ae5c6123ac9
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2814
+has-prop-mods
 
 LineDecoration.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-e224df21cf466a4b56fa1de4b01c1259
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+EllipseFigure.java
+file
+
+
+
+add
 
 
 
 
 
+has-props
+has-prop-mods
+
+NumberTextFigure.java
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-1016
+has-props
+has-prop-mods
 
 RadiusHandle.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-8941a04248f2a32055ce0ea2ab86cdd0
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3786
+has-prop-mods
 
 ConnectedTextTool.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-579768e768f92b5d2115687fa2965572
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5913
-
-PolyLineConnector.java
-file
-
-
-
-
-2012-06-27T14:18:43.000000Z
-f5a1f3e23f9361940c6dd042ccd6e1c4
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2068
-
-RectangleFigure.java
-file
-
-
-
-
-2012-06-27T14:18:43.000000Z
-3f553e68b0239828a5c79f694eeb5b0f
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2338
+has-prop-mods
 
 InsertImageCommand.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-0afb291c7e0e2bce0aaaa58b95f71048
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+RectangleFigure.java
+file
+
+
+
+add
 
 
 
 
 
+has-props
+has-prop-mods
+
+PolyLineConnector.java
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-3551
+has-props
+has-prop-mods
 
 ArrowTip.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-339602c7fb8b57808ad7424942583228
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3698
+has-prop-mods
 
 GroupHandle.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-34770c3d57d3b80a770eaa7cb0a32f19
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-966
+has-prop-mods
 
 FontSizeHandle.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-dae0dad4fe4d45a4584180405770b097
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3615
+has-prop-mods
 
 PolyLineLocator.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-dd8ede44c25db2f1c8e83f89b0ee043a
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1063
+has-prop-mods
 
 AbstractLineDecoration.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-ead5a6b6c850fdc6b5d6cec7a71f6d6e
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3829
+has-prop-mods
 
 ElbowConnection.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-d79ea652679998cb16786cfce99a77f6
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2659
+has-prop-mods
 
 PolyLineFigure.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-4d3a10c5c77c47f9957c67b1e3119c04
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10517
+has-prop-mods
 
 UngroupCommand.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-49a4387b9c9f2b5c2f85e8cc795d2409
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3168
+has-prop-mods
 

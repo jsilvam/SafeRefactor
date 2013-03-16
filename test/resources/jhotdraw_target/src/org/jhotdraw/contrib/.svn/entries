@@ -1,15 +1,15 @@
 10
 
 dir
-1078
+0
 http://spg.dsc.ufcg.edu.br/svn/source/saferefactoraj/files/target/src/org/jhotdraw/contrib
 http://spg.dsc.ufcg.edu.br/svn
+add
 
 
 
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
 
 
 
@@ -31,1605 +31,677 @@ file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-75368acc0441ed06699a5abf70e0d83b
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2651
+has-prop-mods
 
 Layoutable.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-2ab097797d51222b9c8709a169eda57b
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-971
+has-prop-mods
 
 FloatingTextArea.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-3904369d208204804d64a0d9c36dfe87
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3450
+has-prop-mods
 
 JPanelDesktop.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-975fb8ad480dac6ba27dcd1272a44d0d
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3458
+has-prop-mods
 
 ComponentFigure.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-0d6cc23f947b49e22dae1338fc66251a
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3194
+has-prop-mods
 
 NestedCreationTool.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-0e2f7b3974cf7db5f6d103d47d5a1009
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2256
+has-prop-mods
 
 Desktop.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-73618b016fafc78158584b5448471124
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1222
+has-prop-mods
 
 DesktopEvent.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-410e1e58f61419a7c59d48fe04d34cf7
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1518
+has-prop-mods
 
 ChopPolygonConnector.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-2b5dae886e41a0e2357621363dc7566e
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1047
+has-prop-mods
 
 DiamondFigure.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-8e87dec5b2770ff5569f976ba34f9c95
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1787
+has-prop-mods
 
 SimpleLayouter.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-b3f4a4b7f9571c4c66dfd68e2f467845
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3360
+has-prop-mods
 
 Helper.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-b838573464197c42013097824bc78bcd
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1378
+has-prop-mods
 
 html
 dir
+
+
+
+add
 
 PolygonTool.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-bdc4f31df2ad9fd5d95d00c90e379171
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3442
+has-prop-mods
 
 MiniMapView.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-a67be7254171113a1779c5bac1f2293f
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8575
+has-prop-mods
 
 CompositeFigureCreationTool.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-d66da1a1ba6036ebf65224ff9c62e9dc
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2273
-
-PolygonFigure.java
-file
-
-
-
-
-2012-06-27T15:03:07.000000Z
-eec76e9fceb6e6ffcda0d5bc1c08d0df
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11646
+has-prop-mods
 
 CommandCheckBoxMenuItem.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-97f7389f755e69d6902dc71d61a72ebb
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+PolygonFigure.java
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2444
+has-props
+has-prop-mods
 
 ClippingUpdateStrategy.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-e2b6f656410dcb77d913f2571195dccc
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1810
+has-prop-mods
 
 WindowMenu.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-b27b7c45ceab5b7932eb054cdc2ef52f
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3572
+has-prop-mods
 
 ContribHandler.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-61818f507504a4fd79752786573e95b4
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-339
+has-prop-mods
 
 PopupMenuFigureSelection.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-a89c1843aa9c7b0e64cb215927c67013
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1095
-
-SplitPaneDrawApplication.java
-file
-
-
-
-
-2012-06-27T15:03:07.000000Z
-af18cea75b12117b1dddaa5037f57245
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1052
+has-prop-mods
 
 TriangleRotationHandle.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-4931f15e997b9fa89f2e420595782dec
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+SplitPaneDrawApplication.java
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4652
+has-props
+has-prop-mods
 
 PolygonHandle.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-e6859fcd1e963454d3971b6dc711af28
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2827
-
-zoom
-dir
+has-prop-mods
 
 Layouter.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-439eda88916ec4ca8e84d75dcff785b2
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+zoom
+dir
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2249
+add
 
 JScrollPaneDesktop.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-f8e97da9d5d0b216df7d7c34a15990b3
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2642
-
-TriangleFigure.java
-file
-
-
-
-
-2012-06-27T15:03:07.000000Z
-4b27e2f3d231d5f9c8979daae029aa3e
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4520
+has-prop-mods
 
 MDIDesktopPane.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-7b9bdd9459a356e66bf84b166f505ea1
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+TriangleFigure.java
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-19087
+has-props
+has-prop-mods
 
 SplitConnectionTool.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-e79d9054404288298af68a17d4281b29
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3112
+has-prop-mods
 
 MDI_DrawApplication.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-f4e5443c326bafcbc434c6695d240e55
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4237
+has-prop-mods
 
 CTXWindowMenu.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-af07c2a86db843692ab794fec424f6b2
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5773
+has-prop-mods
 
 PolygonScaleHandle.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-3589272a4080bab0633b08e0e183ec3b
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5221
+has-prop-mods
 
 TextAreaTool.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-e38f1cfad0555eb93836e558d0f74c8d
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11973
+has-prop-mods
 
 CommandHolder.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-71daa5881a187ddabfa898000a8b1d7e
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-979
+has-prop-mods
 
 SVGDrawApp.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-914e2e8574ee43c7358cb6e6458c8ef2
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1499
+has-prop-mods
 
 CustomSelectionTool.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-0d29e6175e3d8e5ebab63b4e5f5de901
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6391
+has-prop-mods
 
 TextAreaFigure.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-592576f40e5e685093769a26b5df0cc7
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-26093
+has-prop-mods
 
 GraphicalCompositeFigure.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-dc6e21c109442c517f8e07831a909d05
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-11850
+has-prop-mods
 
 DesktopListener.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-6177568bdf944566a5ec05e25388fbab
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-671
+has-prop-mods
 
 CTXCommandMenu.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-05e363a4bbbae9b66870e183c164c7fb
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5056
+has-prop-mods
 
 CommandMenuItem.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-3cd4b6278c13b2fcc163b45308f10c85
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2145
+has-prop-mods
 
 dnd
 dir
+
+
+
+add
 
 StandardLayouter.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-e0755a354800aeb7e699b4d34a68dd3d
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4360
+has-prop-mods
 
 AutoscrollHelper.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-5dcb5dae95d3d4bbcc9f76850a76348f
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2712
+has-prop-mods
 
 SplitPaneDesktop.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-4563bb9cee4b7782b84bb91332d091f9
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4266
+has-prop-mods
 
 DesktopEventService.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-b46df4be901bd13eeec01194e59b710b
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5687
+has-prop-mods
 
 SVGStorageFormat.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-a39cce10c7e2cb0daf38d9232e19a3da
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3224
+has-prop-mods
 
 CustomToolBar.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-a7f9ebd20c075ab52292cc880e92309b
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2984
+has-prop-mods
 

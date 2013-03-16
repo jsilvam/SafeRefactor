@@ -1,15 +1,15 @@
 10
 
 dir
-1078
+0
 http://spg.dsc.ufcg.edu.br/svn/source/saferefactoraj/files/target/src/org/jhotdraw/application
 http://spg.dsc.ufcg.edu.br/svn
+add
 
 
 
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
 
 
 
@@ -31,66 +31,26 @@ file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-d99c4246114a4aacda5056e5d75ef2b0
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-35650
+has-prop-mods
 
 ApplicationHandler.java
 file
 
 
 
+add
 
-2012-06-27T15:03:07.000000Z
-bca0679b00d774c202b897fd2dd27902
-2012-06-27T15:17:27.348657Z
-1078
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-433
+has-prop-mods
 

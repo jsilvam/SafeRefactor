@@ -26,7 +26,7 @@ import saferefactor.core.util.ast.ConstructorImp;
 import saferefactor.core.util.ast.MethodImp;
 
 public class SafeRefactorImp extends SafeRefactor {
-	
+
 	public SafeRefactorImp(Project source, Project target) throws Exception {
 		super(source, target);
 		init();
@@ -40,55 +40,62 @@ public class SafeRefactorImp extends SafeRefactor {
 
 	private void init() throws Exception {
 
-		//define tmp folder
+		// define tmp folder
 		int counter = 0;
-		String tmpFolder2 = Constants.SAFEREFACTOR_DIR + "SafeRefactor" + counter + Constants.SEPARATOR;
+		String tmpFolder2 = Constants.SAFEREFACTOR_DIR + "SafeRefactor"
+				+ counter + Constants.SEPARATOR;
 		File tmpFile = new File(tmpFolder2);
 		while (tmpFile.exists()) {
 			counter++;
-			tmpFolder2 = Constants.SAFEREFACTOR_DIR + "SafeRefactor" + counter + Constants.SEPARATOR;
+			tmpFolder2 = Constants.SAFEREFACTOR_DIR + "SafeRefactor" + counter
+					+ Constants.SEPARATOR;
 			tmpFile = new File(tmpFolder2);
 		}
 		tmpFile.mkdir();
 		setTmpFolder(tmpFolder2);
-		
-		//create tmp folder
-		setTestPath(new File(tmpFile,Constants.TESTS_DIR));
+
+		// create tmp folder
+		setTestPath(new File(tmpFile, Constants.TESTS_DIR));
 		getTestPath().mkdirs();
-		
+
 		logger = Logger.getLogger("SafeRefactorLogger");
-		FileHandler fh = new FileHandler(getTestPath().getAbsolutePath() + Constants.SEPARATOR + "log_saferefactor");
+		FileHandler fh = new FileHandler(getTestPath().getAbsolutePath()
+				+ Constants.SEPARATOR + "log_saferefactor");
 		fh.setFormatter(new SimpleFormatter());
 		logger.addHandler(fh);
 
-		analyzer = new ASMBasedAnalyzer(this.source, this.target,this.tmpFolder);
-//		analyzer = new ReflectionBasedAnalyzer(this.source, this.target,this.tmpFolder);
+		analyzer = new ASMBasedAnalyzer(this.source, this.target,
+				this.tmpFolder);
+		// analyzer = new ReflectionBasedAnalyzer(this.source,
+		// this.target,this.tmpFolder);
 
-		generator = new RandoopAntAdapter(this.source,this.getTestPath().getAbsolutePath());
+		generator = new RandoopAntAdapter(this.source, this.getTestPath()
+				.getAbsolutePath());
 
 		sourceCompiler = new AntJavaCompiler(this.tmpFolder);
 		targetCompiler = new AntJavaCompiler(this.tmpFolder);
 		sourceTestCompiler = new AntJavaCompiler(this.tmpFolder);
 		targetTestCompiler = new AntJavaCompiler(this.tmpFolder);
 
-		testSourceTask = new AntJunitRunner(this.source,this.tmpFolder);
-		testTargetTask = new AntJunitRunner(this.target,this.tmpFolder);
+		testSourceTask = new AntJunitRunner(this.source, this.tmpFolder);
+		testTargetTask = new AntJunitRunner(this.target, this.tmpFolder);
 
 		if (this.parameters.isExecuteTwiceOnSource()) {
-			testAgainSourceTask = new AntJunitRunner(this.source,this.tmpFolder);
+			testAgainSourceTask = new AntJunitRunner(this.source,
+					this.tmpFolder);
 		}
 
-		testTargetTask = new AntJunitRunner(this.target,this.tmpFolder);
-		sourceReport = new File(this.getTestPath(),SafeRefactor.SOURCE_REPORT);
-		sourceSecondReport = new File(this.getTestPath(),SafeRefactor.SOURCE_SECOND_REPORT);
-		targetReport = new File(this.getTestPath(),SafeRefactor.TARGET_REPORT);
-		
+		testTargetTask = new AntJunitRunner(this.target, this.tmpFolder);
+		sourceReport = new File(this.getTestPath(), SafeRefactor.SOURCE_REPORT);
+		sourceSecondReport = new File(this.getTestPath(),
+				SafeRefactor.SOURCE_SECOND_REPORT);
+		targetReport = new File(this.getTestPath(), SafeRefactor.TARGET_REPORT);
+
 		comparator = new ComparatorImp(sourceReport.getAbsolutePath(),
 				targetReport.getAbsolutePath());
-		
-		
-		bin_source = new File(getTestPath(),SafeRefactor.TESTS_BIN_SOURCE);
-		bin_target = new File(getTestPath(),SafeRefactor.TESTS_BIN_TARGET);
+
+		bin_source = new File(getTestPath(), SafeRefactor.TESTS_BIN_SOURCE);
+		bin_target = new File(getTestPath(), SafeRefactor.TESTS_BIN_TARGET);
 		meter = new CoverageMeter(this.target, bin_source.getAbsolutePath());
 	}
 
@@ -109,9 +116,9 @@ public class SafeRefactorImp extends SafeRefactor {
 			report.setNumberTests(comparatorReport.getTotalTests());
 			report.setMethodsToTest(this.methodsToTest);
 			report.setSourceProject(this.target);
-			File tmp = new File(tmpFolder,"tests/");
+			File tmp = new File(tmpFolder, "tests/");
 			File[] testFiles = tmp.listFiles(new FileFilter() {
-				
+
 				@Override
 				public boolean accept(File file) {
 					if (file.getName().equals("RandoopTest.java"))

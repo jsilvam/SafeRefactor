@@ -1,15 +1,15 @@
 10
 
 dir
-1077
+0
 http://spg.dsc.ufcg.edu.br/svn/source/saferefactoraj/files/source/src/org/jhotdraw/images
 http://spg.dsc.ufcg.edu.br/svn
+add
 
 
 
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
 
 
 
@@ -31,2344 +31,964 @@ file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-3aa47e91220c17145e371926858bb167
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-152
+has-prop-mods
 
 TOFRONT1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-b823f5e28c2194d38244e8df3ebdb908
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-196
+has-prop-mods
 
 TOFRONT2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-30828191f22c40b3123151284d585bb9
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-185
-
-ELLIPSE1.gif
-file
-
-
-
-
-2012-06-27T14:18:43.000000Z
-8fe0655874ae37f8e3157fc1b74279b9
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-199
-
-TOFRONT3.gif
-file
-
-
-
-
-2012-06-27T14:18:43.000000Z
-e0b3aeb767904fdb5d4dc2a0137f9637
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-197
+has-prop-mods
 
 RECT1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-06921b1902bdaff9f0d77e5903ede91d
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-190
+has-prop-mods
 
-RECT2.gif
+TOFRONT3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-adf15ae0ee666476aef867cc6790ca8c
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+ELLIPSE1.gif
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-178
+has-props
+has-prop-mods
 
 ELLIPSE2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-959f9f97c36090b9b1a730aa18805a89
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-193
+has-prop-mods
 
-RECT3.gif
+RECT2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-1947f4040746a9bbd9bf838978d353b9
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-190
+has-prop-mods
 
 ELLIPSE3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-769baad1e867831fe54e5d595d4f98f3
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-202
+has-prop-mods
 
-BORDDEC1.gif
+RECT3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-e95e5112c085888a45b70f1826cd8f2d
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-173
+has-prop-mods
 
 URL1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-39cc455eef5d46fb188fac31138f83fb
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-222
+has-prop-mods
 
-BORDDEC2.gif
+BORDDEC1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-6503dc6c9e631053e75bec85daecd372
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-170
+has-prop-mods
 
 URL2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-379eeb5ff4a844284e310a1644db87e0
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+BORDDEC2.gif
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-216
+has-props
+has-prop-mods
 
 URL3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-e2750071d1801a9b5aabf1dadf5a632a
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-230
+has-prop-mods
 
 BORDDEC3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-da5957b13fe942314d582f4b092c345d
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-186
+has-prop-mods
 
 TEXTAREA1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-e40c8804ece02474234cffa6feceb9cb
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-159
+has-prop-mods
 
 TEXTAREA2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-327074372adc672bbcd137492a6291f1
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-152
+has-prop-mods
 
 RRECT1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-fa0a0855f72fc1ebc4f41710a8e62a2e
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-191
+has-prop-mods
 
 TEXTAREA3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-c801aeab2858609cf1167d1a9bd99353
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-160
+has-prop-mods
 
 RRECT2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-939d0050609d581c2f0f4bbd6fa167d4
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-182
+has-prop-mods
 
 SCRIBBL1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-182090df4b1174a59f9c4ff5ae8cb4b8
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-178
+has-prop-mods
 
 SCRIBBL2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-5b0a1b5967641dfb73500f317886d676
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-169
+has-prop-mods
 
 RRECT3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-047c6978583f522336846a48e77a6abf
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-190
+has-prop-mods
 
 ERASER1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-c9601a0c33907e0f6104ef60e3aaca1a
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-183
+has-prop-mods
 
 ERASER2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-146e6a295a306b33c6f777303cecab4a
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-173
+has-prop-mods
 
 SCRIBBL3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-1e29f449807c8f3b9327119e33e74b0a
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-181
+has-prop-mods
 
 ERASER3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-94a3258ea9049d7bf8e38889c6660fbd
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-179
+has-prop-mods
 
 TEMPLAT_.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-dea35162d2473d44070066024fcfa781
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-151
+has-prop-mods
 
 DIAMOND1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-fc5874a01710b4c386d0d7f03aacaf52
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-192
+has-prop-mods
 
 DIAMOND2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-a9507086bbad3252f86e8c4840131583
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-180
+has-prop-mods
 
 DIAMOND3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-0c20cf02be51a11702453c21aac41e75
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-187
+has-prop-mods
 
 ATEXT1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-7e4891cc46219b54aa81e6634ca2838a
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-195
+has-prop-mods
 
 ATEXT2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-97c7050c40e947aeb7b83032711bf9b6
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-185
-
-ATEXT3.gif
-file
-
-
-
-
-2012-06-27T14:18:43.000000Z
-28a31f1526e3a281a9a98b0d86e5a24b
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-191
+has-prop-mods
 
 POLYGON1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-cf370e3d3bddf73c71d477b56ad495dc
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+ATEXT3.gif
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-193
+has-props
+has-prop-mods
 
 POLYGON2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-5ce0547a8c8b7229d2dff1cedc1b5265
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-179
+has-prop-mods
 
 POLYGON3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-8d15963d84af9020118d8efe667afc48
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-189
+has-prop-mods
 
 CONN1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-b20a58868c85316cf51aac9ae755e192
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-171
+has-prop-mods
 
 CONN2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-3202cf2dd52be9677faf91bb977ba210
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-161
+has-prop-mods
 
 CONN3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-f3c94867cfce47c1d6f8fada7c6c5b85
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-170
+has-prop-mods
 
 TOBACK1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-66c073e572b380c882073901746af11c
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-193
+has-prop-mods
 
 TOBACK2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-237a45801eb99978aeeeec90df3893f6
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-184
+has-prop-mods
 
 TOBACK3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-974be1df3aab479457d197bd9daa1b64
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-195
+has-prop-mods
 
 PERT1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-4dde144e181648c23c9f6def98fa6ba8
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-186
+has-prop-mods
 
 PERT2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-e949c122bce934edfe921c32e7c065cf
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-178
+has-prop-mods
 
 PERT3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-699c8d1b2a94da6fdc2b37d0e6cecbfa
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-188
+has-prop-mods
 
 TEXT1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-3215a41335bd07ba219187583e96e07d
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-193
+has-prop-mods
 
 TEXT2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-4c9f81d99f0d7558f2967838666f273b
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-181
+has-prop-mods
 
 TEXT3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-fa564a5f9f5fea1ebabf2b42909d2db9
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-186
+has-prop-mods
 
 LINE1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-4b473e1f4442a51cb9c509b623a235cf
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-165
+has-prop-mods
 
 LINE2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-dee894e3843195c74dbc76cba12ed028
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-158
+has-prop-mods
 
 LINE3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-ec1bdc9111bb607c270e7d6f46b62075
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-164
+has-prop-mods
 
 HTMLAREA1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-317dbed13b03290e6359dd12bbd96fa6
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-194
+has-prop-mods
 
 HTMLAREA2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-2e06aae60d8900a88781467b0ca066a9
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-190
+has-prop-mods
 
 HTMLAREA3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-8a18a53ae45a433f9482804684b9f115
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-203
+has-prop-mods
 
 TRIANGLE1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-47f95c01240d7e65e5a340b85f40e3bf
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-192
+has-prop-mods
 
 TRIANGLE2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-eb75793272eab77bb799a52fe9472439
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-181
+has-prop-mods
 
 TRIANGLE3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-5558e0cb70b4d4565bb255cdf6934679
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-191
+has-prop-mods
 
 OCONN1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-88634b983caa2d4b8c05460a94e96229
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-172
+has-prop-mods
 
 OCONN2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-a4cd1cfc4220d9a98a1e3ba73c070382
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-161
+has-prop-mods
 
 OCONN3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-c82e77b8822ac7be19409dbe777e26b6
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-170
+has-prop-mods
 
 pspbrwse.jbf
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-938e3e363867db31f87cca296bfd9aa9
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-21230
+has-prop-mods
 
 SEL1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-cbba609ed3042ec887d3572fdd99333b
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-186
+has-prop-mods
 
 ZOOM1.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-4714a0c5cff8a75a4246e7f39580e61b
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-149
+has-prop-mods
 
 SEL2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-6aa37092d95ddaa9a3754ea01d6c2945
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-182
+has-prop-mods
 
 SEL3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-fd124f32e59a8a46ed6ac6232253e941
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-192
+has-prop-mods
 
 ZOOM2.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-70816fb7fdb107d2bb5acbaa932023da
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-130
+has-prop-mods
 
 ZOOM3.gif
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-09973e843c003b919673be973a3331e2
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-949
+has-prop-mods
 

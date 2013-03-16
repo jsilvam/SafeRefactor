@@ -1,15 +1,15 @@
 10
 
 dir
-1077
+0
 http://spg.dsc.ufcg.edu.br/svn/source/saferefactoraj/files/source/src/org/jhotdraw/standard
 http://spg.dsc.ufcg.edu.br/svn
+add
 
 
 
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
 
 
 
@@ -31,2174 +31,894 @@ file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-f17b0ce306ae2367703599a2cf4e613c
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1396
+has-prop-mods
 
 AbstractCommand.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-8f28de23983c089dbb55da27b29bfde6
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7284
+has-prop-mods
 
 FigureAndEnumerator.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-8450676e13fb1fcb0c63d7786675b80e
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1488
+has-prop-mods
 
 NullTool.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-1e852e3f01b07494f7a3ac3aaaf8154e
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-986
+has-prop-mods
 
 DuplicateCommand.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-d94388598969694f1d483699e3f0fdc2
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1624
+has-prop-mods
 
 ConnectionHandle.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-de8733eedea3840f12bf64585bee83a0
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5491
+has-prop-mods
 
 BringToFrontCommand.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-8e07e55fde1e4c6fcd08d5827478d4fc
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1756
+has-prop-mods
 
 ChopBoxConnector.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-775cf027eff8d1bf783fc16b29e4ef40
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1975
-
-LocatorHandle.java
-file
-
-
-
-
-2012-06-27T14:18:44.000000Z
-d3241bfb2d2cbc3369dd019a9595aedd
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2478
+has-prop-mods
 
 PeripheralLocator.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-f97de61e19fc0ed940f3ecacfcdb263b
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+LocatorHandle.java
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2144
+has-props
+has-prop-mods
 
 TextHolder.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-e920277ae7c38ebe995e4aa9d7381023
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1816
-
-SelectionTool.java
-file
-
-
-
-
-2012-06-27T14:18:44.000000Z
-e4861cf5736ee221a35df6ee298c38be
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4156
+has-prop-mods
 
 FigureEnumerator.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-86049d5f989f21d0a14f31b0c37f0226
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+SelectionTool.java
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2230
+has-props
+has-prop-mods
 
 DecoratorFigure.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-5eb5b1ddf28eaf2a749d97592f34c24f
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-8512
+has-prop-mods
 
 FigureTransferCommand.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-bb7b0a9a996318f746fd9a288df4070f
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2082
+has-prop-mods
 
 SingleFigureEnumerator.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-73ad6fad8e2b9c42973317588b23b66e
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1764
+has-prop-mods
 
 FastBufferedUpdateStrategy.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-739f4d2f40a47e8359f9331b2bd7d7ce
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3571
+has-prop-mods
 
 AWTCursor.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-202213bb675ec771d79acd946173460e
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1147
+has-prop-mods
 
 HandleEnumerator.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-7df4523310a37a7af9f3b261c7327949
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2632
+has-prop-mods
 
 CompositeFigure.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-a433e4746fa720231f3ef52ab44a8544
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-19570
+has-prop-mods
 
 HandleTracker.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-a5bb8fd1933372f0d64695f05b425a49
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1435
+has-prop-mods
 
 ChangeConnectionEndHandle.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-f51078ad585eb7a0f2c951a8eaa35864
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2163
+has-prop-mods
 
 CopyCommand.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-a5aaf18a26eb4e2f48631b4f796fb4ba
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1059
+has-prop-mods
 
 ToolButton.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-c3dd4239141abc8e2272064f6e249887
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3950
+has-prop-mods
 
 StandardDrawing.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-a8b1993d8265946b0dddc1eb192b3aef
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5963
+has-prop-mods
 
 ChangeConnectionHandle.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-1a39296fe5596aed3df4cfeb75cccc0a
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7444
+has-prop-mods
 
 ToggleGridCommand.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-4ba000a6645338df4c55d857e934aa43
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1237
+has-prop-mods
 
 AlignCommand.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-6efca61b7051bacc24eed7dcf3a79471
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6013
+has-prop-mods
 
 DragTracker.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-daab41961a535663a9489aea505acd09
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4817
+has-prop-mods
 
 CutCommand.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-cc80698dbddd7c6b2f0e60755d3ad8d3
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5014
-
-RelativeLocator.java
-file
-
-
-
-
-2012-06-27T14:18:44.000000Z
-96ea37e4358174d93c612cf108cf5b53
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2792
+has-prop-mods
 
 ChangeConnectionStartHandle.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-ecb1d11a82994201816bc6f33aa3e808
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+RelativeLocator.java
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2225
+has-props
+has-prop-mods
 
 DeleteCommand.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-5c2848caac4dafc236a2df635bcf354b
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3398
+has-prop-mods
 
 CreationTool.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-d6a77267fdbf99cc4c7ff30301bdec39
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6398
+has-prop-mods
 
 StandardDrawingView.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-af80032f03aba5985feccc640ac12f21
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-29929
-
-StandardFigureSelection.java
-file
-
-
-
-
-2012-06-27T14:18:44.000000Z
-44c5ab34dcc45af85d0d2b6b97759196
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2638
+has-prop-mods
 
 ChangeAttributeCommand.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-b8cad978ecf18ff2f160542591d452f1
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+StandardFigureSelection.java
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4273
+has-props
+has-prop-mods
 
 PasteCommand.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-2f92cc6d662832ba4a18f49b6616ffe6
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3084
+has-prop-mods
 
 AbstractConnector.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-9c6f02e9b7643448d914d5d2dbe358a8
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3124
-
-ReverseFigureEnumerator.java
-file
-
-
-
-
-2012-06-27T14:18:44.000000Z
-bd46f69fdd795f050645e9d60bc65a84
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1681
+has-prop-mods
 
 SimpleUpdateStrategy.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-d5b2850d5277ce2a79ea4b36f3705087
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+ReverseFigureEnumerator.java
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1029
+has-props
+has-prop-mods
 
 HandleAndEnumerator.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-5f8e1ec36b8e7d9c656d6b9dac3f9c5d
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1399
+has-prop-mods
 
 NullHandle.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-7582cc1c42b55f9e7f1dd2ad9c6dafda
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1280
+has-prop-mods
 
 AbstractLocator.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-a2fb3d9e6a32a7b891845172136ae9ea
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1265
+has-prop-mods
 
 InsertIntoDrawingVisitor.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-c64c7aeb7424ecb971444b22213ad203
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1564
-
-NullPainter.java
-file
-
-
-
-
-2012-06-27T14:18:44.000000Z
-9e3cef47c3eca5f1cbe9460b47176d88
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1123
+has-prop-mods
 
 GridConstrainer.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-77e65b6264e2923809762303c84058fb
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+NullPainter.java
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1293
+has-props
+has-prop-mods
 
 AbstractTool.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-2be2a3db684837fdac7cdff959c349b2
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10554
+has-prop-mods
 
 AbstractFigure.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-147738a1361c92690336b90f3c3bf70c
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12408
+has-prop-mods
 
 FigureChangeEventMulticaster.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-ac3fa5df94282399adbbbe7483978ca7
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2903
+has-prop-mods
 
 SelectAllCommand.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-b3b2c33cb708562e530ffe4919054865
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2352
+has-prop-mods
 
 BufferedUpdateStrategy.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-dc899845468366cb0ff5ba8e5d721ed8
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1579
-
-OffsetLocator.java
-file
-
-
-
-
-2012-06-27T14:18:44.000000Z
-93cb2b30bcd0e771abe62f85e6b6aaee
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1735
+has-prop-mods
 
 QuadTree.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-0e80946c7771a8310c2c9b3c63a54cdb
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+OffsetLocator.java
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7311
+has-props
+has-prop-mods
 
 ActionTool.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-fb9ba2a87a171f4d523ac5ee81e321b6
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1231
-
-BoxHandleKit.java
-file
-
-
-
-
-2012-06-27T14:18:44.000000Z
-433e6220c9df6cd0ada1f981b2fa8977
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7158
+has-prop-mods
 
 SendToBackCommand.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-ae567c6d7d05c902be41000ad15afea2
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+BoxHandleKit.java
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3352
+has-props
+has-prop-mods
 
 LocatorConnector.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-c7f92b6d6182beca562a33bbd7215a70
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2457
+has-prop-mods
 
 AbstractHandle.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-8056b0ad068e007f69d42a8b5f791453
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-5143
+has-prop-mods
 
 NullDrawingView.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-ba9754f2779bfe3d69cdab5d3f2647d1
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-9777
+has-prop-mods
 
 DeleteFromDrawingVisitor.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-21ae0bbfcb3d343f63045734a201b7a2
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1655
+has-prop-mods
 
 SelectAreaTracker.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-a7523278434e41cf7fff1d81157e2d88
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3069
+has-prop-mods
 
 FigureChangeAdapter.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-cb05da76d9cc3fe8f52fe2ff57e6a32b
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1133
+has-prop-mods
 
 ConnectionTool.java
 file
 
 
 
+add
 
-2012-06-27T14:18:44.000000Z
-fdcdb1d0bba09dca06e90f74f2c333c4
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-12219
+has-prop-mods
 

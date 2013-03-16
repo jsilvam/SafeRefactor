@@ -1,15 +1,15 @@
 10
 
 dir
-1077
+0
 http://spg.dsc.ufcg.edu.br/svn/source/saferefactoraj/files/source/src/org/jhotdraw/contrib/html
 http://spg.dsc.ufcg.edu.br/svn
+add
 
 
 
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
 
 
 
@@ -31,1086 +31,446 @@ file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-944de7460391fa002c1ee4e90428c49c
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3382
+has-prop-mods
 
 HTMLColorContentProducer.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-4946af9c56043a9a9e5eb993ec118632
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1840
+has-prop-mods
 
 AttributeFigureContentProducer.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-23b6ef12405782d5bc87d14d1ccecd21
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2153
+has-prop-mods
 
 AttributeContentProducerContext.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-3c84b32e981832709c1832d9362fa46f
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-969
+has-prop-mods
 
 ContentProducerRegistry.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-64ca9b00b14ea4863cbf15cff4089d52
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-10123
+has-prop-mods
 
 HTMLContentProducerContext.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-2a5ab9d012df15347aafff33fd671397
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-714
+has-prop-mods
 
 StandardDisposableResourceManager.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-214f8571f9df2b332e7a7b1319d3008b
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3446
+has-prop-mods
 
 ResourceDisposabilityStrategy.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-8bd6dbe75c0e098b8af6df82399fbf18
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1808
+has-prop-mods
 
 FigureDataContentProducer.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-529e66868cfaad917e44935929f73fb7
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2560
+has-prop-mods
 
 RoundRectangleGeometricAdapter.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-4d2ac70874baec5ea4a23c45fe1cb9ca
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1633
+has-prop-mods
 
 ColorContentProducer.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-e84d10445ca581bcc3e0e16037541f0b
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3033
+has-prop-mods
 
 DiamondFigureGeometricAdapter.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-41b6491198c5e5cd8833a469069f502b
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1329
+has-prop-mods
 
 ContentProducer.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-6aa84fb6b8fa116cf44ca83ad08ef30f
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3173
+has-prop-mods
 
 ContentProducerContext.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-23d40eb94e5748937a2c795f4fe32006
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-781
+has-prop-mods
 
 FigureContentProducerContext.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-bfd1b0eafb32827c69f43e8381ce115d
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1016
+has-prop-mods
 
 DisposableResourceManager.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-978ad98ea64d7f45d43a59d3eff4978b
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2221
-
-HTMLLayouter.java
-file
-
-
-
-
-2012-06-27T14:18:43.000000Z
-05d45be47ea4ed73a35c40fe17501e1c
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3745
+has-prop-mods
 
 PolygonFigureGeometricAdapter.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-2e9c04d64542a92731042ca75edfbe82
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+HTMLLayouter.java
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1501
+has-props
+has-prop-mods
 
 ETSLADisposalStrategy.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-b20a7a607f9f1cef8718867bfc2659dc
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-6749
+has-prop-mods
 
 DisposableResourceHolder.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-e29ad2a7c61047e057cf0ce8d7346604
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3722
+has-prop-mods
 
 ResourceManagerNotSetException.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-c0d08d2cb588276909c1827e890acd81
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-704
+has-prop-mods
 
 EllipseFigureGeometricAdapter.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-bd71c541852bf20e9e5083f11b3669f8
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1497
+has-prop-mods
 
 HTMLTextAreaTool.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-ed67e27e80e372a9940710ad6bdd992f
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1557
+has-prop-mods
 
 AbstractContentProducer.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-1e49cf2461fe2afa054f0d9d31ff35e9
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1389
+has-prop-mods
 
 HTMLContentProducer.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-2056930d1d280011bd5d150d872acc6c
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2816
+has-prop-mods
 
 HTMLTextAreaFigure.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-d6e37ef3ff1538cddd50c14f6cfe75ae
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-37915
+has-prop-mods
 
 TriangleFigureGeometricAdapter.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-b37ca789df4f155f6a3fcf3416d038ed
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1337
+has-prop-mods
 
 StandardDisposableResourceHolder.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-1ffe006d3fbb2b82ff78f06e33d858ff
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4123
-
-DisposableResourceManagerFactory.java
-file
-
-
-
-
-2012-06-27T14:18:43.000000Z
-8b8c1b288f58a5a2bb504a200aedc8e0
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3097
+has-prop-mods
 
 GeometricFigure.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-8ae0bdfe76c88b630e18e09b81ed4ccd
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
+has-prop-mods
+
+DisposableResourceManagerFactory.java
+file
+
+
+
+add
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-880
+has-props
+has-prop-mods
 
 TextHolderContentProducer.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-54c1ce986c083a1777a8266b58ba1bbf
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-2896
+has-prop-mods
 
 ResourceContentProducer.java
 file
 
 
 
+add
 
-2012-06-27T14:18:43.000000Z
-22e7a639c56117c9ea69e16849776303
-2012-06-27T14:32:54.036396Z
-1077
-gustavo
+
+
+
+
 has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-3044
+has-prop-mods
 

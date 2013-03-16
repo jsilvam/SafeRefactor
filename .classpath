@@ -6,18 +6,8 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry excluding="data/|resource/|resources/" including="**/*.java" kind="src" output="target/test-classes" path="test">
-		<attributes>
-			<attribute name="optional" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry including="**/*.java" kind="src" path="randoop"/>
-	<classpathentry kind="lib" path="lib/plume.jar"/>
-	<classpathentry kind="lib" path="lib/javaparser-1.0.8.jar"/>
-	<classpathentry kind="lib" path="lib/org.eclipse.jdt.core_3.2.3.v_686_R32x.jar"/>
-	<classpathentry kind="lib" path="lib/gxl.jar"/>
-	<classpathentry kind="lib" path="lib/junit-4.5.jar"/>
+	<classpathentry kind="src" path="test/main/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="src" path="designwizard"/>
 	<classpathentry kind="src" path="designwizard_tests"/>
