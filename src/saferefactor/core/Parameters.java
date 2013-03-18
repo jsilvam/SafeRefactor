@@ -25,6 +25,8 @@ public class Parameters {
 //	private String buildPath;
 
 	private boolean checkCoverage;
+
+	private boolean testNotPublic;
 	
 	
 
@@ -116,6 +118,13 @@ public class Parameters {
 		this.enableImpactAnalysis = enableImpactAnalysis;
 	}
 
+	public void setTestNotPublic(boolean testNotPublic) {
+		this.testNotPublic = testNotPublic;
+	}
+
+	public boolean getTestNotPublic() {
+		return this.testNotPublic;
+	}
 	
 
 }

@@ -275,6 +275,31 @@ public class SafeRefactorTest {
 		assertEquals(false, report.isRefactoring());
 	}
 	
+	@Test
+	public void testCheckTransformationWithPackageAndProtectedElements() throws Exception {
+		
+
+		Project source = new Project();
+		source.setProjectFolder(new File("test/resources/packageSource"));
+		source.setBuildFolder(new File("test/resources/packageSource/bin"));
+		source.setSrcFolder(new File("test/resources/packageSource/src"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("test/resources/packageTarget"));
+		target.setBuildFolder(new File("test/resources/packageTarget/bin"));
+		target.setSrcFolder(new File("test/resources/packageTarget/src"));
+
+		Parameters parameters = new Parameters();
+		parameters.setCompileProjects(false);		
+		parameters.setTimeLimit(1);
+		parameters.setTestNotPublic(true);
+		parameters.getTestGeneratorParameters().add("--junit-package-name=p");
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target, parameters);
+		saferefactor.checkTransformation();
+		Report report = saferefactor.getReport();
+		
+		assertEquals(false, report.isRefactoring());
+	}
 
 
 }
