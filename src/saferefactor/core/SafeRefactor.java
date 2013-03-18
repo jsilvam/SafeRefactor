@@ -244,7 +244,7 @@ public abstract class SafeRefactor {
 
 		double stop = System.currentTimeMillis();
 		double total = ((stop - start) / 1000);
-		logger.info("time to geenrate tests (s): " + total);
+		logger.info("time to generate tests (s): " + total);
 	}
 
 	private void analyzeTransformation() throws Exception {
