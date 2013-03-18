@@ -16,6 +16,15 @@ and after the transformation, and evaluates the results. If results are divergen
  behavioral change, and displays the set of unsuccessful tests.
 
  
+
+-----------------------------
+ RESOLVING MARVEN DEPENDENCES
+-----------------------------
+
+Go to the lib folder and run: 
+ 
+mvn install:install-file -Dfile=plume-lib-1.0.3.jar -DgroupId=plume -DartifactId=plume-lib -Dversion=1.0.3 -Dpackaging=jar
+
 ---------------
  RUNNING TESTS
 --------------
