@@ -294,12 +294,68 @@ public class SafeRefactorTest {
 		parameters.setTimeLimit(1);
 		parameters.setTestNotPublic(true);
 		parameters.getTestGeneratorParameters().add("--junit-package-name=p");
+		parameters.getTestGeneratorParameters().add("--junit-output-dir="+ source.getSrcFolder());
 		SafeRefactor saferefactor = new SafeRefactorImp(source, target, parameters);
 		saferefactor.checkTransformation();
 		Report report = saferefactor.getReport();
-		
+		System.out.println("methods: " + report.getMethodsToTest());
 		assertEquals(false, report.isRefactoring());
 	}
 
 
+	@Test
+	public void testCheckTransformationWithPackageAndProtectedElements2() throws Exception {
+		
+
+		Project source = new Project();
+		source.setProjectFolder(new File("test/resources/package2Source"));
+		source.setBuildFolder(new File("test/resources/package2Source/bin"));
+		source.setSrcFolder(new File("test/resources/package2Source/src"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("test/resources/package2Target"));
+		target.setBuildFolder(new File("test/resources/package2Target/bin"));
+		target.setSrcFolder(new File("test/resources/package2Target/src"));
+
+		Parameters parameters = new Parameters();
+		parameters.setCompileProjects(false);		
+		parameters.setTimeLimit(1);
+		parameters.setTestNotPublic(true);
+		parameters.getTestGeneratorParameters().add("--junit-package-name=p");
+		parameters.getTestGeneratorParameters().add("--junit-output-dir="+ source.getSrcFolder());
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target, parameters);
+		saferefactor.checkTransformation();
+		Report report = saferefactor.getReport();
+		System.out.println("methods: " + report.getMethodsToTest());
+		assertEquals(false, report.isRefactoring());
+	}
+
+	@Test
+	public void testCheckTransformationWithPackageAndProtectedElements3() throws Exception {
+		
+
+		Project source = new Project();
+		source.setProjectFolder(new File("test/resources/package3Source"));
+		source.setBuildFolder(new File("test/resources/package3Source/bin"));
+		source.setSrcFolder(new File("test/resources/package3Source/src"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("test/resources/package3Target"));
+		target.setBuildFolder(new File("test/resources/package3Target/bin"));
+		target.setSrcFolder(new File("test/resources/package3Target/src"));
+
+		Parameters parameters = new Parameters();
+		parameters.setCompileProjects(false);		
+		parameters.setTimeLimit(1);
+		parameters.setTestNotPublic(true);
+		parameters.getTestGeneratorParameters().add("--junit-package-name=p");
+		parameters.getTestGeneratorParameters().add("--junit-output-dir="+ source.getSrcFolder());
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target, parameters);
+		saferefactor.checkTransformation();
+		Report report = saferefactor.getReport();
+		System.out.println("methods: " + report.getMethodsToTest());
+		assertEquals(true, report.isRefactoring());
+	}
+
+	
 }

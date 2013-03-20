@@ -70,13 +70,14 @@ public class DefaultReflectionFilter implements ReflectionFilter {
       return false;
     }
 
-    if (!Reflection.isVisible(m.getModifiers())) {
-      if (Log.isLoggingOn()) {
-        Log.logLine("Will not use: " + m.toString());
-        Log.logLine("  reason: randoop.util.Reflection.isVisible(int modifiers) returned false ");
-      }
-      return false;
-    }
+    //TODO GUSTAVO
+//    if (!Reflection.isVisible(m.getModifiers())) {
+//      if (Log.isLoggingOn()) {
+//        Log.logLine("Will not use: " + m.toString());
+//        Log.logLine("  reason: randoop.util.Reflection.isVisible(int modifiers) returned false ");
+//      }
+//      return false;
+//    }
     if (!Reflection.isVisible(m.getReturnType())) {
       if (Log.isLoggingOn()) {
         Log.logLine("Will not use: " + m.toString());

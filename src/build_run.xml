@@ -32,7 +32,7 @@
 			<formatter type="xml" />
 			<batchtest todir="${report.dir}/">
 				<fileset dir="${tests.dir}/">
-					<include name="*Test*.class" />
+					<include name="p/*Test*.class" />
 					<exclude name="RandoopTest.class" />
 				</fileset>
 			</batchtest>

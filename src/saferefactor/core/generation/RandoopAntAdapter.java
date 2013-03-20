@@ -156,8 +156,8 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 				"--methodlist=" + tmpDir + Constants.SEPARATOR + methodsToTest,
 				"--timelimit=" + timeout,
 				"--log=filewriter",
-				"--junit-output-dir="
-						+ tmpDir,
+//				"--junit-output-dir="
+//						+ tmpDir,
 				"--output-nonexec=true" };
 
 		if (randoopParameters.length() > 0) {

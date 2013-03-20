@@ -196,7 +196,7 @@ public abstract class SafeRefactor {
 
 		}
 		testTargetTask.setReportPath(targetReport.getAbsolutePath());
-		testTargetTask.setTests(this.bin_target.getAbsolutePath());
+		testTargetTask.setTests(this.bin_source.getAbsolutePath());
 		executor.execute(testTargetTask);
 		executor.shutdown();
 
@@ -212,22 +212,22 @@ public abstract class SafeRefactor {
 			FileNotFoundException, SafeRefactorException {
 		double start = System.currentTimeMillis();
 
-		sourceTestCompiler.setBinClasspath(source.getBuildFolder()
-				.getAbsolutePath());
-		if (source.getLibFolder() != null)
-			sourceTestCompiler.setLibClasspath(source.getLibFolder()
-					.getAbsolutePath());
-		sourceTestCompiler.compile(getTestPath().getAbsolutePath(),
+//		sourceTestCompiler.setBinClasspath(source.getBuildFolder()
+//				.getAbsolutePath());
+//		if (source.getLibFolder() != null)
+//			sourceTestCompiler.setLibClasspath(source.getLibFolder()
+//					.getAbsolutePath());
+		sourceTestCompiler.compile(source.getSrcFolder().getAbsolutePath(),
 				bin_source.getAbsolutePath());
 
-		targetTestCompiler.setBinClasspath(target.getBuildFolder()
-				.getAbsolutePath());
+//		targetTestCompiler.setBinClasspath(target.getBuildFolder()
+//				.getAbsolutePath());
 
-		if (target.getLibFolder() != null)
-			targetTestCompiler.setLibClasspath(target.getLibFolder()
-					.getAbsolutePath());
-		targetTestCompiler.compile(getTestPath().getAbsolutePath(),
-				bin_target.getAbsolutePath());
+//		if (target.getLibFolder() != null)
+//			targetTestCompiler.setLibClasspath(target.getLibFolder()
+//					.getAbsolutePath());
+//		targetTestCompiler.compile(getTestPath().getAbsolutePath(),
+//				bin_target.getAbsolutePath());
 
 		double stop = System.currentTimeMillis();
 		double total = ((stop - start) / 1000);

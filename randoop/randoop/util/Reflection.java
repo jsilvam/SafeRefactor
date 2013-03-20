@@ -487,6 +487,10 @@ public final class Reflection {
          result.add(stk);
        }
      }
+     System.out.println("methods from file: ");
+     for (StatementKind statementKind : result) {
+		System.out.println(statementKind.toParseableString());
+	}
      return result;
    }
 

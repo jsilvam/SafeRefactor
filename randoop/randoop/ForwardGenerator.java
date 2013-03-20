@@ -265,6 +265,9 @@ public class ForwardGenerator extends AbstractGenerator {
 			return null;
 
 		// Select a StatementInfo
+		for (StatementKind iterable_element : this.statements) {
+			System.out.println(iterable_element.toParseableString());
+		}
 		statement = Randomness.randomMember(this.statements);
 		if (Log.isLoggingOn())
 			Log.logLine("Selected statement: " + statement.toString());
@@ -471,8 +474,8 @@ public class ForwardGenerator extends AbstractGenerator {
 			Class<?> t = inputTypes.get(i);
 
 			// TODO Does this ever happen?
-			if (!Reflection.isVisible(t))
-				return new InputsAndSuccessFlag(false, null, null);
+//			if (!Reflection.isVisible(t))
+//				return new InputsAndSuccessFlag(false, null, null);
 
 			// true if statement st represents an instance method, and we are
 			// currently

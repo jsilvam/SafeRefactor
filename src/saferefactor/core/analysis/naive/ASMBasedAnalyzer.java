@@ -117,7 +117,7 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 				return true;
 		}
 
-		if (!declaringClass.containsModifiers(Modifier.PUBLIC))
+		if (declaringClass.containsModifiers(Modifier.PRIVATE))
 			return true;
 
 		// FIXME check why Design wizard says that this class is public
@@ -137,8 +137,9 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 			if (targetClass.getName().equals(
 					"net.javacoding.jspider.core.storage.jdbc.DBUtil"))
 				return true;
-			if (!targetClass.containsModifiers(Modifier.PUBLIC))
+			if (targetClass.containsModifiers(Modifier.PRIVATE))
 				return true;
+
 		} catch (InexistentEntityException e) {
 			// e.printStackTrace();
 		}
@@ -153,48 +154,50 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 		if (declaringClass.toString().contains(".aspectOf()"))
 			return true;
 
-		boolean isPublic = false;
-		Collection<Modifier> methodModifiers = methodNode.getModifiers();
-		for (Modifier modifier : methodModifiers) {
-			if (modifier == Modifier.PUBLIC) {
-				isPublic = true;
-				break;
+		
+			boolean isPrivate = false;
+			Collection<Modifier> methodModifiers = methodNode.getModifiers();
+			for (Modifier modifier : methodModifiers) {
+				if (modifier == Modifier.PRIVATE) {
+					isPrivate = true;
+					break;
+				}
 			}
-		}
-		if (!isPublic)
-			return true;
-		isPublic = false;
+			if (isPrivate)
+				return true;
+			isPrivate = false;
+			Collection<Modifier> modifiers = methodNode.getDeclaringClass()
+					.getModifiers();
+
+			for (Modifier modifier : modifiers) {
+				if (modifier == Modifier.PRIVATE) {
+					isPrivate = true;
+					break;
+				}
+			}
+			if (isPrivate)
+				return true;
+
+			if (methodNode.getDeclaringClass().isInnerClass()) {
+				ClassNode outerClass = methodNode.getDeclaringClass()
+						.getOuterClass();
+				if (outerClass.getVisibility() != null
+						&& outerClass.getVisibility().equals(Modifier.PRIVATE))
+					return true;
+			}
+
+			ClassNode returnType = methodNode.getReturnType();
+			Modifier visibility = returnType.getVisibility();
+			if (visibility != null && visibility.equals(Modifier.PRIVATE)) {
+				return true;
+			}
+
 		// do not consider methods declared in interface
 		// only consider when it its declared in the implemented class
 		if (methodNode.getDeclaringClass().isInterface())
 			return true;
 		if (methodNode.getDeclaringClass().isAbstract())
 			return true;
-		Collection<Modifier> modifiers = methodNode.getDeclaringClass()
-				.getModifiers();
-		isPublic = false;
-		for (Modifier modifier : modifiers) {
-			if (modifier == Modifier.PUBLIC) {
-				isPublic = true;
-				break;
-			}
-		}
-		if (!isPublic)
-			return true;
-
-		if (methodNode.getDeclaringClass().isInnerClass()) {
-			ClassNode outerClass = methodNode.getDeclaringClass()
-					.getOuterClass();
-			if (outerClass.getVisibility() != null
-					&& !outerClass.getVisibility().equals(Modifier.PUBLIC))
-				return true;
-		}
-
-		ClassNode returnType = methodNode.getReturnType();
-		Modifier visibility = returnType.getVisibility();
-		if (visibility != null && !visibility.equals(Modifier.PUBLIC)) {
-			return true;
-		}
 
 		// FIXME: to strong. Should not test dispose methods only from java.awt
 		// because they stop the application and the test suite
@@ -323,11 +326,11 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 				.equals("com.atlassw.tools.eclipse.checkstyle.builder.PackageObjectFactory"))
 			System.out.println("class");
 
-		if (!declaringClass.containsModifiers(Modifier.PUBLIC))
-			return false;
-
-		if (!declaringClass.getModifiers().contains(Modifier.PUBLIC))
-			return false;
+		 if (declaringClass.containsModifiers(Modifier.PRIVATE))
+		 return false;
+		
+		 if (declaringClass.getModifiers().contains(Modifier.PRIVATE))
+		 return false;
 
 		return true;
 	}
