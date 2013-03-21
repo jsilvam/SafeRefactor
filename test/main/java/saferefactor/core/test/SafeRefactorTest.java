@@ -404,5 +404,40 @@ public class SafeRefactorTest {
 		System.out.println("methods: " + report.getMethodsToTest());
 		assertEquals(true, report.isRefactoring());
 	}
+	
+	@Test
+	public void testCheckTransformationOutPutDoesNotCompile()
+			throws Exception {
+		Project source = new Project();
+		File sourceFolder = new File("test/resources/test19/in");
+		File sourceBinFolder = new File(sourceFolder,"p");
+		FileUtils.deleteDirectory(sourceBinFolder);
+		source.setProjectFolder(sourceFolder);
+		source.setBuildFolder(sourceFolder);
+		source.setSrcFolder(sourceFolder);
+
+		Project target = new Project();
+		File targetFolder = new File("test/resources/test19/out");
+		File targetBinFolder = new File(targetFolder,"p");
+		FileUtils.deleteDirectory(targetBinFolder);
+		target.setProjectFolder(targetFolder);
+		target.setBuildFolder(targetFolder);
+		target.setSrcFolder(targetFolder);
+
+		Parameters parameters = new Parameters();
+		parameters.setCompileProjects(true);
+		parameters.setTimeLimit(1);
+		parameters.setTestNotPublic(true);
+		parameters.getTestGeneratorParameters().add("--junit-package-name=p");
+		parameters.getTestGeneratorParameters().add(
+				"--junit-output-dir=" + source.getSrcFolder());
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
+				parameters);
+		saferefactor.checkTransformation();
+		Report report = saferefactor.getReport();
+		System.out.println("methods: " + report.getMethodsToTest());
+		assertEquals(false, report.isRefactoring());
+		assertEquals(true, report.hasCompilationError());
+	}
 
 }
