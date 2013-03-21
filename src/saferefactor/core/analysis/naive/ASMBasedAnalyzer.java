@@ -131,6 +131,9 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 		try {
 			String className = declaringClass.getClassName();
 			targetClass = this.dwTarget.getClass(className);
+			
+			if (targetClass.isAbstract() || targetClass.isInterface())
+				return true;
 
 			// FIXME Hack to avoid this class. This class is not public on
 			// target of jpider, but designwizard says it is.
