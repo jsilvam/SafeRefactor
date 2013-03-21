@@ -7,6 +7,8 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+import saferefactor.core.analysis.AnalyzerFactory;
+import saferefactor.core.analysis.TransformationAnalyzer;
 import saferefactor.core.analysis.naive.ASMBasedAnalyzer;
 import saferefactor.core.analysis.naive.ReflectionBasedAnalyzer;
 import saferefactor.core.comparator.ComparatorImp;
@@ -64,10 +66,8 @@ public class SafeRefactorImp extends SafeRefactor {
 		fh.setFormatter(new SimpleFormatter());
 		logger.addHandler(fh);
 
-		analyzer = new ASMBasedAnalyzer(this.source, this.target,
-				this.tmpFolder);
-		// analyzer = new ReflectionBasedAnalyzer(this.source,
-		// this.target,this.tmpFolder);
+		analyzer = AnalyzerFactory.getFactory().createAnalyzer(this.source,
+				this.target, this.tmpFolder);
 
 		generator = new RandoopAntAdapter(this.source, this.getTestPath()
 				.getAbsolutePath());
@@ -159,4 +159,5 @@ public class SafeRefactorImp extends SafeRefactor {
 		}
 		return methods;
 	}
+
 }

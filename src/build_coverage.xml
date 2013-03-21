@@ -122,7 +122,7 @@
 				<batchtest haltonfailure="no">
 					<fileset dir="${tests.folder}/">
 						<!--To check relevant tests, comment next line, and uncomment the following one.-->
-						<include name="*Test.class" />						
+						<include name="*Test.class" />							
 						<!--<include name="${test.name}" />-->
 					</fileset>
 				</batchtest>
