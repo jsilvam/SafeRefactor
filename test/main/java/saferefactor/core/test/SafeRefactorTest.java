@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 
 import saferefactor.core.Parameters;
@@ -20,9 +21,10 @@ import saferefactor.core.util.Project;
 import saferefactor.core.util.ast.Method;
 
 public class SafeRefactorTest {
-	
+
 	@Test
-	public void testCheckTransformationWithProjectsNotCompiled() throws Exception {
+	public void testCheckTransformationWithProjectsNotCompiled()
+			throws Exception {
 		Project source = new Project();
 		source.setProjectFolder(new File("test/resources/notCompiled_source"));
 		source.setBuildFolder(new File("test/resources/notCompiled_source/bin"));
@@ -37,12 +39,12 @@ public class SafeRefactorTest {
 		saferefactor.checkTransformation();
 		Report report = saferefactor.getReport();
 		assertEquals(false, report.isRefactoring());
-		
-		
+
 	}
-	
+
 	@Test(expected = SafeRefactorException.class)
-	public void testCheckTransformationWithIncorrectClasspath() throws Exception {
+	public void testCheckTransformationWithIncorrectClasspath()
+			throws Exception {
 		Project source = new Project();
 		source.setProjectFolder(new File("test/resources/subject14source"));
 		source.setBuildFolder(new File("test/resources/subject14source/bin2"));
@@ -54,65 +56,43 @@ public class SafeRefactorTest {
 		target.setSrcFolder(new File("test/resources/subject14target/src"));
 
 		Parameters parameters = new Parameters();
-		parameters.setCompileProjects(false);		
+		parameters.setCompileProjects(false);
 		parameters.setTimeLimit(1);
-		
-		SafeRefactor saferefactor = new SafeRefactorImp(source, target, parameters);
-		saferefactor.checkTransformation();		
+
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
+				parameters);
+		saferefactor.checkTransformation();
 	}
-	
+
 	@Test(expected = SafeRefactorException.class)
-	public void testCheckTransformationWithProjectsWithCompilationErrors() throws Exception {
+	public void testCheckTransformationWithProjectsWithCompilationErrors()
+			throws Exception {
 		Project source = new Project();
-		source.setProjectFolder(new File("test/resources/compilation_error_source"));
-		source.setBuildFolder(new File("test/resources/notcompilation_error_source/bin"));
-		source.setSrcFolder(new File("test/resources/compilation_error_source/src"));
+		source.setProjectFolder(new File(
+				"test/resources/compilation_error_source"));
+		source.setBuildFolder(new File(
+				"test/resources/notcompilation_error_source/bin"));
+		source.setSrcFolder(new File(
+				"test/resources/compilation_error_source/src"));
 
 		Project target = new Project();
-		target.setProjectFolder(new File("test/resources/compilation_error_target"));
-		target.setBuildFolder(new File("test/resources/compilation_error_target/bin"));
-		target.setSrcFolder(new File("test/resources/compilation_error_target/src"));
+		target.setProjectFolder(new File(
+				"test/resources/compilation_error_target"));
+		target.setBuildFolder(new File(
+				"test/resources/compilation_error_target/bin"));
+		target.setSrcFolder(new File(
+				"test/resources/compilation_error_target/src"));
 
 		SafeRefactor saferefactor = new SafeRefactorImp(source, target);
 		saferefactor.checkTransformation();
 		Report report = saferefactor.getReport();
 		assertEquals(false, report.isRefactoring());
-		
-		
-	}
-	
 
-	
-	
-	
+	}
 
 	@Test
 	public void testCheckTransformationWithProjectsCompiled() throws Exception {
-		
 
-		Project source = new Project();
-		source.setProjectFolder(new File("test/resources/subject14source"));
-		source.setBuildFolder(new File("test/resources/subject14source/bin"));
-		source.setSrcFolder(new File("test/resources/subject14source/src"));
-
-		Project target = new Project();
-		target.setProjectFolder(new File("test/resources/subject14target"));
-		target.setBuildFolder(new File("test/resources/subject14target/bin"));
-		target.setSrcFolder(new File("test/resources/subject14target/src"));
-
-		Parameters parameters = new Parameters();
-		parameters.setCompileProjects(false);		
-		parameters.setTimeLimit(1);
-		
-		SafeRefactor saferefactor = new SafeRefactorImp(source, target, parameters);
-		saferefactor.checkTransformation();
-		Report report = saferefactor.getReport();
-		
-		assertEquals(false, report.isRefactoring());
-	}
-
-	@Test
-	public void testCheckTransformationWithProjectsCompiledForkFalse() throws Exception {
 		Project source = new Project();
 		source.setProjectFolder(new File("test/resources/subject14source"));
 		source.setBuildFolder(new File("test/resources/subject14source/bin"));
@@ -125,85 +105,113 @@ public class SafeRefactorTest {
 
 		Parameters parameters = new Parameters();
 		parameters.setCompileProjects(false);
-//		parameters.setAnalyzeChangeMethods(true);
-		parameters.getTestGeneratorParameters().add("fork=false");
-		
-		SafeRefactor saferefactor = new SafeRefactorImp(source, target, parameters);
+		parameters.setTimeLimit(1);
+
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
+				parameters);
 		saferefactor.checkTransformation();
 		Report report = saferefactor.getReport();
-		
+
 		assertEquals(false, report.isRefactoring());
-		
-//		List<Method> methods =  report.getChangedMethods();
-//		Method method = methods.get(0);
-//		assertEquals("test", method.getSimpleName());
-		
-		
 	}
-	
-	
-	//feature removed
-//	@Test
-//	public void testCheckTransformationWithProjectsNotCompiledSetCompilerPath() throws Exception {
-//		Project source = new Project();
-//		source.setProjectFolder(new File("test/resources/notCompiled_source"));
-//		source.setBuildFolder(new File("test/resources/notCompiled_source/bin"));
-//		source.setSrcFolder(new File("test/resources/notCompiled_source/src"));
-//
-//		Project target = new Project();
-//		target.setProjectFolder(new File("test/resources/notCompiled_target"));
-//		target.setBuildFolder(new File("test/resources/notCompiled_target/bin"));
-//		target.setSrcFolder(new File("test/resources/notCompiled_target/src"));
-//		
-//		
-//		Properties config = new Properties();
-//		File configFile = new File("test/resources/compiler.properties");
-//		config.load(new FileInputStream(configFile));
-//		String path = config.getProperty("COMPILER_JAVA_5");
-//		
-//		Parameters parameters = new Parameters();
-//		parameters.setCompilerPath(path); 
-//
-//		SafeRefactor saferefactor = new SafeRefactorImp(source, target,parameters);
-//		saferefactor.checkTransformation();
-//		Report report = saferefactor.getReport();
-//		assertEquals(false, report.isRefactoring());
-//		
-//		
-//	}
-	
-	
-	//feature removed
-//	@Test
-//	public void testCheckTransformationWithProjectsNotCompiledSetBuildPath() throws Exception {
-//		Project source = new Project();
-//		source.setProjectFolder(new File("test/resources/notCompiled_source"));
-//		source.setBuildFolder(new File("test/resources/notCompiled_source/bin"));
-//		source.setSrcFolder(new File("test/resources/notCompiled_source/src"));
-//
-//		Project target = new Project();
-//		target.setProjectFolder(new File("test/resources/notCompiled_target"));
-//		target.setBuildFolder(new File("test/resources/notCompiled_target/bin"));
-//		target.setSrcFolder(new File("test/resources/notCompiled_target/src"));
-//		
-//		
-//		Properties config = new Properties();
-//		File configFile = new File("test/resources/compiler.properties");
-//		config.load(new FileInputStream(configFile));
-//		String path = config.getProperty("DIFFERENT_BUILDER");
-//		
-//		Parameters parameters = new Parameters();
-//		parameters.setBuildPath(path); 
-//		parameters.setTimeLimit(2);
-//
-//		SafeRefactor saferefactor = new SafeRefactorImp(source, target,parameters);
-//		saferefactor.checkTransformation();
-//		Report report = saferefactor.getReport();
-//		assertEquals(false, report.isRefactoring());
-//		
-//		
-//	}
-	
+
+	@Test
+	public void testCheckTransformationWithProjectsCompiledForkFalse()
+			throws Exception {
+		Project source = new Project();
+		source.setProjectFolder(new File("test/resources/subject14source"));
+		source.setBuildFolder(new File("test/resources/subject14source/bin"));
+		source.setSrcFolder(new File("test/resources/subject14source/src"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("test/resources/subject14target"));
+		target.setBuildFolder(new File("test/resources/subject14target/bin"));
+		target.setSrcFolder(new File("test/resources/subject14target/src"));
+
+		Parameters parameters = new Parameters();
+		parameters.setCompileProjects(false);
+		// parameters.setAnalyzeChangeMethods(true);
+		parameters.getTestGeneratorParameters().add("fork=false");
+
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
+				parameters);
+		saferefactor.checkTransformation();
+		Report report = saferefactor.getReport();
+
+		assertEquals(false, report.isRefactoring());
+
+		// List<Method> methods = report.getChangedMethods();
+		// Method method = methods.get(0);
+		// assertEquals("test", method.getSimpleName());
+
+	}
+
+	// feature removed
+	// @Test
+	// public void
+	// testCheckTransformationWithProjectsNotCompiledSetCompilerPath() throws
+	// Exception {
+	// Project source = new Project();
+	// source.setProjectFolder(new File("test/resources/notCompiled_source"));
+	// source.setBuildFolder(new File("test/resources/notCompiled_source/bin"));
+	// source.setSrcFolder(new File("test/resources/notCompiled_source/src"));
+	//
+	// Project target = new Project();
+	// target.setProjectFolder(new File("test/resources/notCompiled_target"));
+	// target.setBuildFolder(new File("test/resources/notCompiled_target/bin"));
+	// target.setSrcFolder(new File("test/resources/notCompiled_target/src"));
+	//
+	//
+	// Properties config = new Properties();
+	// File configFile = new File("test/resources/compiler.properties");
+	// config.load(new FileInputStream(configFile));
+	// String path = config.getProperty("COMPILER_JAVA_5");
+	//
+	// Parameters parameters = new Parameters();
+	// parameters.setCompilerPath(path);
+	//
+	// SafeRefactor saferefactor = new SafeRefactorImp(source,
+	// target,parameters);
+	// saferefactor.checkTransformation();
+	// Report report = saferefactor.getReport();
+	// assertEquals(false, report.isRefactoring());
+	//
+	//
+	// }
+
+	// feature removed
+	// @Test
+	// public void testCheckTransformationWithProjectsNotCompiledSetBuildPath()
+	// throws Exception {
+	// Project source = new Project();
+	// source.setProjectFolder(new File("test/resources/notCompiled_source"));
+	// source.setBuildFolder(new File("test/resources/notCompiled_source/bin"));
+	// source.setSrcFolder(new File("test/resources/notCompiled_source/src"));
+	//
+	// Project target = new Project();
+	// target.setProjectFolder(new File("test/resources/notCompiled_target"));
+	// target.setBuildFolder(new File("test/resources/notCompiled_target/bin"));
+	// target.setSrcFolder(new File("test/resources/notCompiled_target/src"));
+	//
+	//
+	// Properties config = new Properties();
+	// File configFile = new File("test/resources/compiler.properties");
+	// config.load(new FileInputStream(configFile));
+	// String path = config.getProperty("DIFFERENT_BUILDER");
+	//
+	// Parameters parameters = new Parameters();
+	// parameters.setBuildPath(path);
+	// parameters.setTimeLimit(2);
+	//
+	// SafeRefactor saferefactor = new SafeRefactorImp(source,
+	// target,parameters);
+	// saferefactor.checkTransformation();
+	// Report report = saferefactor.getReport();
+	// assertEquals(false, report.isRefactoring());
+	//
+	//
+	// }
+
 	@Test
 	public void testCheckTransformationWithCoverage() throws Exception {
 		Project source = new Project();
@@ -219,15 +227,16 @@ public class SafeRefactorTest {
 		Parameters parameters = new Parameters();
 		parameters.setCompileProjects(false);
 		parameters.setCheckCoverage(true);
-		
-		SafeRefactor saferefactor = new SafeRefactorImp(source, target,parameters  );
+
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
+				parameters);
 		saferefactor.checkTransformation();
 		Report report = saferefactor.getReport();
 		assertEquals(false, report.isRefactoring());
 		assertNotNull(report.getChanges());
 		assertEquals(78.0, report.getCoverage().getLineRate(), 1);
-//		assertEquals(90.0, report.getGeneratedTests);
-		
+		// assertEquals(90.0, report.getGeneratedTests);
+
 	}
 
 	@Test
@@ -240,12 +249,12 @@ public class SafeRefactorTest {
 		Project target = new Project();
 		target.setProjectFolder(new File("test/resources/randomSubjectTarget"));
 		target.setBuildFolder(new File("test/resources/randomSubjectTarget/bin"));
-		target.setSrcFolder(new File("test/resources/randomSubjectTarget/src"));		
-
+		target.setSrcFolder(new File("test/resources/randomSubjectTarget/src"));
 
 		Parameters parameters = new Parameters();
 		parameters.setCompileProjects(false);
-		SafeRefactor saferefactor = new SafeRefactorImp(source, target,parameters);
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
+				parameters);
 
 		saferefactor.checkTransformation();
 		Report report = saferefactor.getReport();
@@ -262,22 +271,22 @@ public class SafeRefactorTest {
 		Project target = new Project();
 		target.setProjectFolder(new File("test/resources/randomSubjectTarget"));
 		target.setBuildFolder(new File("test/resources/randomSubjectTarget/bin"));
-		target.setSrcFolder(new File("test/resources/randomSubjectTarget/src"));		
+		target.setSrcFolder(new File("test/resources/randomSubjectTarget/src"));
 
-				
 		Parameters parameters = new Parameters();
 		parameters.setCompileProjects(false);
 		parameters.setExecuteTwiceOnSource(true);
-		SafeRefactor saferefactor = new SafeRefactorImp(source, target, parameters );
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
+				parameters);
 
 		saferefactor.checkTransformation();
 		Report report = saferefactor.getReport();
 		assertEquals(false, report.isRefactoring());
 	}
-	
+
 	@Test
-	public void testCheckTransformationWithPackageAndProtectedElements() throws Exception {
-		
+	public void testCheckTransformationWithPackageAndProtectedElements()
+			throws Exception {
 
 		Project source = new Project();
 		source.setProjectFolder(new File("test/resources/packageSource"));
@@ -290,22 +299,23 @@ public class SafeRefactorTest {
 		target.setSrcFolder(new File("test/resources/packageTarget/src"));
 
 		Parameters parameters = new Parameters();
-		parameters.setCompileProjects(false);		
+		parameters.setCompileProjects(false);
 		parameters.setTimeLimit(1);
 		parameters.setTestNotPublic(true);
 		parameters.getTestGeneratorParameters().add("--junit-package-name=p");
-		parameters.getTestGeneratorParameters().add("--junit-output-dir="+ source.getSrcFolder());
-		SafeRefactor saferefactor = new SafeRefactorImp(source, target, parameters);
+		parameters.getTestGeneratorParameters().add(
+				"--junit-output-dir=" + source.getSrcFolder());
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
+				parameters);
 		saferefactor.checkTransformation();
 		Report report = saferefactor.getReport();
 		System.out.println("methods: " + report.getMethodsToTest());
 		assertEquals(false, report.isRefactoring());
 	}
 
-
 	@Test
-	public void testCheckTransformationWithPackageAndProtectedElements2() throws Exception {
-		
+	public void testCheckTransformationWithPackageAndProtectedElements2()
+			throws Exception {
 
 		Project source = new Project();
 		source.setProjectFolder(new File("test/resources/package2Source"));
@@ -318,12 +328,14 @@ public class SafeRefactorTest {
 		target.setSrcFolder(new File("test/resources/package2Target/src"));
 
 		Parameters parameters = new Parameters();
-		parameters.setCompileProjects(false);		
+		parameters.setCompileProjects(false);
 		parameters.setTimeLimit(1);
 		parameters.setTestNotPublic(true);
 		parameters.getTestGeneratorParameters().add("--junit-package-name=p");
-		parameters.getTestGeneratorParameters().add("--junit-output-dir="+ source.getSrcFolder());
-		SafeRefactor saferefactor = new SafeRefactorImp(source, target, parameters);
+		parameters.getTestGeneratorParameters().add(
+				"--junit-output-dir=" + source.getSrcFolder());
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
+				parameters);
 		saferefactor.checkTransformation();
 		Report report = saferefactor.getReport();
 		System.out.println("methods: " + report.getMethodsToTest());
@@ -331,8 +343,8 @@ public class SafeRefactorTest {
 	}
 
 	@Test
-	public void testCheckTransformationWithPackageAndProtectedElements3() throws Exception {
-		
+	public void testCheckTransformationWithPackageAndProtectedElements3()
+			throws Exception {
 
 		Project source = new Project();
 		source.setProjectFolder(new File("test/resources/package3Source"));
@@ -345,17 +357,52 @@ public class SafeRefactorTest {
 		target.setSrcFolder(new File("test/resources/package3Target/src"));
 
 		Parameters parameters = new Parameters();
-		parameters.setCompileProjects(false);		
+		parameters.setCompileProjects(false);
 		parameters.setTimeLimit(1);
 		parameters.setTestNotPublic(true);
 		parameters.getTestGeneratorParameters().add("--junit-package-name=p");
-		parameters.getTestGeneratorParameters().add("--junit-output-dir="+ source.getSrcFolder());
-		SafeRefactor saferefactor = new SafeRefactorImp(source, target, parameters);
+		parameters.getTestGeneratorParameters().add(
+				"--junit-output-dir=" + source.getSrcFolder());
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
+				parameters);
 		saferefactor.checkTransformation();
 		Report report = saferefactor.getReport();
 		System.out.println("methods: " + report.getMethodsToTest());
 		assertEquals(true, report.isRefactoring());
 	}
 
-	
+	@Test
+	public void testCheckTransformationWithAbstractElements()
+			throws Exception {
+		Project source = new Project();
+		File sourceFolder = new File("test/resources/test37/in");
+		File sourceBinFolder = new File(sourceFolder,"p");
+		FileUtils.deleteDirectory(sourceBinFolder);
+		source.setProjectFolder(sourceFolder);
+		source.setBuildFolder(sourceFolder);
+		source.setSrcFolder(sourceFolder);
+
+		Project target = new Project();
+		File targetFolder = new File("test/resources/test37/out");
+		File targetBinFolder = new File(targetFolder,"p");
+		FileUtils.deleteDirectory(targetBinFolder);
+		target.setProjectFolder(targetFolder);
+		target.setBuildFolder(targetFolder);
+		target.setSrcFolder(targetFolder);
+
+		Parameters parameters = new Parameters();
+		parameters.setCompileProjects(true);
+		parameters.setTimeLimit(1);
+		parameters.setTestNotPublic(true);
+		parameters.getTestGeneratorParameters().add("--junit-package-name=p");
+		parameters.getTestGeneratorParameters().add(
+				"--junit-output-dir=" + source.getSrcFolder());
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
+				parameters);
+		saferefactor.checkTransformation();
+		Report report = saferefactor.getReport();
+		System.out.println("methods: " + report.getMethodsToTest());
+		assertEquals(true, report.isRefactoring());
+	}
+
 }
