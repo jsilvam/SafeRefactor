@@ -42,12 +42,12 @@ public class SafeRefactorImp extends SafeRefactor {
 
 		// define tmp folder
 		int counter = 0;
-		String tmpFolder2 = Constants.SAFEREFACTOR_DIR + "SafeRefactor"
+		String tmpFolder2 = Constants.SAFEREFACTOR_DIR + Constants.SEPARATOR + "SafeRefactor"
 				+ counter + Constants.SEPARATOR;
 		File tmpFile = new File(tmpFolder2);
 		while (tmpFile.exists()) {
 			counter++;
-			tmpFolder2 = Constants.SAFEREFACTOR_DIR + "SafeRefactor" + counter
+			tmpFolder2 = Constants.SAFEREFACTOR_DIR + Constants.SEPARATOR + "SafeRefactor" + counter
 					+ Constants.SEPARATOR;
 			tmpFile = new File(tmpFolder2);
 		}
