@@ -87,11 +87,24 @@ public abstract class SafeRefactor {
 	}
 
 	public void checkTransformation() throws SafeRefactorException {
-		try {
-			double start = System.currentTimeMillis();
-			logger.info("check compilation? " + parameters.isCompileProjects());
-			if (parameters.isCompileProjects())
+		double start = System.currentTimeMillis();
+		logger.info("check compilation? " + parameters.isCompileProjects());
+		if (parameters.isCompileProjects()) {
+			try {
 				compileSourceAndTarget();
+			} catch (MalformedURLException e) {
+				throw new SafeRefactorException(e.getMessage());
+			} catch (FileNotFoundException e) {
+				throw new SafeRefactorException(e.getMessage());
+			} catch (CompilationErrorException e) {
+				target.setCompile(false);
+			} catch (Exception e) {
+				e.printStackTrace();
+				throw new SafeRefactorException(e.getMessage());
+			}
+		}
+		try {
+
 			if (hasNoCompilationErrors())
 				checkBehavioralChanges();
 			else
@@ -102,12 +115,6 @@ public abstract class SafeRefactor {
 			double total = ((stop - start) / 1000);
 			logger.info("time to check transformation (s): " + total);
 			report.setTotalTime(total);
-		} catch (MalformedURLException e) {
-			e.printStackTrace();
-			throw new SafeRefactorException(e.getMessage());
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-			throw new SafeRefactorException(e.getMessage());
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new SafeRefactorException(e.getMessage());
@@ -115,12 +122,12 @@ public abstract class SafeRefactor {
 	}
 
 	protected boolean hasNoCompilationErrors() {
-		return (source.isCompile() && target.isCompile())
-				|| !parameters.isCompileProjects();
+		return target.isCompile() || !parameters.isCompileProjects();
 	}
 
 	private void compileSourceAndTarget() throws MalformedURLException,
-			FileNotFoundException, SafeRefactorException {
+			FileNotFoundException, SafeRefactorException,
+			CompilationErrorException {
 
 		double start = System.currentTimeMillis();
 
@@ -145,10 +152,13 @@ public abstract class SafeRefactor {
 			targetCompiler.setLibClasspath(target.getLibFolder()
 					.getAbsolutePath());
 		// boolean isTargetCompilable =
-		targetCompiler.compile(target.getSrcFolder().getAbsolutePath(), target
-				.getBuildFolder().getAbsolutePath());
-		//target.setCompile(isTargetCompilable);
-
+		try {
+			targetCompiler.compile(target.getSrcFolder().getAbsolutePath(),
+					target.getBuildFolder().getAbsolutePath());
+			// target.setCompile(isTargetCompilable);
+		} catch (Exception e) {
+			throw new CompilationErrorException(e);
+		}
 		double stop = System.currentTimeMillis();
 		double total = ((stop - start) / 1000);
 		logger.info("time to compile (s): " + total);

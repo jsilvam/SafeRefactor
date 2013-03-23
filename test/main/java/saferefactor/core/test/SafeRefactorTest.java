@@ -61,7 +61,6 @@ public class SafeRefactorTest {
 		saferefactor.checkTransformation();		
 	}
 	
-	@Test(expected = SafeRefactorException.class)
 	public void testCheckTransformationWithProjectsWithCompilationErrors() throws Exception {
 		Project source = new Project();
 		source.setProjectFolder(new File("test/resources/compilation_error_source"));
@@ -77,6 +76,7 @@ public class SafeRefactorTest {
 		saferefactor.checkTransformation();
 		Report report = saferefactor.getReport();
 		assertEquals(false, report.isRefactoring());
+		assertEquals(true, report.hasCompilationError());
 		
 		
 	}
@@ -275,6 +275,34 @@ public class SafeRefactorTest {
 		assertEquals(false, report.isRefactoring());
 	}
 	
+	
+	@Test
+	public void testCheckTransformationWithAbstractClass() throws Exception {
+		
+
+		Project source = new Project();
+		File sourceFolder = new File("test/resources/test37/in");
+		source.setProjectFolder(sourceFolder);
+		source.setBuildFolder(sourceFolder);
+		source.setSrcFolder(sourceFolder);
+
+		Project target = new Project();
+		File targetFolder = new File("test/resources/test37/out");
+		target.setProjectFolder(targetFolder);
+		target.setBuildFolder(targetFolder);
+		target.setSrcFolder(targetFolder);
+
+		Parameters parameters = new Parameters();
+		parameters.setCompileProjects(true);		
+		parameters.setTimeLimit(1);
+		
+		
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target, parameters);
+		saferefactor.checkTransformation();
+		Report report = saferefactor.getReport();
+		
+		assertEquals(true, report.isRefactoring());
+	}
 
 
 }
