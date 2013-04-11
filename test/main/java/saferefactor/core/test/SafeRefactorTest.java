@@ -36,8 +36,7 @@ public class SafeRefactorTest {
 		SafeRefactor saferefactor = new SafeRefactorImp(source, target);
 		saferefactor.checkTransformation();
 		Report report = saferefactor.getReport();
-		assertEquals(false, report.isRefactoring());
-		
+		assertEquals(false, report.isRefactoring());		
 		
 	}
 	
@@ -304,5 +303,24 @@ public class SafeRefactorTest {
 		assertEquals(true, report.isRefactoring());
 	}
 
+	
+	@Test
+	public void testCheckTransformationWithInheritedMethod() throws Exception {
+		Project source = new Project();
+		source.setProjectFolder(new File("test/resources/inheritanceSource"));
+		source.setBuildFolder(new File("test/resources/inheritanceSource/bin"));
+		source.setSrcFolder(new File("test/resources/inheritanceSource/src"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("test/resources/inheritanceTarget"));
+		target.setBuildFolder(new File("test/resources/inheritanceTarget/bin"));
+		target.setSrcFolder(new File("test/resources/inheritanceTarget/src"));
+
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target);
+		saferefactor.checkTransformation();
+		Report report = saferefactor.getReport();
+		assertEquals(false, report.isRefactoring());		
+		
+	}
 
 }

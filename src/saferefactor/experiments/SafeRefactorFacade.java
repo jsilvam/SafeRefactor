@@ -1,4 +1,4 @@
-package saferefactor.experiments.scp2013;
+package saferefactor.experiments;
 
 import java.io.File;
 import java.util.List;
@@ -40,7 +40,7 @@ public class SafeRefactorFacade {
 		parameters.setCompileProjects(false);
 		parameters.setTimeLimit(timelimit);
 		parameters.setEnableImpactAnalysis(occ);
-		parameters.getTestGeneratorParameters().add("--testsperfile=1");
+//		parameters.getTestGeneratorParameters().add("--testsperfile=1");
 
 		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
 				parameters);
@@ -92,7 +92,7 @@ public class SafeRefactorFacade {
 		parameters.setEnableImpactAnalysis(occ);
 		parameters.setCompileProjects(needCompile);
 		parameters.setExecuteTwiceOnSource(true);
-		parameters.setCheckCoverage(true);
+		parameters.setCheckCoverage(false);
 		// To check relevant tests, comment next line
 		// parameters.getTestGeneratorParameters().add("--testsperfile=1");
 		SafeRefactor saferefactor = new SafeRefactorImp(source, target,

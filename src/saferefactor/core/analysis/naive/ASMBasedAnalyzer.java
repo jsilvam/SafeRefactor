@@ -58,16 +58,65 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 					Set<ClassNode> calleeClasses = classNode.getCalleeClasses();
 					for (ClassNode calleeClass : calleeClasses) {
 						impactedClasses.add(calleeClass.getClassName());
+						Set<ClassNode> calleeClasses2 = calleeClass
+								.getCalleeClasses();
+						for (ClassNode classNode2 : calleeClasses2) {
+							impactedClasses.add(classNode2.getClassName());
+						}
 					}
-					// Set<ClassNode> subClasses = classNode.getSubClasses();
-					// for (ClassNode subClass : subClasses) {
-					// impactedClasses.add(subClass.getClassName());
-					// }
-					//
+					Set<ClassNode> subClasses = classNode.getSubClasses();
+					for (ClassNode subClass : subClasses) {
+						impactedClasses.add(subClass.getClassName());
+					}
+					// //
 					// Set<ClassNode> callerClasses =
 					// classNode.getCallerClasses();
 					// for (ClassNode callerClass : callerClasses) {
 					// impactedClasses.add(callerClass.getClassName());
+					//
+					// Set<ClassNode> calleeClasses2 = callerClass
+					// .getCalleeClasses();
+					// for (ClassNode calleeClass : calleeClasses2) {
+					// impactedClasses.add(calleeClass.getClassName());
+					// }
+					//
+					// Set<ClassNode> callerClasses2 = callerClass
+					// .getCallerClasses();
+					// for (ClassNode classNode2 : callerClasses2) {
+					// impactedClasses.add(classNode2.getClassName());
+					//
+					// Set<ClassNode> calleeClasses3 = classNode2
+					// .getCalleeClasses();
+					// for (ClassNode calleeClass : calleeClasses3) {
+					// impactedClasses.add(calleeClass.getClassName());
+					// }
+					//
+					//
+					// Set<ClassNode> callerClasses3 = classNode2
+					// .getCallerClasses();
+					// for (ClassNode classNode3 : callerClasses3) {
+					// impactedClasses.add(classNode3.getClassName());
+					//
+					// Set<ClassNode> calleeClasses4 = classNode3
+					// .getCalleeClasses();
+					// for (ClassNode calleeClass : calleeClasses4) {
+					// impactedClasses.add(calleeClass.getClassName());
+					// }
+					//
+					// Set<ClassNode> callerClasses4 = classNode3
+					// .getCallerClasses();
+					// for (ClassNode classNode4 : callerClasses4) {
+					// impactedClasses.add(classNode4
+					// .getClassName());
+					//
+					// Set<ClassNode> calleeClasses5 = classNode4
+					// .getCalleeClasses();
+					// for (ClassNode calleeClass : calleeClasses5) {
+					// impactedClasses.add(calleeClass.getClassName());
+					// }
+					// }
+					// }
+					// }
 					// }
 					// //TODO get only declared or all methods?
 					// Set<MethodNode> declaredMethods =
@@ -131,8 +180,8 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 		try {
 			String className = declaringClass.getClassName();
 			targetClass = this.dwTarget.getClass(className);
-			
-			if (targetClass.isAbstract() || targetClass.isInterface())
+
+			if (targetClass.isInterface())
 				return true;
 
 			// FIXME Hack to avoid this class. This class is not public on
@@ -170,8 +219,7 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 		// do not consider methods declared in interface
 		// only consider when it its declared in the implemented class
 		if (methodNode.getDeclaringClass().isInterface())
-			return true;
-		if (methodNode.getDeclaringClass().isAbstract())
+
 			return true;
 		Collection<Modifier> modifiers = methodNode.getDeclaringClass()
 				.getModifiers();
@@ -239,7 +287,10 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 					continue;
 
 				Method convertToMethod = convertToMethod(sourceNode);
-				result.add(convertToMethod);
+
+				if (convertToMethod.getAllowedClasses().size() > 0) {
+					result.add(convertToMethod);
+				}
 			} else {
 				String name = sourceNode.getShortName();
 				List<MethodNode> list = differentSignaturesSource.get(name);
@@ -339,27 +390,30 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 
 		Method result = null;
 		List<String> parameterTypeNames = getParameterList(methodNode);
+		ClassNode declaringClass = methodNode.getDeclaringClass();
+
+		Set<String> allowedClasses = new HashSet<String>();
+		if (!declaringClass.isAbstract())
+			allowedClasses.add(declaringClass.getClassName());
 		if (methodNode.isConstructor()) {
 			result = new ConstructorImp();
-			result.setDeclaringClass(methodNode.getDeclaringClass()
-					.getClassName());
-			result.setSimpleName(methodNode.getDeclaringClass().getClassName());
-			result.setParameterList(parameterTypeNames);
-			Set<String> allowedClasses = new HashSet<String>();
-			allowedClasses.add(methodNode.getDeclaringClass().getClassName());
-			result.setAllowedClasses(allowedClasses);
+			result.setSimpleName(declaringClass.getClassName());
+
 		} else {
 			result = new MethodImp();
-			result.setDeclaringClass(methodNode.getDeclaringClass()
-					.getClassName());
 			result.setSimpleName(methodNode.getShortName());
-			result.setParameterList(parameterTypeNames);
-			Set<String> allowedClasses = new HashSet<String>();
-
-			allowedClasses.add(methodNode.getDeclaringClass().getClassName());
-
-			result.setAllowedClasses(allowedClasses);
+			if (methodNode.containsModifiers(Modifier.PUBLIC)) {
+				Set<ClassNode> subClasses = declaringClass.getSubClasses();
+				for (ClassNode classNode : subClasses) {
+					if (classNode.getAllMethods().contains(methodNode))
+						allowedClasses.add(classNode.getClassName());
+				}
+			}
 		}
+		result.setParameterList(parameterTypeNames);
+		result.setDeclaringClass(declaringClass.getClassName());
+
+		result.setAllowedClasses(allowedClasses);
 		return result;
 	}
 
