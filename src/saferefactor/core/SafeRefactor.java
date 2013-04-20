@@ -259,7 +259,7 @@ public abstract class SafeRefactor {
 
 	private void analyzeTransformation() throws Exception {
 		double start = System.currentTimeMillis();
-		analysisReport = analyzer.analyze(parameters.isEnableImpactAnalysis());
+		analysisReport = analyzer.analyze();
 		methodsToTest = analysisReport.getMethodsToTest();
 
 		double stop = System.currentTimeMillis();

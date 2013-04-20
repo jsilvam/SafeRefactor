@@ -17,7 +17,7 @@ public class Main {
 			
 //			String targetPath = "/Users/gustavoas/Dropbox/mutation/subjects/jaxen_subject/jaxen-m"
 //					+ i + "/";
-			String targetPath = "/Users/gustavoas/Dropbox/mutation/subjects/jaxen_subject/jaxen-m7/";
+			String targetPath = "/Users/gustavoas/Dropbox/mutation/subjects/jaxen_subject/jaxen-m8/";
 			System.out.println("mutante: " + targetPath);
 			try {
 				
@@ -27,6 +27,8 @@ public class Main {
 				System.out.println("is refactoring? "
 						+ checkTransformation.isRefactoring());
 				reports.add(checkTransformation);
+				
+				String changes = checkTransformation.getChanges();
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

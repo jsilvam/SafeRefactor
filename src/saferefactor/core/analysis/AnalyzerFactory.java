@@ -4,7 +4,9 @@ import saferefactor.core.util.Project;
 
 public abstract class AnalyzerFactory {
 
-	public static AnalyzerFactory getFactory() {
+	public static AnalyzerFactory getFactory(boolean impactAnalysis) {
+		if (impactAnalysis)
+			return new ASMBasedImpactAnalyzerFactory();
 		if (AnalyzerConfiguration.getCurrentAnalyzer() == Analyzer.ASM_BASED)
 			return new ASMBasedAnalyzerFactory();
 		else

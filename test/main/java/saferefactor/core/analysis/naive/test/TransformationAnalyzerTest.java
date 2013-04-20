@@ -10,13 +10,14 @@ import org.junit.Test;
 
 import saferefactor.core.analysis.Report;
 import saferefactor.core.analysis.TransformationAnalyzer;
+import saferefactor.core.analysis.impact.ASMBasedImpactAnalyzer;
 import saferefactor.core.analysis.naive.ASMBasedAnalyzer;
 import saferefactor.core.analysis.naive.ReflectionBasedAnalyzer;
 import saferefactor.core.util.Project;
 import saferefactor.core.util.ast.Method;
 
 
-public class NaiveAnalyzerTest {
+public class TransformationAnalyzerTest {
 
 	@Test
 	public void testAnalyze() throws Exception {
@@ -35,7 +36,7 @@ public class NaiveAnalyzerTest {
 				.getProperty("java.io.tmpdir");
 		TransformationAnalyzer analyzer = new ReflectionBasedAnalyzer(
 				source, target,tmpFolder);
-		Report report = analyzer.analyze(false);
+		Report report = analyzer.analyze();
 
 		assertEquals(8, report.getMethodsToTest().size());
 		assertEquals(
@@ -61,40 +62,16 @@ public class NaiveAnalyzerTest {
 				.getProperty("java.io.tmpdir");
 		TransformationAnalyzer analyzer = new ASMBasedAnalyzer(
 				source, target,tmpFolder);
-		Report report = analyzer.analyze(false);
+		Report report = analyzer.analyze();
 
 		assertEquals(8, report.getMethodsToTest().size());
 		assertEquals(
-				"[method : B.k() : B, cons : B.<init>(), method : C.test() : C, cons : A.<init>(), method : A.k() : A, method : C.main([Ljava.lang.String;) : C, cons : C.<init>(), method : B.m() : C]",
+				"[method : B.k() : B;C, cons : B.<init>(), method : C.test() : C, cons : A.<init>(), method : A.k() : A, method : C.main([Ljava.lang.String;) : C, cons : C.<init>(), method : B.m() : C]",
 				report.getMethodsToTest().toString());
 
 	}
 	
-	@Test
-	public void testASMbasedOCC() throws Exception {
 
-		Project source = new Project();
-		source.setProjectFolder(new File("test/resources/subject14source"));
-		source.setBuildFolder(new File("test/resources/subject14source/bin"));
-		source.setSrcFolder(new File("test/resources/subject14source/src"));
-
-		Project target = new Project();
-		target.setProjectFolder(new File("test/resources/subject14target"));
-		target.setBuildFolder(new File("test/resources/subject14target/bin"));
-		target.setSrcFolder(new File("test/resources/subject14target/src"));
-
-		String tmpFolder = System
-				.getProperty("java.io.tmpdir");
-		TransformationAnalyzer analyzer = new ASMBasedAnalyzer(
-				source, target,tmpFolder);
-		
-		Report report = analyzer.analyze(true);
-		assertEquals(8, report.getMethodsToTest().size());
-		assertEquals(
-				"[method : B.k() : B, cons : B.<init>(), method : C.test() : C, cons : A.<init>(), method : A.k() : A, method : C.main([Ljava.lang.String;) : C, cons : C.<init>(), method : B.m() : C]",
-				report.getMethodsToTest().toString());
-
-	}
 
 	@Test(expected = RuntimeException.class)
 	public void testAnalyzeProjectNotFound() throws Exception {
@@ -114,11 +91,63 @@ public class NaiveAnalyzerTest {
 		
 		TransformationAnalyzer analyzer = new ReflectionBasedAnalyzer(
 				source, target,tmpFolder);
-		Report report = analyzer.analyze(false);
+		Report report = analyzer.analyze();
 		List<Method> methodsToTest = report.getMethodsToTest();
 		for (Method abstractMethod : methodsToTest) {
 			System.out.println(abstractMethod);
 		}
+
+	}
+	
+	@Test
+	public void testImpactAnalysis() throws Exception {
+
+		Project source = new Project();
+		source.setProjectFolder(new File("test/resources/subject14source"));
+		source.setBuildFolder(new File("test/resources/subject14source/bin"));
+		source.setSrcFolder(new File("test/resources/subject14source/src"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("test/resources/subject14target"));
+		target.setBuildFolder(new File("test/resources/subject14target/bin"));
+		target.setSrcFolder(new File("test/resources/subject14target/src"));
+
+		String tmpFolder = System
+				.getProperty("java.io.tmpdir");
+		TransformationAnalyzer analyzer = new ASMBasedImpactAnalyzer(
+				source, target,tmpFolder);
+		Report report = analyzer.analyze();
+
+		assertEquals(6, report.getMethodsToTest().size());
+		assertEquals(
+				"[method : B.k() : B;C, cons : B.<init>(), method : C.test() : C, method : C.main([Ljava.lang.String;) : C, cons : C.<init>(), method : B.m() : C]",
+				report.getMethodsToTest().toString());
+
+	}
+	
+	@Test
+	public void testImpactAnalysis2() throws Exception {
+
+		Project source = new Project();
+		source.setProjectFolder(new File("test/resources/impactSource"));
+		source.setBuildFolder(new File("test/resources/impactSource/bin"));
+		source.setSrcFolder(new File("test/resources/impactSource/src"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("test/resources/impactTarget"));
+		target.setBuildFolder(new File("test/resources/impactTarget/bin"));
+		target.setSrcFolder(new File("test/resources/impactTarget/src"));
+
+		String tmpFolder = System
+				.getProperty("java.io.tmpdir");
+		TransformationAnalyzer analyzer = new ASMBasedImpactAnalyzer(
+				source, target,tmpFolder);
+		Report report = analyzer.analyze();
+
+		assertEquals(7, report.getMethodsToTest().size());
+		assertEquals(
+				"[method : C.test(D) : C, method : B.k() : B, cons : B.<init>(), method : A.x() : A, cons : A.<init>(), cons : C.<init>(), cons : D.<init>()]",
+				report.getMethodsToTest().toString());
 
 	}
 

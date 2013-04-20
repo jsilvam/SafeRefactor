@@ -1,4 +1,4 @@
-package saferefactor.core.analysis.naive;
+package saferefactor.core.analysis.impact;
 
 import java.io.File;
 import java.io.IOException;
@@ -8,8 +8,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
+import java.util.Map.Entry;
 
 import org.apache.commons.io.FileUtils;
 import org.designwizard.design.ClassNode;
@@ -25,7 +25,7 @@ import saferefactor.core.util.ast.ConstructorImp;
 import saferefactor.core.util.ast.Method;
 import saferefactor.core.util.ast.MethodImp;
 
-public class ASMBasedAnalyzer implements TransformationAnalyzer {
+public class ASMBasedImpactAnalyzer implements TransformationAnalyzer {
 
 	private final Project source;
 	private final Project target;
@@ -33,7 +33,7 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 	private DesignWizard dwTarget;
 	private List<String> impactedClasses;
 
-	public ASMBasedAnalyzer(Project source, Project target, String tmpDir) {
+	public ASMBasedImpactAnalyzer(Project source, Project target, String tmpDir) {
 		this.source = source;
 		this.target = target;
 	}
@@ -42,6 +42,19 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 
 		dwSource = new DesignWizard(source.getBuildFolder().getAbsolutePath());
 		dwTarget = new DesignWizard(target.getBuildFolder().getAbsolutePath());
+
+		
+
+			List<String> changedClasses = compareBinaries(this.source
+					.getBuildFolder());
+			impactedClasses = new ArrayList<String>();
+			impactedClasses.addAll(changedClasses);
+
+			for (String clazz : changedClasses) {
+ 				impactedClasses.addAll(addCallersAndCallees(clazz));
+			}
+
+		
 
 		Report result = new Report();
 
@@ -52,6 +65,47 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 				targetMethods);
 
 		result.setMethodsToTest(intersection);
+		return result;
+	}
+
+	private List<String> addCallersAndCallees(String clazz) {
+		
+		
+		List<String> result = new ArrayList<String>(); 
+		
+		try {
+			ClassNode classNode = dwSource.getClass(clazz);
+
+			Set<ClassNode> callerClasses = classNode.getCallerClasses();
+			for (ClassNode callerClass : callerClasses) {
+				if (callerClass.getClassName().equals(clazz) || result.contains(callerClass.getClassName()))
+					continue;
+				result.add(callerClass.getClassName());
+				result.addAll(addCallersAndCallees(callerClass.getClassName()));
+			}
+			
+//			Set<ClassNode> calleeClasses = classNode.getCalleeClasses();
+//			for (ClassNode calleeClass : calleeClasses) {
+//				result.add(calleeClass.getClassName());
+//			}
+			Set<MethodNode> allMethods = classNode.getAllMethods();
+			
+			for (MethodNode methodNode : allMethods) {
+				List<ClassNode> parameters = methodNode.getParameters();
+				for (ClassNode parameter : parameters) {
+					result.add(parameter.getClassName());
+				}
+			}
+			
+			
+//			Set<ClassNode> subClasses = classNode.getSubClasses();
+//			for (ClassNode subClass : subClasses) {
+//				result.add(subClass.getClassName());
+//			}
+			
+		} catch (Exception e) {
+			System.out.println("class not found on source: " + clazz);
+		}
 		return result;
 	}
 
@@ -336,5 +390,34 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 		return false;
 	}
 
+	private List<String> compareBinaries(File buildFolder) throws IOException {
+		List<String> result = new ArrayList<String>();
+		if (buildFolder.isDirectory()) {
+			File[] listFiles = buildFolder.listFiles();
+			for (File file : listFiles) {
+				List<String> compareBinaries = compareBinaries(file);
+				result.addAll(compareBinaries);
+			}
+		} else if (buildFolder.getName().endsWith(".class")) {
+			String absolutePath = buildFolder.getAbsolutePath();
+			String root = source.getBuildFolder().getAbsolutePath();
+			String fullNameFolder = absolutePath.substring(root.length() + 1);
+			File targetFile = new File(target.getBuildFolder(), fullNameFolder);
+			if (targetFile.exists()) {
+				boolean isEqual = FileUtils.contentEquals(buildFolder,
+						targetFile);
+				if (!isEqual) {
+					String fullName = fullNameFolder.replace("/", ".");
+					fullName = fullName.substring(0,
+							fullNameFolder.length() - 6);
+					result.add(fullName);
+				}
+			}
+
+		}
+		return result;
+	}
 	
+	
+
 }

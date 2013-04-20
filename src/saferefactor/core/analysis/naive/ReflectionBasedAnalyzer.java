@@ -37,7 +37,7 @@ public class ReflectionBasedAnalyzer implements TransformationAnalyzer {
 
 	}
 
-	public Report analyze(boolean enableOccOptimization) throws Exception {
+	public Report analyze() throws Exception {
 		Report result = new NaiveReport();
 
 		sourceClasses = getClasses(source);
