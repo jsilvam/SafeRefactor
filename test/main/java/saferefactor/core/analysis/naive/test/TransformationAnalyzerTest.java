@@ -150,5 +150,31 @@ public class TransformationAnalyzerTest {
 				report.getMethodsToTest().toString());
 
 	}
+	
+	@Test
+	public void testImpactAnalysis3() throws Exception {
+
+		Project source = new Project();
+		source.setProjectFolder(new File("test/resources/impactSource2"));
+		source.setBuildFolder(new File("test/resources/impactSource2/bin"));
+		source.setSrcFolder(new File("test/resources/impactSource2/src"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("test/resources/impactTarget2"));
+		target.setBuildFolder(new File("test/resources/impactTarget2/bin"));
+		target.setSrcFolder(new File("test/resources/impactTarget2/src"));
+
+		String tmpFolder = System
+				.getProperty("java.io.tmpdir");
+		TransformationAnalyzer analyzer = new ASMBasedImpactAnalyzer(
+				source, target,tmpFolder);
+		Report report = analyzer.analyze();
+
+		assertEquals(2, report.getMethodsToTest().size());
+		assertEquals(
+				"[cons : B.<init>(), method : A.x() : B]",
+				report.getMethodsToTest().toString());
+
+	}
 
 }

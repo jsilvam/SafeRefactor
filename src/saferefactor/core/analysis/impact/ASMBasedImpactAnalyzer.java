@@ -43,18 +43,14 @@ public class ASMBasedImpactAnalyzer implements TransformationAnalyzer {
 		dwSource = new DesignWizard(source.getBuildFolder().getAbsolutePath());
 		dwTarget = new DesignWizard(target.getBuildFolder().getAbsolutePath());
 
-		
+		List<String> changedClasses = compareBinaries(this.source
+				.getBuildFolder());
+		impactedClasses = new ArrayList<String>();
+		impactedClasses.addAll(changedClasses);
 
-			List<String> changedClasses = compareBinaries(this.source
-					.getBuildFolder());
-			impactedClasses = new ArrayList<String>();
-			impactedClasses.addAll(changedClasses);
-
-			for (String clazz : changedClasses) {
- 				impactedClasses.addAll(addCallersAndCallees(clazz));
-			}
-
-		
+		for (String clazz : changedClasses) {
+			addCallersAndCallees(clazz);
+		}
 
 		Report result = new Report();
 
@@ -68,45 +64,44 @@ public class ASMBasedImpactAnalyzer implements TransformationAnalyzer {
 		return result;
 	}
 
-	private List<String> addCallersAndCallees(String clazz) {
-		
-		
-		List<String> result = new ArrayList<String>(); 
-		
+	private void addCallersAndCallees(String clazz) {
+
 		try {
 			ClassNode classNode = dwSource.getClass(clazz);
 
 			Set<ClassNode> callerClasses = classNode.getCallerClasses();
 			for (ClassNode callerClass : callerClasses) {
-				if (callerClass.getClassName().equals(clazz) || result.contains(callerClass.getClassName()))
+				if (callerClass.getClassName().equals(clazz)
+						|| this.impactedClasses.contains(callerClass
+								.getClassName()))
 					continue;
-				result.add(callerClass.getClassName());
-				result.addAll(addCallersAndCallees(callerClass.getClassName()));
+				this.impactedClasses.add(callerClass.getClassName());
+				addCallersAndCallees(callerClass.getClassName());
 			}
-			
-//			Set<ClassNode> calleeClasses = classNode.getCalleeClasses();
-//			for (ClassNode calleeClass : calleeClasses) {
-//				result.add(calleeClass.getClassName());
-//			}
+
+			// Set<ClassNode> calleeClasses = classNode.getCalleeClasses();
+			// for (ClassNode calleeClass : calleeClasses) {
+			// result.add(calleeClass.getClassName());
+			// }
 			Set<MethodNode> allMethods = classNode.getAllMethods();
-			
+
 			for (MethodNode methodNode : allMethods) {
 				List<ClassNode> parameters = methodNode.getParameters();
 				for (ClassNode parameter : parameters) {
-					result.add(parameter.getClassName());
+					if (impactedClasses.contains(parameter.getClassName()))
+						continue;
+					impactedClasses.add(parameter.getClassName());
 				}
 			}
-			
-			
-//			Set<ClassNode> subClasses = classNode.getSubClasses();
-//			for (ClassNode subClass : subClasses) {
-//				result.add(subClass.getClassName());
-//			}
-			
+
+			// Set<ClassNode> subClasses = classNode.getSubClasses();
+			// for (ClassNode subClass : subClasses) {
+			// result.add(subClass.getClassName());
+			// }
+
 		} catch (Exception e) {
 			System.out.println("class not found on source: " + clazz);
 		}
-		return result;
 	}
 
 	private List<String> getParameterList(MethodNode methodNode) {
@@ -417,7 +412,5 @@ public class ASMBasedImpactAnalyzer implements TransformationAnalyzer {
 		}
 		return result;
 	}
-	
-	
 
 }
