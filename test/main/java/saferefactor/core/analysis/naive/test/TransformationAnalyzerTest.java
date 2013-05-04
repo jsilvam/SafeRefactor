@@ -176,5 +176,56 @@ public class TransformationAnalyzerTest {
 				report.getMethodsToTest().toString());
 
 	}
+	
+	@Test
+	public void testImpactAnalysis4() throws Exception {
+
+		Project source = new Project();
+		source.setProjectFolder(new File("test/resources/inheritanceImpactAnalysisSource"));
+		source.setBuildFolder(new File("test/resources/inheritanceImpactAnalysisSource/bin"));
+		source.setSrcFolder(new File("test/resources/inheritanceImpactAnalysisSource/src"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("test/resources/inheritanceImpactAnalysisTarget"));
+		target.setBuildFolder(new File("test/resources/inheritanceImpactAnalysisTarget/bin"));
+		target.setSrcFolder(new File("test/resources/inheritanceImpactAnalysisTarget/src"));
+
+		String tmpFolder = System
+				.getProperty("java.io.tmpdir");
+		TransformationAnalyzer analyzer = new ASMBasedImpactAnalyzer(
+				source, target,tmpFolder);
+		Report report = analyzer.analyze();
+
+		assertEquals(3, report.getMethodsToTest().size());
+		assertEquals(
+				"[cons : B.<init>(), method : A.test() : A;B;C, cons : C.<init>()]",
+				report.getMethodsToTest().toString());
+	}
+	
+	@Test
+	public void testImpactAnalysis5() throws Exception {
+
+		Project source = new Project();
+		source.setProjectFolder(new File("test/resources/inheritanceImpactAnalysisSource"));
+		source.setBuildFolder(new File("test/resources/inheritanceImpactAnalysisSource/bin"));
+		source.setSrcFolder(new File("test/resources/inheritanceImpactAnalysisSource/src"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("test/resources/inheritanceImpactAnalysisTarget"));
+		target.setBuildFolder(new File("test/resources/inheritanceImpactAnalysisTarget/bin"));
+		target.setSrcFolder(new File("test/resources/inheritanceImpactAnalysisTarget/src"));
+
+		String tmpFolder = System
+				.getProperty("java.io.tmpdir");
+		TransformationAnalyzer analyzer = new ASMBasedAnalyzer(
+				source, target,tmpFolder);
+		Report report = analyzer.analyze();
+
+		assertEquals(4, report.getMethodsToTest().size());
+		assertEquals(
+				"[cons : B.<init>(), cons : A.<init>(), method : A.test() : A;B;C, cons : C.<init>()]",
+				report.getMethodsToTest().toString());
+
+	}
 
 }

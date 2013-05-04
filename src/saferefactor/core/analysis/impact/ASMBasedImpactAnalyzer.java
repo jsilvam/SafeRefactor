@@ -47,7 +47,7 @@ public class ASMBasedImpactAnalyzer implements TransformationAnalyzer {
 				.getBuildFolder());
 		impactedClasses = new ArrayList<String>();
 		impactedClasses.addAll(changedClasses);
-
+		
 		for (String clazz : changedClasses) {
 			addCallersAndCallees(clazz);
 		}
@@ -107,18 +107,27 @@ public class ASMBasedImpactAnalyzer implements TransformationAnalyzer {
 	private List<String> getParameterList(MethodNode methodNode) {
 		List<String> result = new ArrayList<String>();
 		List<ClassNode> parameters = methodNode.getParameters();
-		for (ClassNode classNode : parameters) {
-			result.add(classNode.getClassName());
-		}
+		if (parameters != null)
+			for (ClassNode classNode : parameters) {
+				result.add(classNode.getClassName());
+			}
 		return result;
 	}
 
 	private boolean doNotTestTypeOfMethod(MethodNode methodNode) {
 
 		ClassNode declaringClass = methodNode.getDeclaringClass();
-		if (this.impactedClasses != null) {
 
-			if (!this.impactedClasses.contains(declaringClass.getName()))
+		if (this.impactedClasses != null) {
+			Method method = convertToMethod(methodNode);
+			Set<String> allowedClasses = method.getAllowedClasses();
+			boolean doNotTest = true;
+			for (String clazz : allowedClasses) {
+				if (this.impactedClasses.contains(clazz))
+					doNotTest = false;
+			}
+			if (!this.impactedClasses.contains(declaringClass.getName())
+					&& doNotTest)
 				return true;
 		}
 
@@ -359,17 +368,31 @@ public class ASMBasedImpactAnalyzer implements TransformationAnalyzer {
 			result = new MethodImp();
 			result.setSimpleName(methodNode.getShortName());
 			if (methodNode.containsModifiers(Modifier.PUBLIC)) {
-				Set<ClassNode> subClasses = declaringClass.getSubClasses();
-				for (ClassNode classNode : subClasses) {
-					if (classNode.getAllMethods().contains(methodNode))
-						allowedClasses.add(classNode.getClassName());
-				}
+				List<String> allowedClasseNames = findAllowedClasses(
+						methodNode, declaringClass);
+
+				allowedClasses.addAll(allowedClasseNames);
+
 			}
 		}
 		result.setParameterList(parameterTypeNames);
 		result.setDeclaringClass(declaringClass.getClassName());
 
 		result.setAllowedClasses(allowedClasses);
+		return result;
+	}
+
+	private List<String> findAllowedClasses(MethodNode methodNode,
+			ClassNode classNode) {
+		List<String> result = new ArrayList<String>();
+		Set<ClassNode> subClasses = classNode.getSubClasses();
+
+		for (ClassNode subClass : subClasses) {
+			if (subClass.getAllMethods().contains(methodNode)) {
+				result.add(subClass.getClassName());
+				result.addAll(findAllowedClasses(methodNode, subClass));
+			}
+		}
 		return result;
 	}
 

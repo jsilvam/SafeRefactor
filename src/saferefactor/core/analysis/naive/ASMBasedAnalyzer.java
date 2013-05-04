@@ -310,17 +310,31 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 			result = new MethodImp();
 			result.setSimpleName(methodNode.getShortName());
 			if (methodNode.containsModifiers(Modifier.PUBLIC)) {
-				Set<ClassNode> subClasses = declaringClass.getSubClasses();
-				for (ClassNode classNode : subClasses) {
-					if (classNode.getAllMethods().contains(methodNode))
-						allowedClasses.add(classNode.getClassName());
-				}
+				List<String> allowedClasseNames = findAllowedClasses(methodNode,
+						declaringClass);
+				
+				allowedClasses.addAll(allowedClasseNames);
+				
 			}
 		}
 		result.setParameterList(parameterTypeNames);
 		result.setDeclaringClass(declaringClass.getClassName());
 
 		result.setAllowedClasses(allowedClasses);
+		return result;
+	}
+
+	private List<String> findAllowedClasses(MethodNode methodNode,
+			ClassNode classNode) {
+		List<String> result = new ArrayList<String>();
+		Set<ClassNode> subClasses = classNode.getSubClasses();
+		
+		for (ClassNode subClass : subClasses) {
+			if (subClass.getAllMethods().contains(methodNode)) {
+				result.add(subClass.getClassName());
+				result.addAll(findAllowedClasses(methodNode, subClass));
+			}
+		}
 		return result;
 	}
 
