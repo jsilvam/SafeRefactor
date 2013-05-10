@@ -67,7 +67,7 @@ public class SafeRefactorImp extends SafeRefactor {
 		logger.addHandler(fh);
 
 		analyzer = AnalyzerFactory.getFactory(parameters.isEnableImpactAnalysis()).createAnalyzer(this.source,
-				this.target, this.tmpFolder);
+				this.target, this.tmpFolder, parameters.getClazz());
 
 		generator = new RandoopAntAdapter(this.source, this.getTestPath()
 				.getAbsolutePath());

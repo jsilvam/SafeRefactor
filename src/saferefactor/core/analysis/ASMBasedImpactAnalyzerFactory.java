@@ -7,8 +7,8 @@ public class ASMBasedImpactAnalyzerFactory extends AnalyzerFactory {
 
 	@Override
 	public TransformationAnalyzer createAnalyzer(Project source,
-			Project target, String tmpDir) {
-		return new ASMBasedImpactAnalyzer(source, target, tmpDir);
+			Project target, String tmpDir, String clazz) {
+		return new ASMBasedImpactAnalyzer(source, target, tmpDir, clazz);
 	}
 
 }

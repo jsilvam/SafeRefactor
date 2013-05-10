@@ -23,7 +23,8 @@ public abstract class AnalyzerFactory {
 			return Analyzer.ASM_BASED;
 		}
 	}
-	
-	public abstract TransformationAnalyzer createAnalyzer(Project source, Project target, String tmpDir);
+
+	public abstract TransformationAnalyzer createAnalyzer(Project source,
+			Project target, String tmpDir, String string);
 
 }

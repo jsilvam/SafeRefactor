@@ -25,8 +25,12 @@ public class Parameters {
 //	private String buildPath;
 
 	private boolean checkCoverage;
+
+	private String clazz;
 	
-	
+	public void addTestGeneratorParameter(String parameter) {
+		testGeneratorParameters.add(parameter);
+	}
 
 	public List<String> getTestGeneratorParameters() {
 		return testGeneratorParameters;
@@ -114,6 +118,14 @@ public class Parameters {
 
 	public void setEnableImpactAnalysis(boolean enableImpactAnalysis) {
 		this.enableImpactAnalysis = enableImpactAnalysis;
+	}
+
+	public void setClazz(String clazz) {
+		this.clazz = clazz;
+	}
+
+	public String getClazz() {
+		return this.clazz;
 	}
 
 	

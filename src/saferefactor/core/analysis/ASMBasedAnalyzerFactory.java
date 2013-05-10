@@ -7,7 +7,7 @@ public class ASMBasedAnalyzerFactory extends AnalyzerFactory {
 
 	@Override
 	public TransformationAnalyzer createAnalyzer(Project source,
-			Project target, String tmpDir) {
+			Project target, String tmpDir, String clazz) {
 		return new ASMBasedAnalyzer(source, target, tmpDir);
 	}
 }

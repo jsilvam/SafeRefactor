@@ -56,7 +56,7 @@ public class SafeRefactorFacade {
 					.checkTransformation(
 							"/Users/gustavoas/Downloads/workspace/ferramentaLPSSM/Products/Product2/",
 							"/Users/gustavoas/Downloads/workspace/ferramentaLPSSM/Products/Product5/",
-							"bin", "src/", "lib", false, 10, false);
+							"bin", "src/", "lib", false, 10, false, null);
 			System.out.println(checkTransformation.isRefactoring());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -66,7 +66,7 @@ public class SafeRefactorFacade {
 
 	public static Report checkTransformation(String sourcePath,
 			String targetPath, String bin, String src, String lib,
-			boolean needCompile, double timelimit, boolean occ)
+			boolean needCompile, double timelimit, boolean occ, String clazz)
 			throws Exception {
 		File sourceFile = new File(sourcePath);
 		File targetFile = new File(targetPath);
@@ -93,6 +93,13 @@ public class SafeRefactorFacade {
 		parameters.setCompileProjects(needCompile);
 		parameters.setExecuteTwiceOnSource(true);
 		parameters.setCheckCoverage(false);
+		parameters.setClazz(clazz);
+		
+		if (clazz != null) {
+			//parameters.addTestGeneratorParameter("--junit-package-name=" + clazz + ".test");
+			parameters.addTestGeneratorParameter("--junit-classname=" + clazz.replace(".", "_") + "_RandoopTest");
+		}
+		
 		// To check relevant tests, comment next line
 		// parameters.getTestGeneratorParameters().add("--testsperfile=1");
 		SafeRefactor saferefactor = new SafeRefactorImp(source, target,

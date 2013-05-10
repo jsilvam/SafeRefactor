@@ -32,10 +32,18 @@ public class ASMBasedImpactAnalyzer implements TransformationAnalyzer {
 	private DesignWizard dwSource;
 	private DesignWizard dwTarget;
 	private List<String> impactedClasses;
+	private String clazz;
 
-	public ASMBasedImpactAnalyzer(Project source, Project target, String tmpDir) {
+	// TODO: why is there tmpDir?
+	public ASMBasedImpactAnalyzer(Project source, Project target, String tmpDir, String clazz) {
 		this.source = source;
 		this.target = target;
+		this.clazz = clazz;
+	}
+	
+	
+	public ASMBasedImpactAnalyzer(Project source, Project target, String tmpDir) {
+		this(source, target, tmpDir, null);
 	}
 
 	public Report analyze() throws Exception {
@@ -47,6 +55,11 @@ public class ASMBasedImpactAnalyzer implements TransformationAnalyzer {
 				.getBuildFolder());
 		impactedClasses = new ArrayList<String>();
 		impactedClasses.addAll(changedClasses);
+		
+		if (clazz != null) {
+			changedClasses.add(clazz);
+			impactedClasses.add(clazz);
+		}
 		
 		for (String clazz : changedClasses) {
 			addCallersAndCallees(clazz);
