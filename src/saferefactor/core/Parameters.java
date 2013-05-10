@@ -10,6 +10,8 @@ public class Parameters {
 	
 	private boolean verbose = false;
 	
+	private boolean dependenceAnalaysis = false;
+	
 	private boolean analyzeChangeMethods = false;
 
 	private boolean enableImpactAnalysis = false;
@@ -126,6 +128,14 @@ public class Parameters {
 
 	public String getClazz() {
 		return this.clazz;
+	}
+
+	public boolean isDependenceAnalaysis() {
+		return dependenceAnalaysis;
+	}
+
+	public void setDependenceAnalaysis(boolean dependenceAnalaysis) {
+		this.dependenceAnalaysis = dependenceAnalaysis;
 	}
 
 	

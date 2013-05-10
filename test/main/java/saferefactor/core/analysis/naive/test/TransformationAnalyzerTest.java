@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import saferefactor.core.analysis.Report;
 import saferefactor.core.analysis.TransformationAnalyzer;
+import saferefactor.core.analysis.impact.ASMBasedDependenceAnalyzer;
 import saferefactor.core.analysis.impact.ASMBasedImpactAnalyzer;
 import saferefactor.core.analysis.naive.ASMBasedAnalyzer;
 import saferefactor.core.analysis.naive.ReflectionBasedAnalyzer;
@@ -224,6 +225,110 @@ public class TransformationAnalyzerTest {
 		assertEquals(4, report.getMethodsToTest().size());
 		assertEquals(
 				"[cons : B.<init>(), cons : A.<init>(), method : A.test() : A;B;C, cons : C.<init>()]",
+				report.getMethodsToTest().toString());
+
+	}
+	
+	@Test
+	public void testDependenceAnalyzer() throws Exception {
+
+		Project source = new Project();
+		source.setProjectFolder(new File("test/resources/dependenceSource"));
+		source.setBuildFolder(new File("test/resources/dependenceSource/bin"));
+		source.setSrcFolder(new File("test/resources/dependenceSource/src"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("test/resources/dependenceTarget"));
+		target.setBuildFolder(new File("test/resources/dependenceTarget/bin"));
+		target.setSrcFolder(new File("test/resources/dependenceTarget/src"));
+
+		String tmpFolder = System
+				.getProperty("java.io.tmpdir");
+		TransformationAnalyzer analyzer = new ASMBasedDependenceAnalyzer(
+				source, target,tmpFolder,"A");
+		Report report = analyzer.analyze();
+
+		assertEquals(1, report.getMethodsToTest().size());
+		
+		assertEquals(
+		"[method : A.m() : B]",
+		report.getMethodsToTest().toString());
+	}
+	
+	@Test
+	public void testDependenceAnalyzer2() throws Exception {
+
+		Project source = new Project();
+		source.setProjectFolder(new File("test/resources/dependenceSource"));
+		source.setBuildFolder(new File("test/resources/dependenceSource/bin"));
+		source.setSrcFolder(new File("test/resources/dependenceSource/src"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("test/resources/dependenceTarget"));
+		target.setBuildFolder(new File("test/resources/dependenceTarget/bin"));
+		target.setSrcFolder(new File("test/resources/dependenceTarget/src"));
+
+		String tmpFolder = System
+				.getProperty("java.io.tmpdir");
+		TransformationAnalyzer analyzer = new ASMBasedDependenceAnalyzer(
+				source, target,tmpFolder,"B");
+		Report report = analyzer.analyze();
+
+		assertEquals(2, report.getMethodsToTest().size());
+		assertEquals(
+				"[cons : B.<init>(), method : A.m() : B]",
+				report.getMethodsToTest().toString());
+
+	}
+	
+	@Test
+	public void testDependenceAnalyzer3() throws Exception {
+
+		Project source = new Project();
+		source.setProjectFolder(new File("test/resources/dependenceSource"));
+		source.setBuildFolder(new File("test/resources/dependenceSource/bin"));
+		source.setSrcFolder(new File("test/resources/dependenceSource/src"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("test/resources/dependenceTarget"));
+		target.setBuildFolder(new File("test/resources/dependenceTarget/bin"));
+		target.setSrcFolder(new File("test/resources/dependenceTarget/src"));
+
+		String tmpFolder = System
+				.getProperty("java.io.tmpdir");
+		TransformationAnalyzer analyzer = new ASMBasedDependenceAnalyzer(
+				source, target,tmpFolder,"D");
+		Report report = analyzer.analyze();
+
+		assertEquals(7, report.getMethodsToTest().size());
+		assertEquals(
+				"[cons : B.<init>(), method : D.m(C) : D, cons : E.<init>(), method : C.m(java.lang.String) : C, cons : C.<init>(), method : A.m() : B, cons : D.<init>()]",
+				report.getMethodsToTest().toString());
+
+	}
+	
+	@Test
+	public void testDependenceAnalyzer4() throws Exception {
+
+		Project source = new Project();
+		source.setProjectFolder(new File("test/resources/dependenceSource"));
+		source.setBuildFolder(new File("test/resources/dependenceSource/bin"));
+		source.setSrcFolder(new File("test/resources/dependenceSource/src"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("test/resources/dependenceTarget"));
+		target.setBuildFolder(new File("test/resources/dependenceTarget/bin"));
+		target.setSrcFolder(new File("test/resources/dependenceTarget/src"));
+
+		String tmpFolder = System
+				.getProperty("java.io.tmpdir");
+		TransformationAnalyzer analyzer = new ASMBasedDependenceAnalyzer(
+				source, target,tmpFolder,"F");
+		Report report = analyzer.analyze();
+
+		assertEquals(8, report.getMethodsToTest().size());
+		assertEquals(
+				"[cons : B.<init>(), method : D.m(C) : D, cons : E.<init>(), cons : F.<init>(), method : C.m(java.lang.String) : C, cons : C.<init>(), method : A.m() : B, cons : D.<init>()]",
 				report.getMethodsToTest().toString());
 
 	}

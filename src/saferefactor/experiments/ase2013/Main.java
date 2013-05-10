@@ -87,8 +87,8 @@ public class Main {
 			try {
 				Report report;
 				report = SafeRefactorFacade.checkTransformation(sourcePath,
-						targetPath, "bin", "src", "", false, timelimit, true,
-						classe);
+						targetPath, "bin", "src", "", false, timelimit, false,
+						classe, true);
 				reports.add(report);
 			} catch (Exception e) {
 				e.printStackTrace();
