@@ -110,8 +110,12 @@ public class ASMBasedDependenceAnalyzer implements TransformationAnalyzer {
 			// add field types
 			Set<FieldNode> allFields = classNode.getAllFields();
 			for (FieldNode fieldNode : allFields) {
-				if (impactedClasses.contains(fieldNode.getType()))
+				System.out.println("Checking if " + fieldNode.getType().getClassName() + " is already in impactedClasses");
+				if (impactedClasses.contains(fieldNode.getType().getClassName())) {
+					System.out.println("OK, I'm already on impactedClasses");
 					continue;
+				}
+				System.out.println("Nop. Recursive call.");
 				impactedClasses.add(fieldNode.getType().getClassName());
 				if (fieldNode.getType().isClass())
 					addCallees(fieldNode.getType().getClassName());

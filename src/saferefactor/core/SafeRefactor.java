@@ -168,20 +168,20 @@ public abstract class SafeRefactor {
 
 		analyzeTransformation();
 		generateTests();
-		compileTests();
-		runTestsOnSourceAndTargetProjects();
-		comparator.compare();
-		if (!comparator.getReport().isRefactoring()
-				&& parameters.analyzeChangeMethods()) {
-			String testSourceDir = getTmpFolder() + Constants.SEPARATOR
-					+ Constants.TESTS_DIR + Constants.SEPARATOR;
-			Set<Method> changedMethods = comparator
-					.identifyMethodsWithBehavioralChanges(testSourceDir);
-			report.setChangedMethods(new ArrayList<Method>(changedMethods));
-		}
-
-		if (parameters.checkCoverage())
-			meter.checkTestCoverage();
+//		compileTests();
+//		runTestsOnSourceAndTargetProjects();
+//		comparator.compare();
+//		if (!comparator.getReport().isRefactoring()
+//				&& parameters.analyzeChangeMethods()) {
+//			String testSourceDir = getTmpFolder() + Constants.SEPARATOR
+//					+ Constants.TESTS_DIR + Constants.SEPARATOR;
+//			Set<Method> changedMethods = comparator
+//					.identifyMethodsWithBehavioralChanges(testSourceDir);
+//			report.setChangedMethods(new ArrayList<Method>(changedMethods));
+//		}
+//
+//		if (parameters.checkCoverage())
+//			meter.checkTestCoverage();
 	}
 
 	protected abstract void generateReport();
