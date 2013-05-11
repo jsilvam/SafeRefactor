@@ -70,6 +70,8 @@ public class ASMBasedDependenceAnalyzer implements TransformationAnalyzer {
 
 		Set<MethodNode> sourceMethods = dwSource.getAllMethods();
 		Set<MethodNode> targetMethods = dwTarget.getAllMethods();
+		
+		
 
 		List<Method> intersection = getIntersection(sourceMethods,
 				targetMethods);
@@ -83,8 +85,7 @@ public class ASMBasedDependenceAnalyzer implements TransformationAnalyzer {
 		try {
 			ClassNode classNode = dwSource.getClass(clazz);
 
-			
-			//add callees 
+			// add callees
 			Set<ClassNode> calleeClasses = classNode.getCalleeClasses();
 			for (ClassNode calleeClass : calleeClasses) {
 				if (impactedClasses.contains(calleeClass.getClassName()))
@@ -92,9 +93,16 @@ public class ASMBasedDependenceAnalyzer implements TransformationAnalyzer {
 				impactedClasses.add(calleeClass.getClassName());
 				if (calleeClass.isClass())
 					addCallees(calleeClass.getClassName());
+				
+				Set<ClassNode> subClasses = calleeClass.getSubClasses();
+				for (ClassNode subClass : subClasses) {
+					if (impactedClasses.contains(subClass.getClassName()))
+						continue;
+					impactedClasses.add(subClass.getClassName());
+				}
 			}
-			
-			//add parameter types
+
+			// add parameter types
 			Set<MethodNode> allMethods = classNode.getAllMethods();
 			for (MethodNode methodNode : allMethods) {
 				List<ClassNode> parameters = methodNode.getParameters();
@@ -102,26 +110,48 @@ public class ASMBasedDependenceAnalyzer implements TransformationAnalyzer {
 					if (impactedClasses.contains(parameter.getClassName()))
 						continue;
 					impactedClasses.add(parameter.getClassName());
-					if (parameter.isClass())
+					if (parameter.isClass()) {
 						addCallees(parameter.getClassName());
+						Set<ClassNode> subClasses = parameter.getSubClasses();
+						for (ClassNode subClass : subClasses) {
+							if (impactedClasses.contains(subClass.getClassName()))
+								continue;
+							impactedClasses.add(subClass.getClassName());
+						}
+					}
+						
+					
+					
 				}
 			}
 
 			// add field types
 			Set<FieldNode> allFields = classNode.getAllFields();
 			for (FieldNode fieldNode : allFields) {
-				System.out.println("Checking if " + fieldNode.getType().getClassName() + " is already in impactedClasses");
-				if (impactedClasses.contains(fieldNode.getType().getClassName())) {
+				System.out.println("Checking if "
+						+ fieldNode.getType().getClassName()
+						+ " is already in impactedClasses");
+				if (impactedClasses
+						.contains(fieldNode.getType().getClassName())) {
 					System.out.println("OK, I'm already on impactedClasses");
 					continue;
 				}
 				System.out.println("Nop. Recursive call.");
 				impactedClasses.add(fieldNode.getType().getClassName());
-				if (fieldNode.getType().isClass())
+				if (fieldNode.getType().isClass()) {
 					addCallees(fieldNode.getType().getClassName());
+					Set<ClassNode> subClasses = fieldNode.getType().getSubClasses();
+					for (ClassNode subClass : subClasses) {
+						if (impactedClasses.contains(subClass.getClassName()))
+							continue;
+						impactedClasses.add(subClass.getClassName());
+					}
+				}
+					
 			}
 
 		} catch (Exception e) {
+			
 			System.out.println("class not found on source: " + clazz);
 		}
 	}
