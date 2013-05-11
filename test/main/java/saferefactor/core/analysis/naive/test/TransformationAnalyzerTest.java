@@ -378,9 +378,9 @@ public class TransformationAnalyzerTest {
 				source, target,tmpFolder,"H");
 		Report report = analyzer.analyze();
 
-		assertEquals(6, report.getMethodsToTest().size());
+		assertEquals(4, report.getMethodsToTest().size());
 		assertEquals(
-				"[cons : B.<init>(), method : G.m(A) : G, cons : G.<init>(), method : A.m() : B]",
+				"[method : G.m(A) : G, cons : G.<init>(), cons : H.<init>(), method : H.m(Inter) : H]",
 				report.getMethodsToTest().toString());
 
 	}

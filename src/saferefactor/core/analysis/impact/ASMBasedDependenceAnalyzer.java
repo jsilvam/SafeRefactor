@@ -70,8 +70,6 @@ public class ASMBasedDependenceAnalyzer implements TransformationAnalyzer {
 
 		Set<MethodNode> sourceMethods = dwSource.getAllMethods();
 		Set<MethodNode> targetMethods = dwTarget.getAllMethods();
-		
-		
 
 		List<Method> intersection = getIntersection(sourceMethods,
 				targetMethods);
@@ -85,22 +83,32 @@ public class ASMBasedDependenceAnalyzer implements TransformationAnalyzer {
 		try {
 			ClassNode classNode = dwSource.getClass(clazz);
 
-			
-			//add callees 
+			// add callees
 			Set<ClassNode> calleeClasses = classNode.getCalleeClasses();
 			for (ClassNode calleeClass : calleeClasses) {
 				if (impactedClasses.contains(calleeClass.getClassName()))
 					continue;
 				impactedClasses.add(calleeClass.getClassName());
-				if (calleeClass.isClass())
+				if (calleeClass.isClass()) {
 					addCallees(calleeClass.getClassName());
-				
-				Set<ClassNode> subClasses = calleeClass.getSubClasses();
-				for (ClassNode subClass : subClasses) {
-					if (impactedClasses.contains(subClass.getClassName()))
-						continue;
-					impactedClasses.add(subClass.getClassName());
+
+					Set<ClassNode> subClasses = calleeClass.getSubClasses();
+					for (ClassNode subClass : subClasses) {
+						if (impactedClasses.contains(subClass.getClassName()))
+							continue;
+						impactedClasses.add(subClass.getClassName());
+					}
+				} else if (calleeClass.isInterface()) {
+					Set<ClassNode> entitiesThatImplements = calleeClass
+							.getEntitiesThatImplements();
+					for (ClassNode implementation : entitiesThatImplements) {
+						if (impactedClasses.contains(implementation
+								.getClassName()))
+							continue;
+						impactedClasses.add(implementation.getClassName());
+					}
 				}
+
 			}
 
 			// add parameter types
@@ -115,14 +123,22 @@ public class ASMBasedDependenceAnalyzer implements TransformationAnalyzer {
 						addCallees(parameter.getClassName());
 						Set<ClassNode> subClasses = parameter.getSubClasses();
 						for (ClassNode subClass : subClasses) {
-							if (impactedClasses.contains(subClass.getClassName()))
+							if (impactedClasses.contains(subClass
+									.getClassName()))
 								continue;
 							impactedClasses.add(subClass.getClassName());
 						}
+					} else if (parameter.isInterface()) {
+						Set<ClassNode> entitiesThatImplements = parameter
+								.getEntitiesThatImplements();
+						for (ClassNode implementation : entitiesThatImplements) {
+							if (impactedClasses.contains(implementation
+									.getClassName()))
+								continue;
+							impactedClasses.add(implementation.getClassName());
+						}
 					}
-						
-					
-					
+
 				}
 			}
 
@@ -141,18 +157,28 @@ public class ASMBasedDependenceAnalyzer implements TransformationAnalyzer {
 				impactedClasses.add(fieldNode.getType().getClassName());
 				if (fieldNode.getType().isClass()) {
 					addCallees(fieldNode.getType().getClassName());
-					Set<ClassNode> subClasses = fieldNode.getType().getSubClasses();
+					Set<ClassNode> subClasses = fieldNode.getType()
+							.getSubClasses();
 					for (ClassNode subClass : subClasses) {
 						if (impactedClasses.contains(subClass.getClassName()))
 							continue;
 						impactedClasses.add(subClass.getClassName());
 					}
+				} else if (fieldNode.getType().isInterface()) {
+					Set<ClassNode> entitiesThatImplements = fieldNode.getType()
+							.getEntitiesThatImplements();
+					for (ClassNode implementation : entitiesThatImplements) {
+						if (impactedClasses.contains(implementation
+								.getClassName()))
+							continue;
+						impactedClasses.add(implementation.getClassName());
+					}
 				}
-					
+
 			}
 
 		} catch (Exception e) {
-			
+
 			System.out.println("class not found on source: " + clazz);
 		}
 	}
