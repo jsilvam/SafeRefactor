@@ -49,6 +49,8 @@ public class Report implements Serializable {
 	private List<String> changedMethods2 = new ArrayList<String>();
 	
 	private CoverageReport coverage;
+
+	private String clazz;
 	
 	public boolean isRefactoring() {
 		return refactoring;
@@ -176,6 +178,14 @@ public class Report implements Serializable {
 
 	public void setTestsThatCoverTheChange(double testsThatCoverTheChange) {
 		this.testsThatCoverTheChange = testsThatCoverTheChange;
+	}
+
+	public void addClazz(String clazz) {
+		this.clazz = clazz;
+	}
+
+	public String getClazz() {
+		return clazz;
 	}
 
 }

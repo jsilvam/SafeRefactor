@@ -85,7 +85,8 @@ public class ASMBasedDependenceAnalyzer implements TransformationAnalyzer {
 		try {
 			ClassNode classNode = dwSource.getClass(clazz);
 
-			// add callees
+			
+			//add callees 
 			Set<ClassNode> calleeClasses = classNode.getCalleeClasses();
 			for (ClassNode calleeClass : calleeClasses) {
 				if (impactedClasses.contains(calleeClass.getClassName()))
