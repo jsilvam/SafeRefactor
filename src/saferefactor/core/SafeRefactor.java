@@ -248,8 +248,6 @@ public abstract class SafeRefactor {
 	private void generateTests() throws FileNotFoundException {
 		double start = System.currentTimeMillis();
 
-		System.out.println("*********** parameters.getTestGeneratorParameters() *******");
-		System.out.println(parameters.getTestGeneratorParameters());
 		generator.generateTestsForMethodList(methodsToTest,
 				parameters.getTimeLimit(),
 				parameters.getTestGeneratorParameters());
