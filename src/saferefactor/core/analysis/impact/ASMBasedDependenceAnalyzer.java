@@ -83,18 +83,35 @@ public class ASMBasedDependenceAnalyzer implements TransformationAnalyzer {
 		try {
 			ClassNode classNode = dwSource.getClass(clazz);
 
-			
-			//add callees 
+			// add callees
 			Set<ClassNode> calleeClasses = classNode.getCalleeClasses();
 			for (ClassNode calleeClass : calleeClasses) {
 				if (impactedClasses.contains(calleeClass.getClassName()))
 					continue;
 				impactedClasses.add(calleeClass.getClassName());
-				if (calleeClass.isClass())
+				if (calleeClass.isClass()) {
 					addCallees(calleeClass.getClassName());
+
+					Set<ClassNode> subClasses = calleeClass.getSubClasses();
+					for (ClassNode subClass : subClasses) {
+						if (impactedClasses.contains(subClass.getClassName()))
+							continue;
+						impactedClasses.add(subClass.getClassName());
+					}
+				} else if (calleeClass.isInterface()) {
+					Set<ClassNode> entitiesThatImplements = calleeClass
+							.getEntitiesThatImplements();
+					for (ClassNode implementation : entitiesThatImplements) {
+						if (impactedClasses.contains(implementation
+								.getClassName()))
+							continue;
+						impactedClasses.add(implementation.getClassName());
+					}
+				}
+
 			}
-			
-			//add parameter types
+
+			// add parameter types
 			Set<MethodNode> allMethods = classNode.getAllMethods();
 			for (MethodNode methodNode : allMethods) {
 				List<ClassNode> parameters = methodNode.getParameters();
@@ -102,22 +119,66 @@ public class ASMBasedDependenceAnalyzer implements TransformationAnalyzer {
 					if (impactedClasses.contains(parameter.getClassName()))
 						continue;
 					impactedClasses.add(parameter.getClassName());
-					if (parameter.isClass())
+					if (parameter.isClass()) {
 						addCallees(parameter.getClassName());
+						Set<ClassNode> subClasses = parameter.getSubClasses();
+						for (ClassNode subClass : subClasses) {
+							if (impactedClasses.contains(subClass
+									.getClassName()))
+								continue;
+							impactedClasses.add(subClass.getClassName());
+						}
+					} else if (parameter.isInterface()) {
+						Set<ClassNode> entitiesThatImplements = parameter
+								.getEntitiesThatImplements();
+						for (ClassNode implementation : entitiesThatImplements) {
+							if (impactedClasses.contains(implementation
+									.getClassName()))
+								continue;
+							impactedClasses.add(implementation.getClassName());
+						}
+					}
+
 				}
 			}
 
 			// add field types
 			Set<FieldNode> allFields = classNode.getAllFields();
 			for (FieldNode fieldNode : allFields) {
-				if (impactedClasses.contains(fieldNode.getType().getClassName())) 
+				System.out.println("Checking if "
+						+ fieldNode.getType().getClassName()
+						+ " is already in impactedClasses");
+				if (impactedClasses
+						.contains(fieldNode.getType().getClassName())) {
+					System.out.println("OK, I'm already on impactedClasses");
 					continue;
+				}
+				System.out.println("Nop. Recursive call.");
 				impactedClasses.add(fieldNode.getType().getClassName());
-				if (fieldNode.getType().isClass())
+				if (fieldNode.getType().isClass()) {
 					addCallees(fieldNode.getType().getClassName());
+					Set<ClassNode> subClasses = fieldNode.getType()
+							.getSubClasses();
+					for (ClassNode subClass : subClasses) {
+						if (impactedClasses.contains(subClass.getClassName()))
+							continue;
+						impactedClasses.add(subClass.getClassName());
+					}
+				} else if (fieldNode.getType().isInterface()) {
+					Set<ClassNode> entitiesThatImplements = fieldNode.getType()
+							.getEntitiesThatImplements();
+					for (ClassNode implementation : entitiesThatImplements) {
+						if (impactedClasses.contains(implementation
+								.getClassName()))
+							continue;
+						impactedClasses.add(implementation.getClassName());
+					}
+				}
+
 			}
 
 		} catch (Exception e) {
+
 			System.out.println("class not found on source: " + clazz);
 		}
 	}
