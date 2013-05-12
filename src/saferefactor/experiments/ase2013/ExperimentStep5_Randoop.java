@@ -18,11 +18,11 @@ import saferefactor.core.util.Constants;
 import saferefactor.experiments.SafeRefactorFacade;
 
 public class ExperimentStep5_Randoop {
+	static String basePath = "/Users/alan/Dropbox/ase2013_/artefatos/experiments";
 
 	public static void main(String[] args) throws IOException {
-
-		String experimentPath = "/home/alan/Dropbox/ase2013_/artefatos/experiments/commons-collections/experiment";
-		double timelimit = 0.1;
+		String experimentPath = basePath + "/commons-logging/experiment";
+		double timelimit = 10;
 
 		String classesFileName = "classes.txt";
 		String originalDir = "original";
@@ -66,7 +66,7 @@ public class ExperimentStep5_Randoop {
 		File lib = new File(original, "lib");
 		FileUtils.copyDirectoryToDirectory(lib, randoopProject);
 		
-		File resources = new File("/home/alan/Dropbox/ase2013_/artefatos/experiments/resources");
+		File resources = new File(basePath + "/resources");
 		File srcFile = new File(resources, "project_randoop");
 		File destFile = new File(randoopProject, ".project");
 		FileUtils.copyFile(srcFile, destFile);
@@ -79,7 +79,6 @@ public class ExperimentStep5_Randoop {
 	private static void report(String experimentPath, List<Report> reports)
 			throws IOException {
 		StringBuilder sb = new StringBuilder();
-		sb.append("CLASS\tTIME\n");
 		for (Report report : reports) {
 			sb.append(report.getClazz() + "\t" + report.getTotalTime() + "\n");
 		}
