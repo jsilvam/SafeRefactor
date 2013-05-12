@@ -1,40 +1,49 @@
 package saferefactor.experiments.ase2013;
 
+import java.io.File;
+import java.io.FileFilter;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Scanner;
+
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.filefilter.RegexFileFilter;
+import org.apache.commons.io.filefilter.WildcardFileFilter;
 
 import saferefactor.core.Report;
+import saferefactor.core.util.Constants;
 import saferefactor.experiments.SafeRefactorFacade;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
-		String[] classes = {
-				"org.apache.commons.collections.BoundedFifoBuffer",
-				"org.apache.commons.collections.IteratorUtils",
-				"org.apache.commons.collections.LRUMap",
-				"org.apache.commons.collections.MultiHashMap",
-				"org.apache.commons.collections.map.FixedSizeMap",
-				"org.apache.commons.collections.map.ReferenceMap",
-				"org.apache.commons.collections.map.TransformedSortedMap",
-				"org.apache.commons.collections.map.UnmodifiableOrderedMap",
-				};
+		String experimentPath = "/home/alan/Dropbox/ase2013_/artefatos/experiments/commons-collections-10-mutants";
+		double timelimit = 0.1;
 
-		double timelimit = 10;
-//		String sourcePath = "/Users/alan/Dropbox/experiments/ase2013/jaxen/subject/jaxen";
-		// sourcePath = "/Users/alan/Documents/workspace/original";
-//		String targetPath = "/Users/alan/Dropbox/experiments/ase2013/jaxen/mutants/jaxen-m1";
-		// targetPath =
-		// "/Users/alan/Dropbox/experiments/ase2013/jaxen/subject/jaxen";
+		String classesFileName = "classes.txt";
+		String originalDir = "original";
+		String randoopTestsPath = experimentPath + Constants.SEPARATOR + "tests"
+				+ Constants.SEPARATOR + "randoop" + Constants.SEPARATOR
+				+ "tests";
 
-		String sourcePath = "/Users/alan/Dropbox/ase2013_/artefatos/experiments/commons-collections/original";
+		// Read classes.txt into classes list
 
+		@SuppressWarnings("unchecked")
+		List<String> classes = FileUtils.readLines(new File(experimentPath,
+				classesFileName));
+
+		String sourcePath = experimentPath + Constants.SEPARATOR + originalDir;
+		
 		List<Report> reports = new ArrayList<Report>();
 
 		int i = 0;
 		for (String classe : classes) {
 			System.out.println("class " + i + ": " + classe);
+			i++;
 			try {
 				Report report;
 				report = SafeRefactorFacade.checkTransformation(sourcePath,
@@ -45,7 +54,6 @@ public class Main {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			i++;
 		}
 
 		System.out.println("------REPORT------------");
@@ -53,10 +61,44 @@ public class Main {
 		for (Report report : reports) {
 			System.out.println(report.getClazz() + "\t" + report.getTotalTime());
 		}
-		
+
+
+		// Copy generated tests to randoop tests dir of the experiment
+		File randoopTests = new File(randoopTestsPath);
 		for (Report report : reports) {
-			System.out.println(report.getTmpFolder());
+			File testsDir = new File(report.getTmpFolder(), "tests");
+			FileFilter filter = new RegexFileFilter(".*RandoopTest[0-9]+.java");
+			
+			if (testsDir.listFiles(filter).length == 0) {
+				System.out.println("!!!!!! " + report.getClazz());
+				System.out.println(report.getTmpFolder());
+			}
+			
+			for (File test : testsDir.listFiles(filter)) {
+				System.out.println(test.getName());
+				FileUtils.copyFileToDirectory(test, randoopTests);
+			}
 		}
+
+		String header = "import org.junit.runner.RunWith; \n"
+				+ "import org.junit.runners.Suite; \n"
+				+ "import org.junit.runners.Suite.SuiteClasses; \n"
+				+ "@RunWith(Suite.class) \n" + "@SuiteClasses({ \n";
+
+		StringBuilder sb = new StringBuilder();
+
+		for (String clazz : randoopTests.list()) {
+			if (!clazz.endsWith("RandoopTest.java")) {
+				sb.append("\t" + clazz.replace(".java", "") + ".class,\n");
+			}
+		}
+
+		String footer = "}) \n" + "public class RandoopTest {}\n";
+
+		String javaClass = header + sb.toString() + footer;
+
+		File file = new File(randoopTests, "RandoopTest.java");
+		FileUtils.writeStringToFile(file, javaClass);
 
 	}
 }
