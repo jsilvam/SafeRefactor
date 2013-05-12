@@ -57,6 +57,7 @@ public abstract class SafeRefactor {
 	private File testPath;
 	protected File targetReport;
 	protected File sourceSecondReport;
+	private double timeGenerateTestes;
 	public static final String TARGET_REPORT = Constants.TESTS_DIR + "/target";
 	public static final String SOURCE_SECOND_REPORT = Constants.TESTS_DIR
 			+ "/source2";
@@ -254,7 +255,12 @@ public abstract class SafeRefactor {
 
 		double stop = System.currentTimeMillis();
 		double total = ((stop - start) / 1000);
+		setTimeGenerateTests(total);
 		logger.info("time to generate tests (s): " + total);
+	}
+
+	private void setTimeGenerateTests(double total) {
+		this.setTimeGenerateTestes(total);
 	}
 
 	private void analyzeTransformation() throws Exception {
@@ -277,5 +283,13 @@ public abstract class SafeRefactor {
 
 	public void setTestPath(File testPath) {
 		this.testPath = testPath;
+	}
+
+	public double getTimeGenerateTestes() {
+		return timeGenerateTestes;
+	}
+
+	public void setTimeGenerateTestes(double timeGenerateTestes) {
+		this.timeGenerateTestes = timeGenerateTestes;
 	}
 }
