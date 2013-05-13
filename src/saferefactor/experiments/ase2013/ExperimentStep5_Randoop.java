@@ -19,9 +19,10 @@ import saferefactor.experiments.SafeRefactorFacade;
 
 public class ExperimentStep5_Randoop {
 	static String basePath = "/Users/alan/Dropbox/ase2013_/artefatos/experiments";
+	public static String experimentPath = 
+			"/Users/alan/Dropbox/ase2013_/artefatos/experiments/joda-time/experiment";
 
 	public static void main(String[] args) throws IOException {
-		String experimentPath = basePath + "/commons-logging/experiment";
 		double timelimit = 10;
 
 		String classesFileName = "classes.txt";
@@ -103,7 +104,7 @@ public class ExperimentStep5_Randoop {
 			try {
 				Report report;
 				report = SafeRefactorFacade.checkTransformation(sourcePath,
-						sourcePath, "bin", "src", "", false, timelimit, false,
+						sourcePath, "bin", "src", "lib", false, timelimit, false,
 						classe, true);
 				report.addClazz(classe);
 				reports.add(report);
