@@ -26,6 +26,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry combineaccessrules="false" kind="src" path="/commons-jci-1.0-src"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
