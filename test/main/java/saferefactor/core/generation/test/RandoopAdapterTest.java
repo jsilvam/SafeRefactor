@@ -40,7 +40,7 @@ public class RandoopAdapterTest {
 		List<Method> methods = getMethods();
 		List<String> additionalParameters = new ArrayList<String>();
 		randoopGen.generateTestsForMethodList(methods, timelimit,
-				additionalParameters);
+				additionalParameters, true);
 
 		File testGenerated = new File(tmpFolder
 				+ "/RandoopTest0.java");
@@ -64,7 +64,7 @@ public class RandoopAdapterTest {
 		List<Method> methods = getMethods();
 		List<String> additionalParameters = new ArrayList<String>();
 		randoopGen.generateTestsForMethodList(methods, timelimit,
-				additionalParameters);
+				additionalParameters, true);
 	}
 	
 

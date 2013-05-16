@@ -228,7 +228,7 @@ public class Main {
 			String targetSuffix) throws Exception {
 		Report report = SafeRefactorFacade.checkTransformation(workspace
 				+ subjectName + sourceSuffix, workspace + subjectName
-				+ targetSuffix, bin, src, "lib", false, timelimit, occ, null, true);
+				+ targetSuffix, bin, src, "lib", false, timelimit, occ, null, true, true);
 		return report;
 	}
 

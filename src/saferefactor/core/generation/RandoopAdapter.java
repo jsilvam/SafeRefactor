@@ -31,7 +31,7 @@ public class RandoopAdapter extends AbstractTestGeneratorAdapter {
 
 	@Override
 	public void generateTestsForMethodList(List<Method> methods, double timeLimit,
-			List<String> additionalParameters) throws FileNotFoundException {
+			List<String> additionalParameters, boolean mixMethods) throws FileNotFoundException {
 
 		this.timeLimit = timeLimit;
 		this.additionalParameters = additionalParameters;

@@ -42,12 +42,13 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 	private double timeLimit;
 
 	public void generateTestsForMethodList(List<Method> methods,
-			double timeLimit, List<String> additionalParameters)
+			double timeLimit, List<String> additionalParameters, boolean mixMethods)
 			throws FileNotFoundException {
 
 		this.timeLimit = timeLimit;
 		this.additionalParameters = additionalParameters;
-		generateMethodListFile(methods);
+		
+		generateMethodListFile(methods, mixMethods);
 		runRandoopThroughAnt();
 
 	}
@@ -107,12 +108,10 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 
 	}
 
-	private void generateMethodListFile(List<Method> methods) {
+	private void generateMethodListFile(List<Method> methods, boolean mixMethods) {
 
-		Random random = new Random();
-		int choice = random.nextInt(2);		
 		StringBuffer lines = new StringBuffer();
-		if (choice == 0) {
+		if (mixMethods) {
 			for (Method method : methods) {
 				lines.append(method + "\n");
 			}
@@ -126,7 +125,6 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 				if (method instanceof MethodImp)
 					lines.append(method + "\n");
 			}
-
 		}
 
 		FileUtil.makeFile(tmpDir + Constants.SEPARATOR + methodsToTest, lines.toString());

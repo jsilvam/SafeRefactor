@@ -56,7 +56,7 @@ public class SafeRefactorFacade {
 					.checkTransformation(
 							"/Users/gustavoas/Downloads/workspace/ferramentaLPSSM/Products/Product2/",
 							"/Users/gustavoas/Downloads/workspace/ferramentaLPSSM/Products/Product5/",
-							"bin", "src/", "lib", false, 10, false, null, true);
+							"bin", "src/", "lib", false, 10, false, null, true, false);
 			System.out.println(checkTransformation.isRefactoring());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -66,7 +66,8 @@ public class SafeRefactorFacade {
 
 	public static Report checkTransformation(String sourcePath,
 			String targetPath, String bin, String src, String lib,
-			boolean needCompile, double timelimit, boolean impactAnalysis, String clazz, boolean dependence)
+			boolean needCompile, double timelimit, boolean impactAnalysis, String clazz, boolean dependence,
+			boolean mixMethods)
 			throws Exception {
 		File sourceFile = new File(sourcePath);
 		File targetFile = new File(targetPath);
@@ -95,6 +96,8 @@ public class SafeRefactorFacade {
 		parameters.setExecuteTwiceOnSource(true);
 		parameters.setCheckCoverage(false);
 		parameters.setClazz(clazz);
+		parameters.setMixMethods(mixMethods);
+		
 		
 		if (clazz != null) {
 			//parameters.addTestGeneratorParameter("--junit-package-name=" + clazz + ".test");

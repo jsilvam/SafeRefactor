@@ -29,6 +29,8 @@ public class Parameters {
 	private boolean checkCoverage;
 
 	private String clazz;
+
+	private boolean mixMethods;
 	
 	public void addTestGeneratorParameter(String parameter) {
 		testGeneratorParameters.add(parameter);
@@ -136,6 +138,14 @@ public class Parameters {
 
 	public void setDependenceAnalaysis(boolean dependenceAnalaysis) {
 		this.dependenceAnalaysis = dependenceAnalaysis;
+	}
+
+	public void setMixMethods(boolean mixMethods) {
+		this.mixMethods = mixMethods;
+	}
+
+	public boolean isMixMethods() {
+		return mixMethods;
 	}
 
 	

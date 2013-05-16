@@ -1,30 +1,21 @@
 package saferefactor.core;
 
 import java.io.File;
-import java.io.FileFilter;
-import java.util.Arrays;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 import saferefactor.core.analysis.AnalyzerFactory;
-import saferefactor.core.analysis.TransformationAnalyzer;
-import saferefactor.core.analysis.naive.ASMBasedAnalyzer;
-import saferefactor.core.analysis.naive.ReflectionBasedAnalyzer;
 import saferefactor.core.comparator.ComparatorImp;
 import saferefactor.core.comparator.Report;
 import saferefactor.core.execution.AntJunitRunner;
-import saferefactor.core.execution.CoverageDataReader.CoverageReport;
 import saferefactor.core.execution.CoverageMeter;
-import saferefactor.core.generation.RandoopAdapter;
 import saferefactor.core.generation.RandoopAntAdapter;
 import saferefactor.core.util.AntJavaCompiler;
 import saferefactor.core.util.Constants;
-import saferefactor.core.util.EclipseCompiler;
-import saferefactor.core.util.FileUtil;
 import saferefactor.core.util.Project;
-import saferefactor.core.util.ast.Method;
 import saferefactor.core.util.ast.ConstructorImp;
+import saferefactor.core.util.ast.Method;
 import saferefactor.core.util.ast.MethodImp;
 
 public class SafeRefactorImp extends SafeRefactor {
@@ -75,6 +66,7 @@ public class SafeRefactorImp extends SafeRefactor {
 		sourceCompiler = new AntJavaCompiler(this.tmpFolder);
 		targetCompiler = new AntJavaCompiler(this.tmpFolder);
 		sourceTestCompiler = new AntJavaCompiler(this.tmpFolder);
+		//sourceTestCompiler = new CommandlineCompiler(this.tmpFolder, parameters.getTestTemplate());
 		targetTestCompiler = new AntJavaCompiler(this.tmpFolder);
 
 		testSourceTask = new AntJunitRunner(this.source, this.tmpFolder);
