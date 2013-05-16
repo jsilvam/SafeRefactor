@@ -32,10 +32,11 @@ public class ExperimentStep5_Randoop {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		
+		long start = System.currentTimeMillis();
 		ExperimentStep5_Randoop randoopStep = new ExperimentStep5_Randoop(args[0]);
 		randoopStep.run();
-		
+		long end = System.currentTimeMillis();
+		System.out.println("time elapsed: " + (end - start)/1000.0);
 	}
 
 	private void run() throws IOException {
