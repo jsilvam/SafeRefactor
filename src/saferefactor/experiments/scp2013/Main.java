@@ -30,7 +30,7 @@ public class Main {
 
 	private static final boolean RUN_METRIC2 = false;
 
-	private static String workspace = "/Users/gustavoas/workspaces/scp2013/";
+	private static String workspace = "/Users/gustavoas/workspaces/scp/";
 
 	private static int numberofexecutions = 1;
 
@@ -392,13 +392,13 @@ public class Main {
 					List<Result> runSubjects = new ArrayList<Result>();
 					String bin = "bin";
 					String src = "src/main/java";
-					runSubjects.addAll(Main.runSubjects(jss2, bin, src,
-							timelimit, "BEFORE", "AFTER"));
+//					runSubjects.addAll(Main.runSubjects(jss2, bin, src,
+//							timelimit, "BEFORE", "AFTER"));
 
 					bin = "build/classes";
 					src = "src/main/java";
-					runSubjects.addAll(Main.runSubjects(jss, bin, src,
-							timelimit, "BEFORE", "AFTER"));
+//					runSubjects.addAll(Main.runSubjects(jss, bin, src,
+//							timelimit, "BEFORE", "AFTER"));
 
 					bin = "bin";
 					src = "src";

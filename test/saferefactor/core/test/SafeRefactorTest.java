@@ -275,6 +275,32 @@ public class SafeRefactorTest {
 		assertEquals(false, report.isRefactoring());
 	}
 	
+	
+	@Test
+	public void testCheckTransformationWithAspects() throws Exception {
+		
+
+		Project source = new Project();
+		source.setProjectFolder(new File("/Users/gustavoas/workspaces/eclipse_project/javaTree-AroundClosure"));
+		source.setBuildFolder(new File("/Users/gustavoas/workspaces/eclipse_project/javaTree-AroundClosure/bin"));
+		source.setSrcFolder(new File("/Users/gustavoas/workspaces/eclipse_project/javaTree-AroundClosure/src"));
+
+		Project target = new Project();
+		target.setProjectFolder(new File("/Users/gustavoas/workspaces/eclipse_project/javaTree-idiom1"));
+		target.setBuildFolder(new File("/Users/gustavoas/workspaces/eclipse_project/javaTree-idiom1/bin"));
+		target.setSrcFolder(new File("/Users/gustavoas/workspaces/eclipse_project/javaTree-idiom1/src"));
+
+		Parameters parameters = new Parameters();
+		parameters.setCompileProjects(false);		
+		parameters.setTimeLimit(10);
+		
+		
+		SafeRefactor saferefactor = new SafeRefactorImp(source, target, parameters);
+		saferefactor.checkTransformation();
+		Report report = saferefactor.getReport();
+		
+		assertEquals(false, report.isRefactoring());
+	}
 
 
 }

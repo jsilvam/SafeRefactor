@@ -152,6 +152,9 @@ public class ASMBasedAnalyzer implements TransformationAnalyzer {
 		// TODO HACK: do not test methods from aspects
 		if (declaringClass.toString().contains(".aspectOf()"))
 			return true;
+		
+		if (declaringClass.toString().contains("$Ajc"))
+			return true;
 
 		boolean isPublic = false;
 		Collection<Modifier> methodModifiers = methodNode.getModifiers();
