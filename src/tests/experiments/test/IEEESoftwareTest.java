@@ -1,4 +1,3 @@
-package tests;
 
 //package br.edu.ufcg.saferefactor.test;
 
@@ -99,28 +98,28 @@ public class IEEESoftwareTest {
 		
 		String sourceSub = "JHD176source";
 		String targetSub = "JHD176target";
-//		sourceSub = "sub1.2.1source";
-//		targetSub = "sub1.2.1target";
+		sourceSub = "sub1.2.1source";
+		targetSub = "sub1.2.1target";
 		
 		source.setProjectFolder(new File("test/subjects/"+sourceSub));
 		source.setBin("bin");
 		source.setBuildFolder(new File("test/subjects/"+sourceSub+"/bin"));
 		source.setSrcFolder(new File("test/subjects/"+sourceSub+"/src"));
-		source.setLibFolder(new File("test/subjects/"+sourceSub+"/lib"));
+//		source.setLibFolder(new File("test/subjects/"+sourceSub+"/lib"));
 
 		Project target = new Project();
 		target.setProjectFolder(new File("test/subjects/"+targetSub));
 		source.setBin("bin");
 		target.setBuildFolder(new File("test/subjects/"+targetSub+"/bin"));
 		target.setSrcFolder(new File("test/subjects/"+targetSub+"/src"));
-		target.setLibFolder(new File("test/subjects/"+targetSub+"/lib"));
+//		target.setLibFolder(new File("test/subjects/"+targetSub+"/lib"));
 
 		Parameters parameters = new Parameters();
-		parameters.setTimeLimit(30);
+		parameters.setTimeLimit(1);
 		parameters.setCheckCoverage(false);
 		parameters.setCompileProjects(false);
-//		parameters.setKind_of_analysis(Parameters.SAFIRA_ANALYSIS);
-		parameters.setKind_of_analysis(Parameters.REFLECTION_ANALYSIS);
+		parameters.setKind_of_analysis(Parameters.SAFIRA_ANALYSIS);
+//		parameters.setKind_of_analysis(Parameters.REFLECTION_ANALYSIS);
 //		parameters.setEnableImpactAnalysis(false);
 		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
 				parameters);
