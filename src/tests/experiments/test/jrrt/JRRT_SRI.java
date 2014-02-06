@@ -153,7 +153,7 @@ public class JRRT_SRI {
 			System.out.println(isRefactoring);
 			System.out.println("is compilation error? "+c.isTestCompilationError());
 			
-			c.getIa().print();
+//			c.getIa().print();
 			
 			analysisTime = c.getAnalysisTime()/1000;
 			randoopTime = c.getRandoopTime()/1000;

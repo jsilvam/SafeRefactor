@@ -60,7 +60,7 @@ public class SRImpact {
 		Project target = new Project();
 		target.setProjectFolder(new File(targetSub));
 		source.setBin(bin);
-		target.setBuildFolder(new File(targetSub+Constants.FILE_SEPARATOR +"/bin"));
+		target.setBuildFolder(new File(targetSub+Constants.FILE_SEPARATOR +"/"+bin));
 		target.setSrcFolder(new File(targetSub+Constants.FILE_SEPARATOR +"/src"));
 
 		if (!lib.equals("")) {
