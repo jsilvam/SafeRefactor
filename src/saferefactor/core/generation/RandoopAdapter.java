@@ -2,6 +2,7 @@ package saferefactor.core.generation;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -31,7 +32,7 @@ public class RandoopAdapter extends AbstractTestGeneratorAdapter {
 
 	@Override
 	public void generateTestsForMethodList(List<Method> methods, double timeLimit,
-			List<String> additionalParameters) throws FileNotFoundException {
+			List<String> additionalParameters, String impactedList) throws FileNotFoundException {
 
 		this.timeLimit = timeLimit;
 		this.additionalParameters = additionalParameters;
@@ -44,6 +45,8 @@ public class RandoopAdapter extends AbstractTestGeneratorAdapter {
 				"--junit-output-dir=" + tmpDir, "--output-nonexec=true" };
 
 		main2.nonStaticMain(argsRandoop);
+//		ArrayList<String> impactedMethods = new ArrayList<String>();
+//		main2.nonStaticMainAJ(argsRandoop, impactedMethods);
 	}
 
 	private void generateMethodListFile(List<Method> methods) {

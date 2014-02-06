@@ -14,6 +14,7 @@ public class Project implements Serializable {
 	private File buildFolder;
 	private File srcFolder;
 	private File libFolder;
+	private String bin;
 	private boolean compile = true; 
 	
 	public File getProjectFolder() {
@@ -46,5 +47,12 @@ public class Project implements Serializable {
 	public void setCompile(boolean compile) {
 		this.compile = compile;
 	}
+	public String getBin() {
+		return bin;
+	}
+	public void setBin(String bin) {
+		this.bin = bin;
+	}
+	
 
 }

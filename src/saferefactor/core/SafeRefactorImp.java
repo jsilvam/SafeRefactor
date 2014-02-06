@@ -9,7 +9,6 @@ import java.util.logging.SimpleFormatter;
 
 import saferefactor.core.analysis.AnalyzerFactory;
 import saferefactor.core.analysis.TransformationAnalyzer;
-import saferefactor.core.analysis.naive.ASMBasedAnalyzer;
 import saferefactor.core.analysis.naive.ReflectionBasedAnalyzer;
 import saferefactor.core.comparator.ComparatorImp;
 import saferefactor.core.comparator.Report;

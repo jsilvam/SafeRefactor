@@ -5,20 +5,20 @@ import saferefactor.core.util.Project;
 public abstract class AnalyzerFactory {
 
 	public static AnalyzerFactory getFactory() {
-		if (AnalyzerConfiguration.getCurrentAnalyzer() == Analyzer.ASM_BASED)
-			return new ASMBasedAnalyzerFactory();
+		if (AnalyzerConfiguration.getCurrentAnalyzer() == Analyzer.SAFIRA)
+			return new SafiraAnalyzerFactory();
 		else
 			return new ReflectionBasedAnalyzerFactory();
 	}
 
 	enum Analyzer {
-		REFLECTION_BASED, ASM_BASED
+		REFLECTION_BASED, SAFIRA
 	}
 
 	static class AnalyzerConfiguration {
 
 		static Analyzer getCurrentAnalyzer() {
-			return Analyzer.ASM_BASED;
+			return Analyzer.SAFIRA;
 		}
 	}
 	

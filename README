@@ -17,18 +17,3 @@ and after the transformation, and evaluates the results. If results are divergen
 
  
 
------------------------------
- RESOLVING MARVEN DEPENDENCES
------------------------------
-
-Go to the lib folder and run: 
- 
-mvn install:install-file -Dfile=plume-lib-1.0.3.jar -DgroupId=plume -DartifactId=plume-lib -Dversion=1.0.3 -Dpackaging=jar
-
----------------
- RUNNING TESTS
---------------
-
-- Before running the tests, download the test resources (test-resources-X.zip) at
- https://bitbucket.org/gustavoasoares/saferefactor/downloads
-- Extract the zip file inside the test folder 

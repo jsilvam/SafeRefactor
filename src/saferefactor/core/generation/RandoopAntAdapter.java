@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,7 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 
 	public static String methodsToTest = "methodToTest.txt";
 	private final String tmpDir;
+	protected String impactedList = "";
 
 	public RandoopAntAdapter(Project projectToTest, String tmpDir) {
 		super(projectToTest);
@@ -42,21 +44,34 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 	private double timeLimit;
 
 	public void generateTestsForMethodList(List<Method> methods,
-			double timeLimit, List<String> additionalParameters)
+			double timeLimit, List<String> additionalParameters, String impactedList)
 			throws FileNotFoundException {
 
 		this.timeLimit = timeLimit;
 		this.additionalParameters = additionalParameters;
+		this.impactedList = impactedList;
 		generateMethodListFile(methods);
+		
 		runRandoopThroughAnt();
 
 	}
 
 	private void runRandoopThroughAnt() throws FileNotFoundException {
 
-		URL buildFile = RandoopAntAdapter.class
-				.getResource("/build_generator.xml");
+//		URL buildFile = RandoopAntAdapter.class
+//				.getResource("/build_generator.xml");
 		// File buildFile = new File("ant" + "/" + "build_generator.xml");
+		
+		String path = System.getProperty("user.dir");
+		 URL buildFile = null;
+			try {
+				buildFile = new File(path
+						+ "/src/" + "build_generator.xml").toURL();
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		org.apache.tools.ant.Project p = new org.apache.tools.ant.Project();
 
 		p.setProperty("projectBin", project.getBuildFolder().getAbsolutePath());
@@ -67,6 +82,8 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 			p.setProperty("sourceLib", project.getProjectFolder()
 					.getAbsolutePath());
 		p.setProperty("timeout", String.valueOf(timeLimit));
+		
+		p.setProperty("impactedMethods", this.impactedList);
 
 		String isFork = "true";
 
@@ -148,7 +165,7 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 		
 		String randoopParameters = "";
 		if (args.length > 2) randoopParameters = args[2];
-		
+		String impactedList  = args[3];
 
 		Main main2 = new Main();
 		String[] argsRandoop = {
@@ -168,8 +185,20 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 						listRandoopParameters);
 
 		}
-
-		main2.nonStaticMain(argsRandoop);
+		
+		ArrayList<String> impactedMethods = new ArrayList<String>();
+		String[] split = impactedList.split(" ");
+		for (String string : split) {
+			if (!string.equals("")) {
+//				System.out.println(string.trim());
+				impactedMethods.add(string);
+				System.out.println("impacted Method "+string);
+			}
+		}
+		
+		
+//		main2.nonStaticMain(argsRandoop);
+		main2.nonStaticMainAJ(argsRandoop, impactedMethods);
 		
 //		ThreadGroup rootGroup = Thread.currentThread( ).getThreadGroup( );
 //		ThreadGroup parentGroup;

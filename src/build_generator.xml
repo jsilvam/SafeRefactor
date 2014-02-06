@@ -32,6 +32,7 @@
 			<arg value="${timeout}" />
 			<arg value="${test.folder}" />
 			<arg value="${randoopParameters}" />
+			<arg value="${impactedMethods}" />
 			
 			<classpath>
 				<pathelement path="${projectBin}" />

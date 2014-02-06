@@ -1,10 +1,12 @@
 package saferefactor.core.analysis.naive;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.PrintStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,7 +39,7 @@ public class ReflectionBasedAnalyzer implements TransformationAnalyzer {
 
 	}
 
-	public Report analyze(boolean enableOccOptimization) throws Exception {
+	public Report analyze() throws Exception {
 		Report result = new NaiveReport();
 
 		sourceClasses = getClasses(source);
@@ -183,9 +185,21 @@ public class ReflectionBasedAnalyzer implements TransformationAnalyzer {
 	}
 
 	private void loadAndAnalyzeProject(Project source) throws Exception {
-		URL buildFile = ReflectionBasedAnalyzer.class
-				.getResource("/build_analyze.xml");
+		
+		
+//		URL buildFile = ReflectionBasedAnalyzer.class
+//				.getResource("/build_analyze.xml");
 
+		String path = System.getProperty("user.dir");
+		 URL buildFile = null;
+			try {
+				buildFile = new File(path
+						+ "/src/" + "build_analyze.xml").toURL();
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		org.apache.tools.ant.Project p = new org.apache.tools.ant.Project();
 		p.setProperty("source", source.getProjectFolder().getAbsolutePath());
 		p.setProperty("sourceBin", source.getBuildFolder().getAbsolutePath());
