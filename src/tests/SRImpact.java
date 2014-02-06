@@ -34,6 +34,15 @@ public class SRImpact {
 		}
 	}
 	
+	public SRImpact(String tests, String source, String target, 
+			String lib, String timeLimit, String bin, boolean randoop) {
+		try {
+			init(tests, source, target, lib, timeLimit, bin, randoop, "");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	
 	public void init(String tests, String sourceSub, String targetSub, 
@@ -60,7 +69,7 @@ public class SRImpact {
 		}
 		
 		Parameters parameters = new Parameters();
-		parameters.setTimeLimit(Integer.valueOf(timeLimit));
+		parameters.setTimeLimit(Double.valueOf(timeLimit));
 		parameters.setCheckCoverage(false);
 		parameters.setCompileProjects(false);
 		parameters.setKind_of_analysis(Parameters.SAFIRA_ANALYSIS);

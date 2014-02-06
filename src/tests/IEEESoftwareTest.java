@@ -116,11 +116,11 @@ public class IEEESoftwareTest {
 		target.setLibFolder(new File("test/subjects/"+targetSub+"/lib"));
 
 		Parameters parameters = new Parameters();
-		parameters.setTimeLimit(30);
+		parameters.setTimeLimit(60);
 		parameters.setCheckCoverage(false);
 		parameters.setCompileProjects(false);
-//		parameters.setKind_of_analysis(Parameters.SAFIRA_ANALYSIS);
-		parameters.setKind_of_analysis(Parameters.REFLECTION_ANALYSIS);
+		parameters.setKind_of_analysis(Parameters.SAFIRA_ANALYSIS);
+//		parameters.setKind_of_analysis(Parameters.REFLECTION_ANALYSIS);
 //		parameters.setEnableImpactAnalysis(false);
 		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
 				parameters);
