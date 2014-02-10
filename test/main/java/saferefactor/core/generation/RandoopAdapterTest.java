@@ -28,9 +28,9 @@ public class RandoopAdapterTest {
 	public void testGenerateTestsForMethodList() throws FileNotFoundException {
 
 		Project projectToTest = new Project();
-		projectToTest.setProjectFolder(new File("test/resources/subject14source"));
-		projectToTest.setBuildFolder(new File("test/resources/subject14source/bin"));
-		projectToTest.setSrcFolder(new File("test/resources/subject14source/src"));
+		projectToTest.setProjectFolder(new File("test/subjects/subject14source"));
+		projectToTest.setBuildFolder(new File("test/subjects/subject14source/bin"));
+		projectToTest.setSrcFolder(new File("test/subjects/subject14source/src"));
 		int timelimit = 1;
 		String tmpFolder = System
 				.getProperty("java.io.tmpdir");
@@ -51,9 +51,9 @@ public class RandoopAdapterTest {
 	public void testGenerateTestsIncorrectPath() throws FileNotFoundException {
 
 		Project projectToTest = new Project();
-		projectToTest.setProjectFolder(new File("test/resources/subject14source"));
-		projectToTest.setBuildFolder(new File("test/resources/subject14source/bin2"));
-		projectToTest.setSrcFolder(new File("test/resources/subject14source/src"));
+		projectToTest.setProjectFolder(new File("test/subjects/subject14source"));
+		projectToTest.setBuildFolder(new File("test/subjects/subject14source/bin2"));
+		projectToTest.setSrcFolder(new File("test/subjects/subject14source/src"));
 
 		int timelimit = 1;
 		String tmpFolder = System

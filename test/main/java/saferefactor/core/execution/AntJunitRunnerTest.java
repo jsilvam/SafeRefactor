@@ -16,12 +16,12 @@ public class AntJunitRunnerTest {
 	@Test
 	public void test() throws FileNotFoundException {
 		Project project= new Project();
-		project.setProjectFolder(new File("test/resources/subject14source"));
-		project.setBuildFolder(new File("test/resources/subject14source/bin"));
-		project.setSrcFolder(new File("test/resources/subject14source/src"));
+		project.setProjectFolder(new File("test/subjects/subject14source"));
+		project.setBuildFolder(new File("test/subjects/subject14source/bin"));
+		project.setSrcFolder(new File("test/subjects/subject14source/src"));
 		
-		String reportPath = "test/resources/subject14source/report";
-		String tests = "test/resources/subject14source/test";
+		String reportPath = "test/subjects/subject14source/report";
+		String tests = "test/subjects/subject14source/test";
 		TestExecutor testExecutor = new AntJunitRunner(project,tests);
 		testExecutor.setReportPath(reportPath);
 		testExecutor.executeTests(tests);
