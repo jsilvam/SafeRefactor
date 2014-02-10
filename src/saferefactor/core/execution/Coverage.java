@@ -25,7 +25,7 @@
 //
 //import saferefactor.ProjectInfo;
 //import saferefactor.Saferefactor;
-//import util.Constants;
+//import randoop.util.Constants;
 //
 //import entity.Method;
 //

@@ -11,7 +11,7 @@ import saferefactor.core.generation.test.RandoopAdapterTest;
 import saferefactor.core.test.SafeRefactorTest;
 import saferefactor.core.util.test.CompilerTest;
 
-import experiments.test.IEEESoftwareTest;
+import randoop.experiments.test.IEEESoftwareTest;
 
 @RunWith(Suite.class)
 @SuiteClasses({IEEESoftwareTest.class,

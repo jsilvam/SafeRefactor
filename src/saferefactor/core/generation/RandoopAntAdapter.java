@@ -11,11 +11,12 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
+import randoop.main.Main;
+
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.tools.ant.DefaultLogger;
 import org.apache.tools.ant.ProjectHelper;
 
-import randoop.main.Main;
 import saferefactor.core.Parameters;
 import saferefactor.core.util.Constants;
 import saferefactor.core.util.FileUtil;
@@ -83,6 +84,7 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 					.getAbsolutePath());
 		p.setProperty("timeout", String.valueOf(timeLimit));
 		
+		impactedList = "";
 		p.setProperty("impactedMethods", this.impactedList);
 
 		String isFork = "true";

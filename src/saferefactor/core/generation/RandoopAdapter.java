@@ -6,9 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import randoop.main.Main;
+
 import org.apache.commons.lang.ArrayUtils;
 
-import randoop.main.Main;
 import saferefactor.core.util.Constants;
 import saferefactor.core.util.FileUtil;
 import saferefactor.core.util.Project;

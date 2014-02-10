@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding="randoop/" kind="src" path="src"/>
+	<classpathentry kind="src" path="test/main/java"/>
+	<classpathentry kind="src" path="randoop"/>
+	<classpathentry kind="src" path="asm"/>
+	<classpathentry kind="src" path="aspect"/>
 	<classpathentry kind="lib" path="lib/ant-junit.jar"/>
 	<classpathentry kind="lib" path="lib/ant-launcher.jar"/>
 	<classpathentry kind="lib" path="lib/ant.jar"/>
@@ -13,7 +17,9 @@
 	<classpathentry kind="lib" path="lib/org.eclipse.jdt.core_3.2.3.v_686_R32x.jar"/>
 	<classpathentry kind="lib" path="lib/plume-lib-1.0.3.jar"/>
 	<classpathentry kind="lib" path="lib/plume.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 6 [1.6.0_24-b07-334]"/>
+	<classpathentry kind="lib" path="lib/emma_ant.jar"/>
+	<classpathentry kind="lib" path="lib/emma.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 6 [1.6.0_24-b07-334]"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

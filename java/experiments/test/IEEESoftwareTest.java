@@ -19,7 +19,7 @@ import saferefactor.core.SafeRefactorImp;
 import saferefactor.core.metrics.AffectedTests;
 import saferefactor.core.metrics.CoverageAspect;
 import saferefactor.core.util.Project;
-import saferefactor.safira.analyzer.ImpactAnalysis;
+import saferefactor.core.analysis.safira.analyzer.ImpactAnalysis;
 
 /*
  * Author: Gustavo Soares

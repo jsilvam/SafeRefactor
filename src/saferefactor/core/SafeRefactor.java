@@ -10,9 +10,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.logging.Logger;
 
-import saferefactor.core.analysis.TransformationAnalyzer;
-import saferefactor.core.analysis.naive.ReflectionBasedAnalyzer;
-import saferefactor.core.analysis.naive.SafiraAnalyzer;
+import saferefactor.core.analysis.analyzer.ReflectionBasedAnalyzer;
+import saferefactor.core.analysis.analyzer.SafiraAnalyzer;
+import saferefactor.core.analysis.analyzer.TransformationAnalyzer;
 import saferefactor.core.comparator.TestComparator;
 import saferefactor.core.execution.CoverageMeter;
 import saferefactor.core.execution.TestExecutor;
@@ -21,7 +21,7 @@ import saferefactor.core.util.Compiler;
 import saferefactor.core.util.Constants;
 import saferefactor.core.util.Project;
 import saferefactor.core.util.ast.Method;
-import saferefactor.safira.analyzer.ImpactAnalysis;
+import saferefactor.core.analysis.safira.analyzer.ImpactAnalysis;
 
 public abstract class SafeRefactor {
 	
