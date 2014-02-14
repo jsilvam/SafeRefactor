@@ -273,10 +273,10 @@ public abstract class SafeRefactor {
 		String kind_of_analysis = parameters.getKind_of_analysis();
 		
 		if (kind_of_analysis.equals(Parameters.REFLECTION_ANALYSIS)){
-			analyzer = new ReflectionBasedAnalyzer(source, target, "");
+			analyzer = new ReflectionBasedAnalyzer(source, target, getTmpFolder());
 			analysisReport = analyzer.analyze();
 		}  else if (kind_of_analysis.equals(Parameters.SAFIRA_ANALYSIS)) {
-			analyzer = new SafiraAnalyzer(source, target, "");
+			analyzer = new SafiraAnalyzer(source, target, getTmpFolder());
 			analysisReport = analyzer.analyze();
 			ia = ((SafiraAnalyzer)analyzer).getIa();
 		}
