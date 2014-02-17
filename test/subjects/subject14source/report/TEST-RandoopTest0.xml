@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Melina-Mongiovis-MacBook-Pro.local" name="RandoopTest0" tests="136" time="0.28" timestamp="2014-02-14T14:15:24">
+<testsuite errors="0" failures="0" hostname="Melina-Mongiovis-MacBook-Pro.local" name="RandoopTest0" tests="136" time="0.231" timestamp="2014-02-14T19:15:38">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
     <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries" />
@@ -53,7 +53,7 @@
     <property name="report.dir" value="test/subjects/subject14source/report" />
     <property name="java.vm.specification.version" value="1.0" />
     <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner RandoopTest0 filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/melmongiovi/git3/saferefactorimpact/test/subjects/subject14source/report/TEST-RandoopTest0.xml crashfile=/Users/melmongiovi/git3/saferefactorimpact/junitvmwatcher5256241314528081992.properties propsfile=/Users/melmongiovi/git3/saferefactorimpact/junit2278163453173661108.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner RandoopTest0 filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/melmongiovi/git3/saferefactorimpact/test/subjects/subject14source/report/TEST-RandoopTest0.xml crashfile=/Users/melmongiovi/git3/saferefactorimpact/junitvmwatcher1013130354000143996.properties propsfile=/Users/melmongiovi/git3/saferefactorimpact/junit6258411137065267450.properties" />
     <property name="sun.arch.data.model" value="64" />
     <property name="java.specification.vendor" value="Sun Microsystems Inc." />
     <property name="user.language" value="en" />
@@ -73,11 +73,11 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
     <property name="sun.cpu.isalist" value="" />
   </properties>
-  <testcase classname="RandoopTest0" name="test1" time="0.043" />
+  <testcase classname="RandoopTest0" name="test1" time="0.0040" />
   <testcase classname="RandoopTest0" name="test2" time="0.0" />
-  <testcase classname="RandoopTest0" name="test3" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test3" time="0.0" />
   <testcase classname="RandoopTest0" name="test4" time="0.0" />
-  <testcase classname="RandoopTest0" name="test5" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test5" time="0.0" />
   <testcase classname="RandoopTest0" name="test6" time="0.0" />
   <testcase classname="RandoopTest0" name="test7" time="0.0" />
   <testcase classname="RandoopTest0" name="test8" time="0.0" />
@@ -86,67 +86,67 @@
   <testcase classname="RandoopTest0" name="test11" time="0.0010" />
   <testcase classname="RandoopTest0" name="test12" time="0.0" />
   <testcase classname="RandoopTest0" name="test13" time="0.0" />
-  <testcase classname="RandoopTest0" name="test14" time="0.0" />
+  <testcase classname="RandoopTest0" name="test14" time="0.0010" />
   <testcase classname="RandoopTest0" name="test15" time="0.0" />
   <testcase classname="RandoopTest0" name="test16" time="0.0" />
   <testcase classname="RandoopTest0" name="test17" time="0.0" />
-  <testcase classname="RandoopTest0" name="test18" time="0.0" />
+  <testcase classname="RandoopTest0" name="test18" time="0.0010" />
   <testcase classname="RandoopTest0" name="test19" time="0.0" />
   <testcase classname="RandoopTest0" name="test20" time="0.0" />
   <testcase classname="RandoopTest0" name="test21" time="0.0" />
   <testcase classname="RandoopTest0" name="test22" time="0.0" />
   <testcase classname="RandoopTest0" name="test23" time="0.0" />
-  <testcase classname="RandoopTest0" name="test24" time="0.0" />
-  <testcase classname="RandoopTest0" name="test25" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test26" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test24" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test25" time="0.0" />
+  <testcase classname="RandoopTest0" name="test26" time="0.0" />
   <testcase classname="RandoopTest0" name="test27" time="0.0010" />
   <testcase classname="RandoopTest0" name="test28" time="0.0" />
   <testcase classname="RandoopTest0" name="test29" time="0.0" />
-  <testcase classname="RandoopTest0" name="test30" time="0.0" />
-  <testcase classname="RandoopTest0" name="test31" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test32" time="0.0" />
+  <testcase classname="RandoopTest0" name="test30" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test31" time="0.0" />
+  <testcase classname="RandoopTest0" name="test32" time="0.0010" />
   <testcase classname="RandoopTest0" name="test33" time="0.0" />
   <testcase classname="RandoopTest0" name="test34" time="0.0" />
-  <testcase classname="RandoopTest0" name="test35" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test35" time="0.0" />
   <testcase classname="RandoopTest0" name="test36" time="0.0" />
-  <testcase classname="RandoopTest0" name="test37" time="0.0" />
-  <testcase classname="RandoopTest0" name="test38" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test37" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test38" time="0.0" />
   <testcase classname="RandoopTest0" name="test39" time="0.0" />
-  <testcase classname="RandoopTest0" name="test40" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test40" time="0.0" />
   <testcase classname="RandoopTest0" name="test41" time="0.0" />
   <testcase classname="RandoopTest0" name="test42" time="0.0" />
   <testcase classname="RandoopTest0" name="test43" time="0.0" />
-  <testcase classname="RandoopTest0" name="test44" time="0.0" />
+  <testcase classname="RandoopTest0" name="test44" time="0.0010" />
   <testcase classname="RandoopTest0" name="test45" time="0.0" />
-  <testcase classname="RandoopTest0" name="test46" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test47" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test48" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test46" time="0.0" />
+  <testcase classname="RandoopTest0" name="test47" time="0.0" />
+  <testcase classname="RandoopTest0" name="test48" time="0.0" />
   <testcase classname="RandoopTest0" name="test49" time="0.0" />
   <testcase classname="RandoopTest0" name="test50" time="0.0" />
   <testcase classname="RandoopTest0" name="test51" time="0.0" />
   <testcase classname="RandoopTest0" name="test52" time="0.0" />
   <testcase classname="RandoopTest0" name="test53" time="0.0" />
-  <testcase classname="RandoopTest0" name="test54" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test55" time="0.0" />
-  <testcase classname="RandoopTest0" name="test56" time="0.0" />
-  <testcase classname="RandoopTest0" name="test57" time="0.0" />
+  <testcase classname="RandoopTest0" name="test54" time="0.0" />
+  <testcase classname="RandoopTest0" name="test55" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test56" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test57" time="0.0010" />
   <testcase classname="RandoopTest0" name="test58" time="0.0" />
   <testcase classname="RandoopTest0" name="test59" time="0.0" />
-  <testcase classname="RandoopTest0" name="test60" time="0.0" />
+  <testcase classname="RandoopTest0" name="test60" time="0.0010" />
   <testcase classname="RandoopTest0" name="test61" time="0.0" />
-  <testcase classname="RandoopTest0" name="test62" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test62" time="0.0" />
   <testcase classname="RandoopTest0" name="test63" time="0.0" />
   <testcase classname="RandoopTest0" name="test64" time="0.0" />
   <testcase classname="RandoopTest0" name="test65" time="0.0" />
-  <testcase classname="RandoopTest0" name="test66" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test67" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test68" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test69" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test66" time="0.0" />
+  <testcase classname="RandoopTest0" name="test67" time="0.0" />
+  <testcase classname="RandoopTest0" name="test68" time="0.0" />
+  <testcase classname="RandoopTest0" name="test69" time="0.0" />
   <testcase classname="RandoopTest0" name="test70" time="0.0" />
   <testcase classname="RandoopTest0" name="test71" time="0.0" />
   <testcase classname="RandoopTest0" name="test72" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test73" time="0.0" />
-  <testcase classname="RandoopTest0" name="test74" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test73" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test74" time="0.0" />
   <testcase classname="RandoopTest0" name="test75" time="0.0" />
   <testcase classname="RandoopTest0" name="test76" time="0.0" />
   <testcase classname="RandoopTest0" name="test77" time="0.0" />
@@ -157,56 +157,56 @@
   <testcase classname="RandoopTest0" name="test82" time="0.0010" />
   <testcase classname="RandoopTest0" name="test83" time="0.0010" />
   <testcase classname="RandoopTest0" name="test84" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test85" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test86" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test87" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test88" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test89" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test85" time="0.0" />
+  <testcase classname="RandoopTest0" name="test86" time="0.0" />
+  <testcase classname="RandoopTest0" name="test87" time="0.0" />
+  <testcase classname="RandoopTest0" name="test88" time="0.0" />
+  <testcase classname="RandoopTest0" name="test89" time="0.0" />
   <testcase classname="RandoopTest0" name="test90" time="0.0" />
-  <testcase classname="RandoopTest0" name="test91" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test91" time="0.0" />
   <testcase classname="RandoopTest0" name="test92" time="0.0" />
   <testcase classname="RandoopTest0" name="test93" time="0.0" />
   <testcase classname="RandoopTest0" name="test94" time="0.0" />
   <testcase classname="RandoopTest0" name="test95" time="0.0" />
   <testcase classname="RandoopTest0" name="test96" time="0.0" />
-  <testcase classname="RandoopTest0" name="test97" time="0.0" />
+  <testcase classname="RandoopTest0" name="test97" time="0.0010" />
   <testcase classname="RandoopTest0" name="test98" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test99" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test99" time="0.0" />
   <testcase classname="RandoopTest0" name="test100" time="0.0" />
   <testcase classname="RandoopTest0" name="test101" time="0.0" />
   <testcase classname="RandoopTest0" name="test102" time="0.0" />
   <testcase classname="RandoopTest0" name="test103" time="0.0" />
-  <testcase classname="RandoopTest0" name="test104" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test105" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test104" time="0.0" />
+  <testcase classname="RandoopTest0" name="test105" time="0.0" />
   <testcase classname="RandoopTest0" name="test106" time="0.0" />
-  <testcase classname="RandoopTest0" name="test107" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test107" time="0.0" />
   <testcase classname="RandoopTest0" name="test108" time="0.0" />
-  <testcase classname="RandoopTest0" name="test109" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test110" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test111" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test112" time="0.0" />
-  <testcase classname="RandoopTest0" name="test113" time="0.0" />
+  <testcase classname="RandoopTest0" name="test109" time="0.0" />
+  <testcase classname="RandoopTest0" name="test110" time="0.0" />
+  <testcase classname="RandoopTest0" name="test111" time="0.0" />
+  <testcase classname="RandoopTest0" name="test112" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test113" time="0.0010" />
   <testcase classname="RandoopTest0" name="test114" time="0.0" />
-  <testcase classname="RandoopTest0" name="test115" time="0.0" />
+  <testcase classname="RandoopTest0" name="test115" time="0.0010" />
   <testcase classname="RandoopTest0" name="test116" time="0.0" />
-  <testcase classname="RandoopTest0" name="test117" time="0.0" />
+  <testcase classname="RandoopTest0" name="test117" time="0.0010" />
   <testcase classname="RandoopTest0" name="test118" time="0.0" />
-  <testcase classname="RandoopTest0" name="test119" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test119" time="0.0" />
   <testcase classname="RandoopTest0" name="test120" time="0.0010" />
   <testcase classname="RandoopTest0" name="test121" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test122" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test122" time="0.0" />
   <testcase classname="RandoopTest0" name="test123" time="0.0" />
   <testcase classname="RandoopTest0" name="test124" time="0.0" />
   <testcase classname="RandoopTest0" name="test125" time="0.0" />
-  <testcase classname="RandoopTest0" name="test126" time="0.0" />
+  <testcase classname="RandoopTest0" name="test126" time="0.0010" />
   <testcase classname="RandoopTest0" name="test127" time="0.0" />
   <testcase classname="RandoopTest0" name="test128" time="0.0" />
   <testcase classname="RandoopTest0" name="test129" time="0.0" />
   <testcase classname="RandoopTest0" name="test130" time="0.0010" />
   <testcase classname="RandoopTest0" name="test131" time="0.0" />
-  <testcase classname="RandoopTest0" name="test132" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test133" time="0.0010" />
-  <testcase classname="RandoopTest0" name="test134" time="0.0010" />
+  <testcase classname="RandoopTest0" name="test132" time="0.0" />
+  <testcase classname="RandoopTest0" name="test133" time="0.0" />
+  <testcase classname="RandoopTest0" name="test134" time="0.0" />
   <testcase classname="RandoopTest0" name="test135" time="0.0" />
   <testcase classname="RandoopTest0" name="test136" time="0.0" />
   <system-out><![CDATA[]]></system-out>
