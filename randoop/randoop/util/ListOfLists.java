@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import randoop.util.SimpleList;
+
 /**
  * Given a list of lists, defines methods that can access all the elements as if
  * they were part of a single list, without actually merging the lists.

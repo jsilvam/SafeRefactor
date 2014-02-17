@@ -1,6 +1,7 @@
 package randoop.util;
 
 import randoop.PrimitiveOrStringOrNullDecl;
+import randoop.util.MultiMap;
 
 import java.util.*;
 import java.io.*;

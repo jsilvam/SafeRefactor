@@ -40,7 +40,6 @@ public class SafeRefactorImpact {
 
 		Parameters parameters = new Parameters();
 		parameters.setTimeLimit(timelimit);
-		parameters.setEnableImpactAnalysis(true);
 		parameters.setCompileProjects(needCompile);
 		parameters.setExecuteTwiceOnSource(true);
 		parameters.setCheckCoverage(true);

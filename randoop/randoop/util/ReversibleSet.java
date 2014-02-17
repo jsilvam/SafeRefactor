@@ -2,6 +2,9 @@ package randoop.util;
 
 import java.util.Set;
 
+import randoop.util.ISimpleSet;
+import randoop.util.ReversibleMultiMap;
+
 public class ReversibleSet<T> implements ISimpleSet<T> {
 
   public final ReversibleMultiMap<T, Boolean> map;

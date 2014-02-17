@@ -7,6 +7,7 @@ import java.util.Set;
 
 import randoop.BugInRandoopException;
 import randoop.Globals;
+import randoop.util.TestCoverageInfo;
 import plume.Pair;
 
 public class TestCoverageInfo {

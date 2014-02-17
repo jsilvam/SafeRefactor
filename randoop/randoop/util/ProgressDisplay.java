@@ -3,11 +3,13 @@ package randoop.util;
 import java.util.Date;
 import java.util.Map;
 
+import randoop.main.GenInputsAbstract;
+
 import plume.UtilMDE;
 import randoop.AbstractGenerator;
 import randoop.Globals;
 import randoop.RandoopListenerManager;
-import randoop.main.GenInputsAbstract;
+import randoop.util.ProgressDisplay;
 
 /**
  * Modified from Daikon.FileIOProgress.

@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import randoop.util.CollectionsExt;
+
 public final class Files {
   private Files() {
     throw new IllegalStateException("no instances");

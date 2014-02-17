@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import randoop.main.CommandHandler;
+import randoop.main.GenInputsAbstract;
+import randoop.main.GenTests;
+import randoop.main.RandoopTextuiException;
+import randoop.main.RmDiffObservations;
+
 import plume.Options;
 import randoop.ExecutableSequence;
 import randoop.RegressionCaptureVisitor;

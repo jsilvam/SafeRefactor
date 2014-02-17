@@ -6,6 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import randoop.main.GenInputsAbstract;
+
 import plume.Pair;
 import randoop.AbstractGenerator;
 import randoop.ExecutableSequence;
@@ -15,7 +17,12 @@ import randoop.ITestFilter;
 import randoop.JunitFileWriter;
 import randoop.NoExceptionCheck;
 import randoop.StatementKind;
-import randoop.main.GenInputsAbstract;
+import randoop.runtime.ErrorRevealed;
+import randoop.runtime.IMessage;
+import randoop.runtime.MessageSender;
+import randoop.runtime.PercentDone;
+import randoop.runtime.RandoopFinished;
+import randoop.runtime.RandoopStarted;
 
 public class PluginBridge implements ITestFilter, IEventListener {
 

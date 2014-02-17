@@ -6,6 +6,11 @@ import java.util.List;
 import java.util.Random;
 
 import randoop.BugInRandoopException;
+import randoop.util.CollectionsExt;
+import randoop.util.Log;
+import randoop.util.Randomness;
+import randoop.util.SimpleList;
+import randoop.util.WeightedElement;
 
 
 

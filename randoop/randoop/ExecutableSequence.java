@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Set;
 
 import randoop.main.GenInputsAbstract;
+
 import randoop.util.ProgressDisplay;
 import randoop.util.Reflection;
 

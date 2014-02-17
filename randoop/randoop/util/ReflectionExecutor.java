@@ -5,6 +5,10 @@ import java.io.PrintStream;
 import plume.Option;
 import plume.OptionGroup;
 import plume.UtilMDE;
+import randoop.util.Log;
+import randoop.util.ReflectionCode;
+import randoop.util.ReflectionExecutor;
+import randoop.util.RunnerThread;
 
 
 /**

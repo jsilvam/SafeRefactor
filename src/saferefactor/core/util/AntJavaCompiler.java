@@ -27,7 +27,17 @@ public class AntJavaCompiler implements Compiler {
 	public void compile(String src, String dest)
 			throws MalformedURLException, FileNotFoundException {
 
-		URL buildFile = AntJavaCompiler.class.getResource("/build_compile.xml");
+//		URL buildFile = AntJavaCompiler.class.getResource("/build_compile.xml");
+		
+		String path = System.getProperty("user.dir");
+		 URL buildFile = null;
+			try {
+				buildFile = new File(path
+						+ "/src/" + "build_compile.xml").toURL();
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 		org.apache.tools.ant.Project p = new org.apache.tools.ant.Project();
 

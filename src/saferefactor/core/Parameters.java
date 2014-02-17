@@ -12,7 +12,9 @@ public class Parameters {
 	
 	private boolean analyzeChangeMethods = false;
 
-	private boolean enableImpactAnalysis = false;
+//	private boolean enableImpactAnalysis = false;
+	
+	private String kind_of_analysis = REFLECTION_ANALYSIS;
 	
 	private boolean fork = true;
 	
@@ -25,6 +27,12 @@ public class Parameters {
 //	private String buildPath;
 
 	private boolean checkCoverage;
+	
+	public static final String NAIVE_CHANGE_IMPACT_ANALYSIS =  "NAIVE_CHANGE_IMPACT_ANALYSIS";
+	
+	public static final String SAFIRA_ANALYSIS =  "SAFIRA_ANALYSIS";
+	
+	public static final String REFLECTION_ANALYSIS =  "REFLECTION_ANALYSIS";
 	
 	
 
@@ -108,13 +116,21 @@ public class Parameters {
 		this.analyzeChangeMethods = analyzeChangeMethod;
 	}
 
-	public boolean isEnableImpactAnalysis() {
-		return enableImpactAnalysis;
+//	public boolean isEnableImpactAnalysis() {
+//		return enableImpactAnalysis;
+//	}
+
+	public String getKind_of_analysis() {
+		return kind_of_analysis;
 	}
 
-	public void setEnableImpactAnalysis(boolean enableImpactAnalysis) {
-		this.enableImpactAnalysis = enableImpactAnalysis;
+	public void setKind_of_analysis(String kind_of_analysis) {
+		this.kind_of_analysis = kind_of_analysis;
 	}
+//
+//	public void setEnableImpactAnalysis(boolean enableImpactAnalysis) {
+//		this.enableImpactAnalysis = enableImpactAnalysis;
+//	}
 
 	
 

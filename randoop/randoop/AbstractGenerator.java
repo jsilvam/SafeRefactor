@@ -6,11 +6,13 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
+import randoop.main.GenInputsAbstract;
+
+import randoop.experiments.StatsWriter;
+
 import plume.Option;
 import plume.OptionGroup;
 import plume.Unpublicized;
-import randoop.experiments.StatsWriter;
-import randoop.main.GenInputsAbstract;
 import randoop.util.Log;
 import randoop.util.ProgressDisplay;
 import randoop.util.ReflectionExecutor;

@@ -10,7 +10,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.logging.Logger;
 
-import saferefactor.core.analysis.TransformationAnalyzer;
+import saferefactor.core.analysis.analyzer.ReflectionBasedAnalyzer;
+import saferefactor.core.analysis.analyzer.SafiraAnalyzer;
+import saferefactor.core.analysis.analyzer.TransformationAnalyzer;
 import saferefactor.core.comparator.TestComparator;
 import saferefactor.core.execution.CoverageMeter;
 import saferefactor.core.execution.TestExecutor;
@@ -19,8 +21,11 @@ import saferefactor.core.util.Compiler;
 import saferefactor.core.util.Constants;
 import saferefactor.core.util.Project;
 import saferefactor.core.util.ast.Method;
+import saferefactor.core.analysis.safira.analyzer.ImpactAnalysis;
 
 public abstract class SafeRefactor {
+	
+	private ImpactAnalysis ia;
 
 	protected String tmpFolder = "";
 
@@ -247,10 +252,15 @@ public abstract class SafeRefactor {
 
 	private void generateTests() throws FileNotFoundException {
 		double start = System.currentTimeMillis();
-
+		
+		String impactedList = "";
+		if (ia != null) {
+			impactedList = ia.getImpactedList();
+		}
+		
 		generator.generateTestsForMethodList(methodsToTest,
 				parameters.getTimeLimit(),
-				parameters.getTestGeneratorParameters());
+				parameters.getTestGeneratorParameters(), impactedList);
 
 		double stop = System.currentTimeMillis();
 		double total = ((stop - start) / 1000);
@@ -259,7 +269,18 @@ public abstract class SafeRefactor {
 
 	private void analyzeTransformation() throws Exception {
 		double start = System.currentTimeMillis();
-		analysisReport = analyzer.analyze(parameters.isEnableImpactAnalysis());
+		
+		String kind_of_analysis = parameters.getKind_of_analysis();
+		
+		if (kind_of_analysis.equals(Parameters.REFLECTION_ANALYSIS)){
+			analyzer = new ReflectionBasedAnalyzer(source, target, getTmpFolder());
+			analysisReport = analyzer.analyze();
+		}  else if (kind_of_analysis.equals(Parameters.SAFIRA_ANALYSIS)) {
+			analyzer = new SafiraAnalyzer(source, target, getTmpFolder());
+			analysisReport = analyzer.analyze();
+			ia = ((SafiraAnalyzer)analyzer).getIa();
+		}
+		
 		methodsToTest = analysisReport.getMethodsToTest();
 
 		double stop = System.currentTimeMillis();
@@ -277,5 +298,13 @@ public abstract class SafeRefactor {
 
 	public void setTestPath(File testPath) {
 		this.testPath = testPath;
+	}
+
+	public ImpactAnalysis getIa() {
+		return ia;
+	}
+
+	public void setIa(ImpactAnalysis ia) {
+		this.ia = ia;
 	}
 }

@@ -3,6 +3,7 @@ package randoop;
 import java.io.ObjectStreamException;
 import java.io.Serializable;
 
+import randoop.ArrayDeclaration;
 import randoop.util.Reflection;
 
 public class SerializableArrayDeclaration implements Serializable {

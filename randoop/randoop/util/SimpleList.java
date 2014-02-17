@@ -2,6 +2,10 @@ package randoop.util;
 
 import java.util.List;
 
+import randoop.util.ArrayListSimpleList;
+import randoop.util.ListOfLists;
+import randoop.util.OneMoreElementList;
+
 /**
  * List implementation used by Randoop to store the sequence of
  * <code>Statement</code>s making up a Sequence.

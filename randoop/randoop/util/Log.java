@@ -5,10 +5,11 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.List;
 
+import randoop.main.GenInputsAbstract;
+
 import randoop.Globals;
 import randoop.Sequence;
 import randoop.StatementKind;
-import randoop.main.GenInputsAbstract;
 
 public final class Log {
 

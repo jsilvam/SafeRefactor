@@ -22,13 +22,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import randoop.main.GenInputsAbstract;
+
 import randoop.Globals;
 import randoop.RConstructor;
 import randoop.RMethod;
 import randoop.StatementKind;
 import randoop.StatementKindParseException;
 import randoop.StatementKinds;
-import randoop.main.GenInputsAbstract;
+import randoop.util.DefaultReflectionFilter;
+import randoop.util.Files;
+import randoop.util.Log;
+import randoop.util.PrimitiveTypes;
+import randoop.util.Reflection;
+import randoop.util.ReflectionFilter;
 import plume.EntryReader;
 import plume.Pair;
 import plume.UtilMDE;

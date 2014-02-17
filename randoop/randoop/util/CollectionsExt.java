@@ -15,6 +15,7 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 import randoop.Globals;
+import randoop.util.CollectionsExt;
 import plume.Hasher;
 
 public final class CollectionsExt {

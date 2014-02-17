@@ -1,6 +1,8 @@
 package randoop.util;
 
 import randoop.Globals;
+import randoop.util.SimpleList;
+import randoop.util.Util;
 
 /**
  * Compares two SimpleLists for member-wise equality, e.g.

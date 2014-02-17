@@ -6,12 +6,13 @@ import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 
+import randoop.main.GenInputsAbstract;
+
 import plume.UtilMDE;
 import randoop.util.PrimitiveTypes;
 import randoop.util.Reflection;
 import randoop.util.StringEscapeUtils;
 import randoop.util.Util;
-import randoop.main.GenInputsAbstract;
 
 /**
  * Represents a primitive value (including Strings). This type of statement

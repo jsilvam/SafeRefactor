@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import randoop.main.GenInputsAbstract;
+
 import randoop.util.ArrayListSimpleList;
 import randoop.util.ListOfLists;
 import randoop.util.Log;

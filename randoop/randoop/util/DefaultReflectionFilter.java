@@ -7,6 +7,9 @@ import java.util.Arrays;
 import java.util.regex.Pattern;
 
 import randoop.CheckRep;
+import randoop.util.Log;
+import randoop.util.Reflection;
+import randoop.util.ReflectionFilter;
 
 /**
  * Returns true for public members, with some exceptions (see

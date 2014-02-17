@@ -7,6 +7,8 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
 
+import randoop.util.IMultiMap;
+
 /**
  * Implements an IMultiMap with a java.util.LinkedHashMap.
  */

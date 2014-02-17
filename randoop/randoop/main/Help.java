@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import randoop.main.CommandHandler;
+import randoop.main.Help;
+import randoop.main.Main;
+import randoop.main.RandoopTextuiException;
+
 import plume.Option;
 import plume.Options;
 import plume.Options.ArgException;

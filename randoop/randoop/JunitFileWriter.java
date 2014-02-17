@@ -11,9 +11,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import randoop.main.GenInputsAbstract;
+
 import randoop.util.CollectionsExt;
 import randoop.util.Log;
-import randoop.main.GenInputsAbstract;
 
 /**
  * Outputs a collection of sequences as Java files, using the JUnit framework, with one method per sequence.

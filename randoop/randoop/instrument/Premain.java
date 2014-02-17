@@ -2,10 +2,12 @@ package randoop.instrument;
 
 // import harpoon.ClassFile.HMethod;
 
+import randoop.instrument.Instrument;
+import randoop.instrument.Premain;
+
 import java.lang.instrument.*;
 import java.lang.reflect.Member;
 import java.io.*;
-import java.io.File;
 import java.util.*;
 import java.util.jar.*;
 import java.net.URL;

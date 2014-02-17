@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import randoop.BugInRandoopException;
+import randoop.util.Randomness;
+import randoop.util.WeightedElement;
 
 public class WeightedList {
 

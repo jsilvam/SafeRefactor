@@ -5,6 +5,10 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import randoop.util.CollectionsExt;
+import randoop.util.MultiMap;
+import randoop.util.Reflection;
+
 /**
  * For a given set of classes, this object can answer queries about sub/superclass dependencies.
  */

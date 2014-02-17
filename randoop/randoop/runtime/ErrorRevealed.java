@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import randoop.runtime.IMessage;
+
 
 public class ErrorRevealed implements IMessage {
 

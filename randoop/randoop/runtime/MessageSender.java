@@ -5,6 +5,9 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
+import randoop.runtime.ClosingStream;
+import randoop.runtime.IMessage;
+
 public class MessageSender {
   public final static String SERVER_HOSTNAME = "127.0.0.1"; //$NON-NLS-1$
 

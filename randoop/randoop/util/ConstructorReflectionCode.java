@@ -4,7 +4,12 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 
+import randoop.util.Log;
+import randoop.util.Reflection;
+import randoop.util.ReflectionCode;
+
 import randoop.main.GenInputsAbstract;
+
 
 /**
  * This is used to wrap a constructor together with its parameters, ready for execution.

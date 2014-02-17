@@ -1,5 +1,7 @@
 package randoop.util;
 
+import randoop.util.CountDownTimer;
+
 public class CountDownTimer {
 
   private long totalTime;

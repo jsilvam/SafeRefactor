@@ -6,6 +6,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import randoop.main.GenInputsAbstract;
+import randoop.main.GenTests;
+import randoop.main.RandoopTextuiException;
+
 import randoop.ContractCheckingVisitor;
 import randoop.EqualsHashcode;
 import randoop.EqualsReflexive;
@@ -16,9 +20,6 @@ import randoop.ExecutionVisitor;
 import randoop.MultiVisitor;
 import randoop.ObjectContract;
 import randoop.RegressionCaptureVisitor;
-import randoop.main.GenInputsAbstract;
-import randoop.main.GenTests;
-import randoop.main.RandoopTextuiException;
 import saferefactor.rmi.common.Task;
 
 public class TestGeneration implements Task<List<ExecutableSequence>>,

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import randoop.Globals;
+import randoop.util.StringLineIterator;
 import plume.UtilMDE;
 
 

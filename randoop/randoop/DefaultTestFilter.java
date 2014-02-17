@@ -5,6 +5,7 @@ import java.util.Set;
 
 import randoop.main.GenInputsAbstract;
 
+
 /**
  * <p>Randoop's default test filter determines if a generated test should be output
  * to the user. This determination is made by following these steps in order:</p>

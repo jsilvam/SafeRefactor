@@ -1,5 +1,7 @@
 package randoop.util;
 
+import randoop.util.PrimitiveTypes;
+
 /**
  * Holds a primitive or string.
  * The string can be null.

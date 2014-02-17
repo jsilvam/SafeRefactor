@@ -2,6 +2,8 @@ package randoop.util;
 
 import java.lang.reflect.InvocationTargetException;
 
+import randoop.util.RandoopSecurityManager;
+import randoop.util.Util;
 import randoop.util.RandoopSecurityManager.Status;
 
 /**

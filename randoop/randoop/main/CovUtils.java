@@ -8,6 +8,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.zip.GZIPInputStream;
 
+import randoop.main.CommandHandler;
+import randoop.main.RandoopTextuiException;
+
 import randoop.Sequence;
 import randoop.util.CollectionsExt;
 import cov.Branch;

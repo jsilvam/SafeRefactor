@@ -5,7 +5,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
+import randoop.util.StringEscapeUtils;
+
 import randoop.main.GenInputsAbstract;
+
 
 public final class PrimitiveTypes {
   private PrimitiveTypes() {

@@ -5,7 +5,12 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
 
+import randoop.util.Log;
+import randoop.util.Reflection;
+import randoop.util.ReflectionCode;
+
 import randoop.main.GenInputsAbstract;
+
 
 
 

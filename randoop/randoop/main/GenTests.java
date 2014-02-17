@@ -25,6 +25,10 @@ import java.util.TreeSet;
 import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
+import randoop.main.GenInputsAbstract;
+import randoop.main.GenTests;
+import randoop.main.RandoopTextuiException;
+
 import plume.Option;
 import plume.OptionGroup;
 import plume.Options;
@@ -62,9 +66,6 @@ import randoop.SeedSequences;
 import randoop.Sequence;
 import randoop.StatementKind;
 import randoop.Variable;
-import randoop.experiments.CodeCoverageTracker;
-import randoop.experiments.CovWitnessHelperVisitor;
-import randoop.experiments.RandomWalkGenerator;
 import randoop.runtime.ClosingStream;
 import randoop.runtime.CreatedJUnitFile;
 import randoop.runtime.IMessage;
@@ -80,6 +81,9 @@ import randoop.util.ReflectionExecutor;
 import randoop.util.RunCmd;
 import cov.Branch;
 import cov.Coverage;
+import randoop.experiments.CodeCoverageTracker;
+import randoop.experiments.CovWitnessHelperVisitor;
+import randoop.experiments.RandomWalkGenerator;
 
 public class GenTests extends GenInputsAbstract {
 

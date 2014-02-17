@@ -1,5 +1,7 @@
 package randoop.main;
 
+import randoop.main.CommandHandler;
+import randoop.main.RandoopTextuiException;
 import randoop.ExecutableSequence;
 import randoop.MultiVisitor;
 import randoop.RegressionCaptureVisitor;

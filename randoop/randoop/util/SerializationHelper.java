@@ -6,6 +6,8 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import randoop.util.Log;
+
 
 /**
  * A collection of static methods to serialize an object to a file and

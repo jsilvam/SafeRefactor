@@ -9,6 +9,8 @@ import java.util.Map;
 import java.util.Set;
 
 import plume.Triple;
+import randoop.util.IMultiMap;
+import randoop.util.Log;
 
 public class ReversibleMultiMap<T1, T2> implements IMultiMap<T1, T2> {
   

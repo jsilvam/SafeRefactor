@@ -1,5 +1,7 @@
 package randoop.runtime;
 
+import randoop.runtime.IMessage;
+
 /**
  * A Randoop message that reports how close test generation is close
  * to being done.

@@ -23,6 +23,8 @@ import java.io.Writer;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import randoop.util.StringPrintWriter;
+
 /**
  * <p>Escapes and unescapes <code>String</code>s for
  * Java, Java Script, HTML, XML, and SQL.</p>

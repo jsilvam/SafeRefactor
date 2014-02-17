@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import randoop.ArrayDeclaration;
 import randoop.main.GenInputsAbstract;
+
 import randoop.util.PrimitiveTypes;
 import randoop.util.Reflection;
 

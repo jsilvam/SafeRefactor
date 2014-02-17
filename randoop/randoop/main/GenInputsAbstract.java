@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import randoop.main.CommandHandler;
+
 import plume.Option;
 import plume.OptionGroup;
 import plume.Options;

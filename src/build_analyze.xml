@@ -18,7 +18,7 @@
 			
 		</echo>
 		
-		<java classname="saferefactor.core.analysis.naive.ProjectAnalyzer" logerror="true" failonerror="true" fork="true" maxmemory="256m">
+		<java classname="saferefactor.core.analysis.analyzer.ProjectAnalyzer" logerror="true" failonerror="true" fork="true" maxmemory="256m">
 			<arg value="${sourceBin}" />
 			<classpath>
 				<pathelement path="${sourceBin}" />

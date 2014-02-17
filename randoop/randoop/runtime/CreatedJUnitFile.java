@@ -2,6 +2,8 @@ package randoop.runtime;
 
 import java.io.File;
 
+import randoop.runtime.IMessage;
+
 /**
  * A message indicating that Randoop created a specific JUnit file containing
  * generated tests.

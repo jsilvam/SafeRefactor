@@ -7,6 +7,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import randoop.main.GenInputsAbstract;
+
 
 
 
@@ -20,7 +22,6 @@ import randoop.ExecutionVisitor;
 import randoop.MultiVisitor;
 import randoop.ObjectContract;
 import randoop.RegressionCaptureVisitor;
-import randoop.main.GenInputsAbstract;
 import saferefactor.rmi.common.Task;
 
 public class SequenceExecution implements Task<List<ExecutableSequence>>, Serializable {

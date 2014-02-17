@@ -1,5 +1,7 @@
 package randoop.runtime;
 
+import randoop.runtime.IMessage;
+
 /**
  * A message indicating that Randoop has just started generating tests.
  */

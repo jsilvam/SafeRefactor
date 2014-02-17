@@ -3,6 +3,8 @@ package randoop.util;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import randoop.util.ISimpleSet;
+
 public class SimpleSet<T> implements ISimpleSet<T> {
   
   private final LinkedHashSet<T> set;

@@ -8,6 +8,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
 
+import randoop.util.MultiSet;
+
 public class KeyToMultiSet<T1, T2> {
 
   private final Map<T1, MultiSet<T2>> map;

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import plume.UtilMDE;
+import randoop.util.RecordProcessor;
 
 /**
  * Reads a list of records from a text file, where a record is

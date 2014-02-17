@@ -3,6 +3,8 @@ package randoop.util;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
+import randoop.util.ReflectionFilter;
+
 public class EverythingAllowedFilter implements ReflectionFilter {
 
   public boolean canUse(Class<?> c) {

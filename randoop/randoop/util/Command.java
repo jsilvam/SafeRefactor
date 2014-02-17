@@ -10,6 +10,7 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 
 import randoop.Globals;
+import randoop.util.Command;
 
 
 

@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import plume.StrTok;
+import randoop.util.StreamRedirectThread;
 
 public class RunCmd {
 

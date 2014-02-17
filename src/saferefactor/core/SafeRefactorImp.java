@@ -7,10 +7,9 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-import saferefactor.core.analysis.AnalyzerFactory;
-import saferefactor.core.analysis.TransformationAnalyzer;
-import saferefactor.core.analysis.naive.ASMBasedAnalyzer;
-import saferefactor.core.analysis.naive.ReflectionBasedAnalyzer;
+import saferefactor.core.analysis.analyzer.ReflectionBasedAnalyzer;
+import saferefactor.core.analysis.analyzer.TransformationAnalyzer;
+import saferefactor.core.analysis.analyzer.factory.AnalyzerFactory;
 import saferefactor.core.comparator.ComparatorImp;
 import saferefactor.core.comparator.Report;
 import saferefactor.core.execution.AntJunitRunner;

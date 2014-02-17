@@ -9,6 +9,10 @@ import java.util.Map;
 import java.util.Set;
 
 import randoop.Globals;
+import randoop.util.ClassComplexityCalculator;
+import randoop.util.ClassHierarchy;
+import randoop.util.Histogram;
+import randoop.util.Reflection;
 
 
 /**

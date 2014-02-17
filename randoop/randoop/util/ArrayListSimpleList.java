@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import randoop.util.SimpleList;
+
 public class ArrayListSimpleList<T> extends SimpleList<T> implements Serializable {
 
   private static final long serialVersionUID = 9155161101212598259L;

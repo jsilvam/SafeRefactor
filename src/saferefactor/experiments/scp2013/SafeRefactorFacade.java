@@ -39,7 +39,6 @@ public class SafeRefactorFacade {
 		Parameters parameters = new Parameters();
 		parameters.setCompileProjects(false);
 		parameters.setTimeLimit(timelimit);
-		parameters.setEnableImpactAnalysis(occ);
 		parameters.getTestGeneratorParameters().add("--testsperfile=1");
 
 		SafeRefactor saferefactor = new SafeRefactorImp(source, target,
@@ -89,7 +88,6 @@ public class SafeRefactorFacade {
 
 		Parameters parameters = new Parameters();
 		parameters.setTimeLimit(timelimit);
-		parameters.setEnableImpactAnalysis(occ);
 		parameters.setCompileProjects(needCompile);
 		parameters.setExecuteTwiceOnSource(true);
 		parameters.setCheckCoverage(true);

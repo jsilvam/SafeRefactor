@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.apache.tools.ant.DefaultLogger;
@@ -75,7 +76,17 @@ public class AntJunitRunner implements TestExecutor {
 
 	public void run() {
 		// File buildFile = new File("ant" + "/" + "build_run.xml");
-		URL buildFile = AntJunitRunner.class.getResource("/build_run.xml");
+//		URL buildFile = AntJunitRunner.class.getResource("/build_run.xml");
+		String path = System.getProperty("user.dir");
+		 URL buildFile = null;
+			try {
+				buildFile = new File(path
+						+ "/src/" + "build_run.xml").toURL();
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		org.apache.tools.ant.Project p = new org.apache.tools.ant.Project();
 
 		p.setProperty("binClasspath", project.getBuildFolder()

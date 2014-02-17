@@ -1,5 +1,8 @@
 package randoop.util;
 
+import randoop.util.RandoopUncaughtRunnerThreadExceptionHandler;
+import randoop.util.ReflectionCode;
+
 public class RunnerThread extends Thread {
 
   // Fields assigned when calling setup(..)

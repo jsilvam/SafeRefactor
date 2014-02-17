@@ -4,6 +4,8 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import randoop.main.RandoopTextuiException;
+
 import randoop.Globals;
 import randoop.util.Util;
 import plume.Options;

@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+import randoop.ArrayDeclaration;
 import randoop.main.GenInputsAbstract;
+
 import randoop.util.ArrayListSimpleList;
 import randoop.util.Randomness;
 import randoop.util.SimpleList;

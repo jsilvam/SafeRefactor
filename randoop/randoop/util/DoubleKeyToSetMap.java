@@ -4,6 +4,8 @@ import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+import randoop.util.DoubleKeyMap;
+
 /**
  * Map indexed with 2 keys.
  */
