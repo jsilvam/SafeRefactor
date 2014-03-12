@@ -58,7 +58,7 @@ public class Bugs extends TestCase{
 	}
 	
 	//Ao adicionar as dependências de um método, quando esta era uma interface ou classe abstrata, 
-	//apenas uma classe que implementa a dependência estava sendo considerada 
+	//apenas ruma classe que implementa a dependência estava sendo considerada 
 	@Test
 	public void testImplementerClasses() throws IOException {
 		String source = path + "/test/subjects/bugImplementerClassesS";

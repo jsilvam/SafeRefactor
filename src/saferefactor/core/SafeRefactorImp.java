@@ -13,11 +13,14 @@ import saferefactor.core.analysis.analyzer.factory.AnalyzerFactory;
 import saferefactor.core.comparator.ComparatorImp;
 import saferefactor.core.comparator.Report;
 import saferefactor.core.execution.AntJunitRunner;
+import saferefactor.core.execution.AntJunitRunnerST;
 import saferefactor.core.execution.CoverageDataReader.CoverageReport;
 import saferefactor.core.execution.CoverageMeter;
+import saferefactor.core.generation.CommandLineAdapter;
 import saferefactor.core.generation.RandoopAdapter;
 import saferefactor.core.generation.RandoopAntAdapter;
 import saferefactor.core.util.AntJavaCompiler;
+import saferefactor.core.util.CommandLineCompiler;
 import saferefactor.core.util.Constants;
 import saferefactor.core.util.EclipseCompiler;
 import saferefactor.core.util.FileUtil;
@@ -27,6 +30,8 @@ import saferefactor.core.util.ast.ConstructorImp;
 import saferefactor.core.util.ast.MethodImp;
 
 public class SafeRefactorImp extends SafeRefactor {
+
+
 
 	public SafeRefactorImp(Project source, Project target) throws Exception {
 		super(source, target);
@@ -68,23 +73,29 @@ public class SafeRefactorImp extends SafeRefactor {
 		analyzer = AnalyzerFactory.getFactory().createAnalyzer(this.source,
 				this.target, this.tmpFolder);
 
-		generator = new RandoopAntAdapter(this.source, this.getTestPath()
+//		generator = new RandoopAntAdapter(this.source, this.getTestPath()
+//				.getAbsolutePath());
+		generator = new CommandLineAdapter(this.source, this.getTestPath()
 				.getAbsolutePath());
 
 		sourceCompiler = new AntJavaCompiler(this.tmpFolder);
 		targetCompiler = new AntJavaCompiler(this.tmpFolder);
-		sourceTestCompiler = new AntJavaCompiler(this.tmpFolder);
-		targetTestCompiler = new AntJavaCompiler(this.tmpFolder);
 
-		testSourceTask = new AntJunitRunner(this.source, this.tmpFolder);
-		testTargetTask = new AntJunitRunner(this.target, this.tmpFolder);
+//		sourceTestCompiler = new AntJavaCompiler(this.tmpFolder);
+//		targetTestCompiler = new AntJavaCompiler(this.tmpFolder);		
+		sourceTestCompiler = new CommandLineCompiler(this.tmpFolder);
+		targetTestCompiler = new CommandLineCompiler(this.tmpFolder);
+		
+//		testSourceTask = new AntJunitRunner(this.source, this.tmpFolder);
+//		testTargetTask = new AntJunitRunner(this.target, this.tmpFolder);
+		testSourceTask = new AntJunitRunnerST(this.source, this.target, this.tmpFolder);
 
 		if (this.parameters.isExecuteTwiceOnSource()) {
 			testAgainSourceTask = new AntJunitRunner(this.source,
 					this.tmpFolder);
 		}
 
-		testTargetTask = new AntJunitRunner(this.target, this.tmpFolder);
+//		testTargetTask = new AntJunitRunner(this.target, this.tmpFolder);
 		sourceReport = new File(this.getTestPath(), SafeRefactor.SOURCE_REPORT);
 		sourceSecondReport = new File(this.getTestPath(),
 				SafeRefactor.SOURCE_SECOND_REPORT);

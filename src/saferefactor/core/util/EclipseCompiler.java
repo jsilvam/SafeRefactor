@@ -14,6 +14,8 @@ public class EclipseCompiler implements Compiler {
 
 	private String binClasspath;
 
+
+
 	public void compile(String src, String dest)
 			throws MalformedURLException, FileNotFoundException, SafeRefactorException {
 		

@@ -14,6 +14,7 @@ import saferefactor.core.analysis.analyzer.ReflectionBasedAnalyzer;
 import saferefactor.core.analysis.analyzer.SafiraAnalyzer;
 import saferefactor.core.analysis.analyzer.TransformationAnalyzer;
 import saferefactor.core.comparator.TestComparator;
+import saferefactor.core.execution.AntJunitRunnerST;
 import saferefactor.core.execution.CoverageMeter;
 import saferefactor.core.execution.TestExecutor;
 import saferefactor.core.generation.AbstractTestGeneratorAdapter;
@@ -198,21 +199,34 @@ public abstract class SafeRefactor {
 
 		// ExecutorService executor = Executors.newSingleThreadExecutor();
 		ExecutorService executor = Executors.newFixedThreadPool(1);
-
-		testSourceTask.setReportPath(this.sourceReport.getAbsolutePath());
-		testSourceTask.setTests(this.bin_source.getAbsolutePath());
+		
+		//MUDAN‚A MELINA
+		((AntJunitRunnerST)testSourceTask).setReportPathSource(this.sourceReport.getAbsolutePath());
+		((AntJunitRunnerST)testSourceTask).setReportPathTarget(this.targetReport.getAbsolutePath());
+		
+		((AntJunitRunnerST)testSourceTask).setTests(this.bin_source.getAbsolutePath());
+		((AntJunitRunnerST)testSourceTask).setTests(this.bin_target.getAbsolutePath());
 		executor.execute(testSourceTask);
-
-		if (testAgainSourceTask != null) {
-			testAgainSourceTask.setReportPath(this.sourceSecondReport
-					.getAbsolutePath());
-			testAgainSourceTask.setTests(this.bin_source.getAbsolutePath());
-			executor.execute(testAgainSourceTask);
-
-		}
-		testTargetTask.setReportPath(targetReport.getAbsolutePath());
-		testTargetTask.setTests(this.bin_target.getAbsolutePath());
-		executor.execute(testTargetTask);
+		
+		//MUDAN‚A MELINA
+		
+		//COMENTAR
+//		testSourceTask.setReportPath(this.sourceReport.getAbsolutePath());
+//		testSourceTask.setTests(this.bin_source.getAbsolutePath());
+//		executor.execute(testSourceTask);
+//
+//		if (testAgainSourceTask != null) {
+//			testAgainSourceTask.setReportPath(this.sourceSecondReport
+//					.getAbsolutePath());
+//			testAgainSourceTask.setTests(this.bin_source.getAbsolutePath());
+//			executor.execute(testAgainSourceTask);
+//
+//		}
+//		testTargetTask.setReportPath(targetReport.getAbsolutePath());
+//		testTargetTask.setTests(this.bin_target.getAbsolutePath());
+//		executor.execute(testTargetTask);
+		//COMENTAR
+		
 		executor.shutdown();
 
 		while (!executor.isTerminated()) {
@@ -223,7 +237,7 @@ public abstract class SafeRefactor {
 
 	}
 
-	private void compileTests() throws MalformedURLException,
+	private void compileTests2() throws MalformedURLException,
 			FileNotFoundException, SafeRefactorException {
 		double start = System.currentTimeMillis();
 
@@ -250,6 +264,34 @@ public abstract class SafeRefactor {
 
 	}
 
+		private void compileTests() throws MalformedURLException,
+		FileNotFoundException, SafeRefactorException {
+	double start = System.currentTimeMillis();
+	
+	sourceTestCompiler.setBinClasspath(source.getBuildFolder()
+			.getAbsolutePath());
+	if (source.getLibFolder() != null)
+		sourceTestCompiler.setLibClasspath(source.getLibFolder()
+				.getAbsolutePath());
+	sourceTestCompiler.compile(getTestPath().getAbsolutePath(),
+			bin_source.getAbsolutePath());
+	
+	targetTestCompiler.setBinClasspath(target.getBuildFolder()
+			.getAbsolutePath());
+	
+	if (target.getLibFolder() != null)
+		targetTestCompiler.setLibClasspath(target.getLibFolder()
+				.getAbsolutePath());
+	targetTestCompiler.compile(getTestPath().getAbsolutePath(),
+			bin_target.getAbsolutePath());
+	
+	double stop = System.currentTimeMillis();
+	double total = ((stop - start) / 1000);
+	logger.info("time to compile tests (s): " + total);
+	
+	}
+
+	
 	private void generateTests() throws FileNotFoundException {
 		double start = System.currentTimeMillis();
 		

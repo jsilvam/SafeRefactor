@@ -56,7 +56,65 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 		runRandoopThroughAnt();
 
 	}
+	private void runRandoopThroughAnt2() throws FileNotFoundException {
+		String timeout = String.valueOf(timeLimit);
+		String tmpDir = this.tmpDir;
+		
+	
+		
+		String randoopParameters = "";
+		String isFork = "true";
 
+		StringBuffer randoopParametersForAnt = new StringBuffer();
+		for (String parameter : additionalParameters) {
+			if (parameter.startsWith("fork")) {
+				String[] forkParameter = parameter.split("=");
+				isFork = forkParameter[1];
+			} else {
+				randoopParametersForAnt.append(parameter);
+				randoopParametersForAnt.append(";");
+			}
+
+		}
+		
+		randoopParameters = randoopParametersForAnt.toString();
+		String impactedList  = this.impactedList;
+
+		Main main2 = new Main();
+		String[] argsRandoop = {
+				"-classpath "+tmpDir+" ",
+				"gentests",
+				"--methodlist=" + tmpDir + Constants.SEPARATOR + methodsToTest,
+				"--timelimit=" + timeout,
+				"--log=filewriter",
+				"--junit-output-dir="
+						+ tmpDir,
+				"--output-nonexec=true" };
+
+		if (randoopParameters.length() > 0) {
+			String[] listRandoopParameters = randoopParameters.split(";");
+
+			if (listRandoopParameters.length > 0)
+				argsRandoop = (String[]) ArrayUtils.addAll(argsRandoop,
+						listRandoopParameters);
+
+		}
+		
+		ArrayList<String> impactedMethods = new ArrayList<String>();
+		String[] split = impactedList.split(" ");
+		for (String string : split) {
+			if (!string.equals("")) {
+//				System.out.println(string.trim());
+				impactedMethods.add(string);
+				System.out.println("impacted Method "+string);
+			}
+		}
+		
+		
+		main2.nonStaticMain(argsRandoop);
+		main2.nonStaticMainAJ(argsRandoop, impactedMethods);
+	}
+	
 	private void runRandoopThroughAnt() throws FileNotFoundException {
 
 //		URL buildFile = RandoopAntAdapter.class
@@ -84,7 +142,6 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 					.getAbsolutePath());
 		p.setProperty("timeout", String.valueOf(timeLimit));
 		
-		impactedList = "";
 		p.setProperty("impactedMethods", this.impactedList);
 
 		String isFork = "true";
@@ -164,6 +221,8 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 			
 		String timeout = args[0];
 		String tmpDir = args[1];
+		
+		System.out.println("argsss a1 "+args[0]+" a2 "+args[1]+" a3 "+args[2]+" a4 "+args[3]);
 		
 		String randoopParameters = "";
 		if (args.length > 2) randoopParameters = args[2];
