@@ -96,6 +96,10 @@ public class CommandLineAdapter extends AbstractTestGeneratorAdapter{
         }
         input.close();
 			exec.waitFor();
+			exec.getInputStream().close();
+			exec.getErrorStream().close();
+			exec.getOutputStream().close(); 
+			exec.destroy();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -104,7 +108,7 @@ public class CommandLineAdapter extends AbstractTestGeneratorAdapter{
 			e.printStackTrace();
 		}
 		
-		//java -classpath /Users/melmongiovi/git3/saferefactorimpact/lib/*:/Users/melmongiovi/git3/saferefactorimpact/test/subjects/bugModifiedFieldS/bin/:/Users/melmongiovi/git3/saferefactorimpact/bin/ saferefactor.core.generation.RandoopAntAdapter 1 /var/folders/x3/bvxnl_gd10l1v_1pvgpgf4gw0000gn/T/SafeRefactor11/tests/ рс рA.teste() A.m(long) A.m(int)с 
+	 
 		
 	}
 
@@ -119,14 +123,7 @@ public class CommandLineAdapter extends AbstractTestGeneratorAdapter{
 	private void generateMethodListFile(List<Method> methods) {
 
 		Random random = new Random();
-//		int choice = random.nextInt(2);		
 		StringBuffer lines = new StringBuffer();
-//		if (choice == 0) {
-//			for (Method method : methods) {
-//				lines.append(method + "\n");
-//			}
-//		} 
-//		else {
 			for (Method method : methods) {
 				if (method instanceof ConstructorImp)
 					lines.append(method + "\n");
@@ -161,7 +158,7 @@ public class CommandLineAdapter extends AbstractTestGeneratorAdapter{
 			impactedList = impactedList.replaceAll("\\*", " ");
 		}
 		
-		System.out.println("argsss a1 "+args[0]+" a2 "+args[1]+" a3 "+args[2]+" a4 "+args[3]);
+		//System.out.println("argsss a1 "+args[0]+" a2 "+args[1]+" a3 "+args[2]+" a4 "+args[3]);
 		
 //		if (args.length > 2) randoopParameters = args[2];
 //		String impactedList  = args[3];

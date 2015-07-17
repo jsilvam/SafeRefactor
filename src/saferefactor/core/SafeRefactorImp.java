@@ -63,12 +63,13 @@ public class SafeRefactorImp extends SafeRefactor {
 		// create tmp folder
 		setTestPath(new File(tmpFile, Constants.TESTS_DIR));
 		getTestPath().mkdirs();
-
-		logger = Logger.getLogger("SafeRefactorLogger");
+//AQUII
+//		logger = Logger.getLogger("SafeRefactorLogger");
 		FileHandler fh = new FileHandler(getTestPath().getAbsolutePath()
 				+ Constants.SEPARATOR + "log_saferefactor");
 		fh.setFormatter(new SimpleFormatter());
-		logger.addHandler(fh);
+		//AQUII
+		//logger.addHandler(fh);
 
 		analyzer = AnalyzerFactory.getFactory().createAnalyzer(this.source,
 				this.target, this.tmpFolder);

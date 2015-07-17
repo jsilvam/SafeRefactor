@@ -1833,42 +1833,6 @@ private void getChangesInFieldAssignment(Method methodSource, Method methodTarge
 		this.impactedList = impactedList;
 	}
 
-	public static void main(String[] args) throws IOException {
-		
-		
-		
-//		String source = "/Users/melmongiovi/Documents/workspace4/addParameterS";
-//		String target = "/Users/melmongiovi/Documents/workspace4/addParameterT";
-		
-//		String source = "/Users/melmongiovi/Documents/workspace3/JHD"+503+"source";
-//		String target = "/Users/melmongiovi/Documents/workspace3/JHD"+503+"target";
-		int sub = 650;
-		
-//		String source = "/Users/melmongiovi/Downloads/subjects/"+sub+"/JHotDraw_"+sub+"_BEFORE/";
-//		String target = "/Users/melmongiovi/Downloads/subjects/"+sub+"/JHotDraw_"+sub+"_AFTER/";
-		
-		String source = "/Users/melmongiovi/Documents/resultados/T476BEFORERENAME";
-		String target = "/Users/melmongiovi/Documents/resultados/T476AFTERRENAME";
-		
-//		String source = "/Users/melmongiovi/Documents/workspace4/AnalisadorASMOpt/subjects/addMethodS2";
-//		String target = "/Users/melmongiovi/Documents/workspace4/AnalisadorASMOpt/subjects/addMethodT2";
-		
-//		String source = "/Users/melmongiovi/Documents/workspace4/changeMethodS3";
-//		String target = "/Users/melmongiovi/Documents/workspace4/changeMethodT3";
-		
-//		String source = "/Users/melmongiovi/Documents/workspace4/removeFieldS1";
-//		String target = "/Users/melmongiovi/Documents/workspace4/removeFieldT1";
-		
-		long time = System.currentTimeMillis();
-//		SRImpact sri = new SRImpact("", source, target, "", "1", "");
-//		SRImpact sri = new SRImpact("", source, target, "lib", "6", "bin"+Constants.FILE_SEPARATOR+"main"+Constants.FILE_SEPARATOR+"java");
-		time = System.currentTimeMillis() - time;
-		System.out.println(time/1000);
-//		ImpactAnalysis ia = new ImpactAnalysis(source, target);
-//		ia.print();
-//		System.out.println(ia.methods);
-		
-
-	}
+	
 
 }

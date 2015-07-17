@@ -59,16 +59,17 @@ public class AntJunitRunnerST implements TestExecutor {
 		p.setProperty("report.dir.source", reportPathSource);
 		p.setProperty("report.dir.target", reportPathTarget);
 
-		DefaultLogger consoleLogger = new DefaultLogger();
-		consoleLogger
-				.setMessageOutputLevel(org.apache.tools.ant.Project.MSG_INFO);
+//		DefaultLogger consoleLogger = new DefaultLogger();
+//		consoleLogger
+//				.setMessageOutputLevel(org.apache.tools.ant.Project.MSG_INFO);
 		FileOutputStream fileOutputStream = new FileOutputStream(tmpDir
 				+ Constants.SEPARATOR + "log_saferefactor_testrunner.txt");
 		PrintStream ps = new PrintStream(fileOutputStream);
-		consoleLogger.setOutputPrintStream(ps);
-		consoleLogger.setErrorPrintStream(ps);
+//		consoleLogger.setOutputPrintStream(ps);
+//		consoleLogger.setErrorPrintStream(ps);
 
-		p.addBuildListener(consoleLogger);
+//		p.addBuildListener(consoleLogger);
+		System.out.println("—k, no log");
 
 		p.init();
 		ProjectHelper helper = ProjectHelper.getProjectHelper();
@@ -132,19 +133,21 @@ public class AntJunitRunnerST implements TestExecutor {
 		p.setProperty("tests.dir", getTests());
 		p.setProperty("report.dir.source", reportPathSource);
 		p.setProperty("report.dir.target", reportPathTarget);
-		
-		DefaultLogger consoleLogger = new DefaultLogger();
-		consoleLogger
-				.setMessageOutputLevel(org.apache.tools.ant.Project.MSG_INFO);
+		//AQUII
+//		DefaultLogger consoleLogger = new DefaultLogger();
+//		consoleLogger
+//				.setMessageOutputLevel(org.apache.tools.ant.Project.MSG_INFO);
 		FileOutputStream fileOutputStream;
 		try {
 			fileOutputStream = new FileOutputStream(tmpDir
 					+ Constants.SEPARATOR + "log_saferefactor_testrunner" + System.currentTimeMillis() + ".txt");
 
 			PrintStream ps = new PrintStream(fileOutputStream);
-			consoleLogger.setOutputPrintStream(ps);
-			consoleLogger.setErrorPrintStream(ps);
-			p.addBuildListener(consoleLogger);
+			//AQUII
+//			consoleLogger.setOutputPrintStream(ps);
+//			consoleLogger.setErrorPrintStream(ps);
+//			p.addBuildListener(consoleLogger);
+			System.out.println("'no log");
 			p.init();
 			ProjectHelper helper = ProjectHelper.getProjectHelper();
 			p.addReference("ant.projectHelper", helper);

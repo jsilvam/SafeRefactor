@@ -230,20 +230,7 @@ public class ClassNode extends ClassVisitor {
     @Override
     public void visitSource(final String file, final String debug) {
         sourceFile = file;
-//        try {
-//			InputManager out = new InputManagerASCII("/Users/melmongiovi/Documents/workspace3/source//src/"+file);
-//			out.openFile();
-//			while (!out.isEndOfFile())
-//				System.out.println("f "+out.readLine());
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-        
-//        sourceDebug = debug;
+
     }
 
     @Override

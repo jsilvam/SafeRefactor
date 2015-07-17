@@ -25,15 +25,8 @@ public class CommandLineCompiler implements Compiler{
 	public void compile(String src, String dest) throws MalformedURLException,
 			FileNotFoundException, SafeRefactorException {
 		
-//		String command = "javac -classpath " +
-//				"/var/folders/x3/bvxnl_gd10l1v_1pvgpgf4gw0000gn/T/SafeRefactor11/tests/:" +
-//				"/Users/melmongiovi/git3/saferefactorimpact/test/subjects/bugModifiedFieldS/bin/:" +
-//				"./lib/* " +
-//				"/var/folders/x3/bvxnl_gd10l1v_1pvgpgf4gw0000gn/T/SafeRefactor11/tests/RandoopTest.java " +
-//				"-d /var/folders/x3/bvxnl_gd10l1v_1pvgpgf4gw0000gn/T/SafeRefactor11/tests/tests/bin_source";
 		
 		String command3 = "mkdir -p "+dest;
-		//		String command4 = "mkdir "+this.tmpDir+Constants.SEPARATOR+"tests"+Constants.SEPARATOR+"bin_source";
 //		
 		String command1 = "javac -classpath " +
 		this.tmpDir+":" +
@@ -53,6 +46,12 @@ public class CommandLineCompiler implements Compiler{
 		try {
 			String line = "";
 			Process exec = Runtime.getRuntime().exec(command3);
+			exec.waitFor();
+			exec.getInputStream().close();
+			exec.getErrorStream().close();
+			exec.getOutputStream().close(); 
+			exec.destroy();
+//			System.out.println("okkkkkkkkkkkk");
 //			BufferedReader input = new BufferedReader(
 //		            new InputStreamReader(exec.getInputStream()));
 //		        while ((line = input.readLine()) != null) {
@@ -64,12 +63,20 @@ public class CommandLineCompiler implements Compiler{
 			Process exec2 = Runtime.getRuntime().exec(command1);
 			try {
 				exec2.waitFor();
+				exec2.getInputStream().close();
+				exec2.getErrorStream().close();
+				exec2.getOutputStream().close(); 
+				exec2.destroy();
+				
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 //			Runtime.getRuntime().exec(command2);
 		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

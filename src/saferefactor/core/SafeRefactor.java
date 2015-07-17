@@ -56,7 +56,8 @@ public abstract class SafeRefactor {
 	protected Project target;
 	protected CoverageMeter meter;
 
-	protected Logger logger;
+	//AQUII
+//	protected Logger logger;
 	protected File bin_target;
 	protected File bin_source;
 	protected File sourceReport;
@@ -94,7 +95,8 @@ public abstract class SafeRefactor {
 
 	public void checkTransformation() throws SafeRefactorException {
 		double start = System.currentTimeMillis();
-		logger.info("check compilation? " + parameters.isCompileProjects());
+		//AQUII
+//		logger.info("check compilation? " + parameters.isCompileProjects());
 		if (parameters.isCompileProjects()) {
 			try {
 				compileSourceAndTarget();
@@ -113,13 +115,17 @@ public abstract class SafeRefactor {
 
 			if (hasNoCompilationErrors())
 				checkBehavioralChanges();
-			else
-				logger.info("has compilation error");
+			else {
+				//AQUII
+				//logger.info("has compilation error");
+			}
+				
 			generateReport();
 
 			double stop = System.currentTimeMillis();
 			double total = ((stop - start) / 1000);
-			logger.info("time to check transformation (s): " + total);
+			//AQUII
+//			logger.info("time to check transformation (s): " + total);
 			report.setTotalTime(total);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -167,7 +173,8 @@ public abstract class SafeRefactor {
 		}
 		double stop = System.currentTimeMillis();
 		double total = ((stop - start) / 1000);
-		logger.info("time to compile (s): " + total);
+		//AQUII
+//		logger.info("time to compile (s): " + total);
 	}
 
 	private void checkBehavioralChanges() throws Exception {
@@ -200,7 +207,7 @@ public abstract class SafeRefactor {
 		// ExecutorService executor = Executors.newSingleThreadExecutor();
 		ExecutorService executor = Executors.newFixedThreadPool(1);
 		
-		//MUDAN‚A MELINA
+		//MUDANï¿½A MELINA
 		((AntJunitRunnerST)testSourceTask).setReportPathSource(this.sourceReport.getAbsolutePath());
 		((AntJunitRunnerST)testSourceTask).setReportPathTarget(this.targetReport.getAbsolutePath());
 		
@@ -208,7 +215,7 @@ public abstract class SafeRefactor {
 		((AntJunitRunnerST)testSourceTask).setTests(this.bin_target.getAbsolutePath());
 		executor.execute(testSourceTask);
 		
-		//MUDAN‚A MELINA
+		//MUDANï¿½A MELINA
 		
 		//COMENTAR
 //		testSourceTask.setReportPath(this.sourceReport.getAbsolutePath());
@@ -233,7 +240,8 @@ public abstract class SafeRefactor {
 		}
 		double stop = System.currentTimeMillis();
 		double total = ((stop - start) / 1000);
-		logger.info("time to run tests (s): " + total);
+		//AQUII
+		//logger.info("time to run tests (s): " + total);
 
 	}
 
@@ -260,7 +268,8 @@ public abstract class SafeRefactor {
 
 		double stop = System.currentTimeMillis();
 		double total = ((stop - start) / 1000);
-		logger.info("time to compile tests (s): " + total);
+		//AQUII
+//		logger.info("time to compile tests (s): " + total);
 
 	}
 
@@ -287,7 +296,8 @@ public abstract class SafeRefactor {
 	
 	double stop = System.currentTimeMillis();
 	double total = ((stop - start) / 1000);
-	logger.info("time to compile tests (s): " + total);
+	//AQUII
+//	logger.info("time to compile tests (s): " + total);
 	
 	}
 
@@ -306,7 +316,8 @@ public abstract class SafeRefactor {
 
 		double stop = System.currentTimeMillis();
 		double total = ((stop - start) / 1000);
-		logger.info("time to generate tests (s): " + total);
+		//AQUII
+//		logger.info("time to generate tests (s): " + total);
 	}
 
 	private void analyzeTransformation() throws Exception {
@@ -327,7 +338,8 @@ public abstract class SafeRefactor {
 
 		double stop = System.currentTimeMillis();
 		double total = ((stop - start) / 1000);
-		logger.info("time to identify common methods (s): " + total);
+		//AQUII
+//		logger.info("time to identify common methods (s): " + total);
 	}
 
 	public Report getReport() {

@@ -162,17 +162,20 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 		p.setProperty("test.folder", tmpDir);
 		p.setProperty("randoopParameters", randoopParametersForAnt.toString());
 
-		DefaultLogger consoleLogger = new DefaultLogger();
-		consoleLogger
-				.setMessageOutputLevel(org.apache.tools.ant.Project.MSG_INFO);
+		//AQUII
+//		DefaultLogger consoleLogger = new DefaultLogger();
+//		consoleLogger
+//				.setMessageOutputLevel(org.apache.tools.ant.Project.MSG_INFO);
 
 		FileOutputStream fileOutputStream = new FileOutputStream(tmpDir  + Constants.SEPARATOR + 
 				"log_saferefactor_generation.txt");
-		PrintStream ps = new PrintStream(fileOutputStream); 
-		consoleLogger.setOutputPrintStream(ps);
-		consoleLogger.setErrorPrintStream(ps);
-
-		p.addBuildListener(consoleLogger);
+		PrintStream ps = new PrintStream(fileOutputStream);
+		
+		//AQUII
+//		consoleLogger.setOutputPrintStream(ps);
+//		consoleLogger.setErrorPrintStream(ps);
+//
+//		p.addBuildListener(consoleLogger);
 
 		p.init();
 		ProjectHelper helper = ProjectHelper.getProjectHelper();
@@ -222,7 +225,7 @@ public class RandoopAntAdapter extends AbstractTestGeneratorAdapter {
 		String timeout = args[0];
 		String tmpDir = args[1];
 		
-		System.out.println("argsss a1 "+args[0]+" a2 "+args[1]+" a3 "+args[2]+" a4 "+args[3]);
+		//System.out.println("argsss a1 "+args[0]+" a2 "+args[1]+" a3 "+args[2]+" a4 "+args[3]);
 		
 		String randoopParameters = "";
 		if (args.length > 2) randoopParameters = args[2];

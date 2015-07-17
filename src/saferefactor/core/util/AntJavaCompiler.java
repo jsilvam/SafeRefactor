@@ -41,13 +41,18 @@ public class AntJavaCompiler implements Compiler {
 
 		org.apache.tools.ant.Project p = new org.apache.tools.ant.Project();
 
-		DefaultLogger consoleLogger = new DefaultLogger();
-		consoleLogger
-				.setMessageOutputLevel(org.apache.tools.ant.Project.MSG_INFO);
+		//AQUII
+//		DefaultLogger consoleLogger = new DefaultLogger();
+//		consoleLogger
+//				.setMessageOutputLevel(org.apache.tools.ant.Project.MSG_INFO);
 		FileOutputStream fileOutputStream = new FileOutputStream(tmpDir  + Constants.SEPARATOR +  "log_compile.txt");
 		PrintStream ps = new PrintStream(fileOutputStream);
-		consoleLogger.setOutputPrintStream(ps);		
-		consoleLogger.setErrorPrintStream(ps);
+		//AQUII
+//		consoleLogger.setOutputPrintStream(ps);		
+//		consoleLogger.setErrorPrintStream(ps);
+		
+		
+		
 //		if (buildPath != null) {
 //			buildFile = new File(buildPath).toURI().toURL()	;
 //		}
@@ -61,7 +66,9 @@ public class AntJavaCompiler implements Compiler {
 		p.setProperty("src", src);
 		p.setProperty("dest", dest);
 
-		p.addBuildListener(consoleLogger);
+		//AQUII
+//		p.addBuildListener(consoleLogger);
+		
 		p.init();
 		ProjectHelper helper = ProjectHelper.getProjectHelper();
 		p.addReference("ant.projectHelper", helper);
