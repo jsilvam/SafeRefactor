@@ -1,3 +1,7 @@
+# changedistiller
+
+This project is a fork from https://bitbucket.org/gustavoasoares/saferefactor.
+
 Safe Refactor is a tool for checking behavioral changes. First, it checks for compilation errors
 in the resulting program, and reports those errors; if no errors are found, it analyzes the results 
 and generates a number of tests suited for detecting behavioral changes.
