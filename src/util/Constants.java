@@ -3,8 +3,7 @@ package util;
 
 public class Constants {
 
-	public static final String FILE_SEPARATOR = System
-	.getProperty("file.separator");
+	public static final String FILE_SEPARATOR = java.io.File.separator;
 	// Nao alterar as constantes abaixo.
 	// Alterar apenas a constante Identifychange.EXAMPLE_NUMBER
 //	public static final String SOURCE_JAVA_PROJECT = "refactoringExamples/examples/example"+ IdentifyChange.EXAMPLE_NUMBER +"/source";
